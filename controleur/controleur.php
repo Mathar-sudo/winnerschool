@@ -35,6 +35,10 @@
     } else if(isset($_GET['pedagogues'])){
         require_once('controleur_pedagogue.php');
 
+    // Gestion des responsables
+    } else if(isset($_GET['responsables'])){
+        require_once('controleur_responsable.php');
+
     // Gestion des élèves
     } else if(isset($_GET['eleves'])){
         require_once('controleur_eleve.php');
