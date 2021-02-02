@@ -15,6 +15,7 @@
     } else if(isset($_GET['classes'])){
         require_once('controleur_classe.php');
 
+<<<<<<< HEAD
     // Gestion des salles
     } else if(isset($_GET['salles'])){
         require_once('controleur_salle.php');
@@ -38,6 +39,23 @@
     // Gestion des élèves
     } else if(isset($_GET['eleves'])){
         require_once('controleur_eleve.php');
+=======
+        // Gestion des Salles
+    } else if(isset($_GET['salles'])){
+        require_once('controleur_salle.php');
+
+        // Gestion des matieres
+    } else if(isset($_GET['matieres'])){
+        require_once('controleur_matiere.php');
+
+        // Gestion des horaires
+    } else if(isset($_GET['horaires'])){
+        require_once('controleur_horaire.php');
+
+            // Gestion des pedagogues
+    } else if(isset($_GET['pedagogues'])){
+        require_once('controleur_pedagogue.php');
+>>>>>>> f39e460750259d94212ad6e0f375ac539700fdf7
 
     // Espace membre
     } else if(isset($_GET['espace_membre'])){
