@@ -66,15 +66,27 @@
         }
 
         function get_casier_intervenant():String{
-            return $this->casier_intervenant;
+            if($this->casier_intervenant){
+                return $this->casier_intervenant;
+            } else {
+                return false;
+            }
         }
 
         function get_photo1_intervenant():String{
-            return $this->photo1_intervenant;
+            if($this->photo1_intervenant){
+                return $this->photo1_intervenant;
+            } else {
+                return false;
+            }
         }
 
         function get_photo2_intervenant():String{
-            return $this->photo2_intervenant;
+            if($this->photo2_intervenant){
+                return $this->photo2_intervenant;
+            } else {
+                return false;
+            }
         }
 
         function get_niveau_intervenant():String{
