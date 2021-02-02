@@ -17,11 +17,11 @@
 </head>
 <body class="text-center">
     <div style="margin:15% 35%;">
-        <form method="POST" action="">
+        <form method="POST" action="?connexion_utilisateur">
             <h1 class="text-primary text-uppercase mb-3"><i class="fas fa-chalkboard-teacher"></i> Winner School</h1>
-            <input type="email" name="email" class="form-control" placeholder="Adresse email" required>
+            <input type="text" name="email" class="form-control" placeholder="Adresse email" required>
             <input type="password" name="motdepasse" class="form-control my-3" placeholder="Mot de passe" required>
-            <select id="type_connexion" class="form-select mb-3" required>
+            <select name="type_connexion" id="type_connexion" class="form-select mb-3" required>
                 <option disabled selected value>Quelle est votre connexion ?</option>
                 <option value="admin">Administrateur</option>
                 <option value="secretaire">Secrétaire</option>
