@@ -35,6 +35,14 @@
                     </li>
                     <span class="mx-3"></span>
                     <li class="nav-item">
+                        <a class="nav-link <?php if(isset($active_salles)){ echo 'active'; } ?>" href="?salles">Salles</a>
+                    </li>
+                    <span class="mx-3"></span>
+                    <li class="nav-item">
+                        <a class="nav-link <?php if(isset($active_matieres)){ echo 'active'; } ?>" href="?matieres">Matières</a>
+                    </li>
+                    <span class="mx-3"></span>
+                    <li class="nav-item">
                         <a class="nav-link <?php if(isset($active_espace_membre)){ echo 'active'; } ?>" href="?espace_membre">Espace membre</a>
                     </li>
                     <span class="separateur mx-3"></span>
