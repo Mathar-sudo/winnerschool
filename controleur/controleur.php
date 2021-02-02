@@ -15,6 +15,22 @@
     } else if(isset($_GET['classes'])){
         require_once('controleur_classe.php');
 
+        // Gestion des Salles
+    } else if(isset($_GET['salles'])){
+        require_once('controleur_salle.php');
+
+        // Gestion des matieres
+    } else if(isset($_GET['matieres'])){
+        require_once('controleur_matiere.php');
+
+        // Gestion des horaires
+    } else if(isset($_GET['horaires'])){
+        require_once('controleur_horaire.php');
+
+            // Gestion des pedagogues
+    } else if(isset($_GET['pedagogues'])){
+        require_once('controleur_pedagogue.php');
+
     // Espace membre
     } else if(isset($_GET['espace_membre'])){
         require_once($chemin . 'espace_membre.php');
