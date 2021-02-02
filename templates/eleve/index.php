@@ -17,6 +17,8 @@
                 <th scope="col">Numéro mobile</th>
                 <th scope="col">Mail</th>
                 <th scope="col">Elèments spécifiques</th>
+                <th scope="col">Classe</th>
+                <th scope="col">Responsable</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +33,8 @@
                     <td><?= $eleve->get_mobile_eleve() ?></td>
                     <td><?= $eleve->get_etablissement_eleve() ?></td>
                     <td><?= $eleve->get_particularite_eleve() ?></td>
+                    <td><?= $eleve->get_classe() ?></td>
+                    <td><?= $eleve->get_responsable() ?></td>
                 </tr>
                 <?php 
                     }

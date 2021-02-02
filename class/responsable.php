@@ -17,8 +17,6 @@
         private $mobile_responsable;
         private $mail_responsable;
         private $mdp_responsable;
-        
-        
 
         use hydrate;
 
@@ -41,10 +39,10 @@
         function get_ville_responsable():String{
             return $this->ville_responsable;
         }
-        function get_fixe_responsable():int{
+        function get_fixe_responsable():String{
             return $this->fixe_responsable;
         }
-        function get_mobile_responsable():int{
+        function get_mobile_responsable():String{
             return $this->mobile_responsable;
         }
         function get_mail_responsable():String{
@@ -53,7 +51,6 @@
         function get_mdp_responsable():String{
             return $this->mdp_responsable;
         }
-       
 
         // Setters
         function set_id_responsable($id){

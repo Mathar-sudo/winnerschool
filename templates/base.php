@@ -63,7 +63,7 @@
                     </li>
                     <span class="mx-1"></span>
                     <li class="nav-item">
-                        <a class="nav-link <?php if(isset($active_planning)){ echo 'active'; } ?>" href="?planning">Responsables</a>
+                        <a class="nav-link <?php if(isset($active_responsables)){ echo 'active'; } ?>" href="?responsables">Responsables</a>
                     </li>
                     <span class="separateur mx-1"></span>
                     <li class="nav-item">
