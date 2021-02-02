@@ -58,6 +58,36 @@
             return $this->fk_id_classe;
         }
 
+        // Récupérer la classe
+        function get_classe():String{
+            $bdd = new Connexion_bdd();
+            $requete = 'SELECT * FROM classe WHERE id_classe = ?';
+            if($bdd->doQuery($requete, [$this->fk_id_classe])){
+                if($classe_result = $bdd->tabResultat){
+                    return $classe_result[0]['nom_classe'];
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+
+        // Récupérer la responsable
+        function get_responsable():String{
+            $bdd = new Connexion_bdd();
+            $requete = 'SELECT * FROM responsable WHERE id_responsable = ?';
+            if($bdd->doQuery($requete, [$this->fk_id_responsable])){
+                if($responsable_result = $bdd->tabResultat){
+                    return $responsable_result[0]['prenom_responsable'] . ' ' . $responsable_result[0]['nom_responsable'];
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+
         // Setters
         function set_id_eleve($id){
             if(!empty($id)){

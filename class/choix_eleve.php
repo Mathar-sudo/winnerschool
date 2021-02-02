@@ -25,6 +25,51 @@
             return $this->fk_id_horaire;
         }
 
+        // Récupérer l'élève
+        function get_eleve():String{
+            $bdd = new Connexion_bdd();
+            $requete = 'SELECT * FROM eleve WHERE id_eleve = ?';
+            if($bdd->doQuery($requete, [$this->fk_id_eleve])){
+                if($eleve_result = $bdd->tabResultat){
+                    return $eleve_result[0]['prenom_eleve'] . ' ' . $eleve_result[0]['nom_eleve'];
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+
+        // Récupérer la matière
+        function get_matiere():String{
+            $bdd = new Connexion_bdd();
+            $requete = 'SELECT * FROM matiere WHERE id_matiere = ?';
+            if($bdd->doQuery($requete, [$this->fk_id_matiere])){
+                if($matiere_result = $bdd->tabResultat){
+                    return $matiere_result[0]['nom_matiere'];
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+
+        // Récupérer l'horaire
+        function get_horaire():String{
+            $bdd = new Connexion_bdd();
+            $requete = 'SELECT * FROM horaire WHERE id_horaire = ?';
+            if($bdd->doQuery($requete, [$this->fk_id_horaire])){
+                if($horaire_result = $bdd->tabResultat){
+                    return $horaire_result[0]['jour_horaire'] . ' à ' . $horaire_result[0]['heure_horaire'];
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+
         // Setters
         function set_fk_id_eleve($fk_id_eleve){
             if(!empty($fk_id_eleve)){

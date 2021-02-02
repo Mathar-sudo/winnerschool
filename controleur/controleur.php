@@ -47,6 +47,10 @@
     } else if(isset($_GET['choix_eleves'])){
         require_once('controleur_choix_eleve.php');
 
+        // Gestion des plannings
+    } else if(isset($_GET['plannings'])){
+        require_once('controleur_planning.php');
+
     // Sinon renvoi vers l'accueil
     } else {
         header('Location: ?accueil');
