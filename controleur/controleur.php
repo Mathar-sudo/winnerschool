@@ -23,6 +23,22 @@
     } else if(isset($_GET['matieres'])){
         require_once('controleur_matiere.php');
 
+    // Gestion des intervenants
+    } else if(isset($_GET['intervenants'])){
+        require_once('controleur_intervenant.php');
+
+    // Gestion des horaires
+    } else if(isset($_GET['horaires'])){
+        require_once('');
+
+    // Gestion des pédagogues
+    } else if(isset($_GET['pedagogues'])){
+        require_once('');
+
+    // Gestion des élèves
+    } else if(isset($_GET['eleves'])){
+        require_once('controleur_eleve.php');
+
     // Espace membre
     } else if(isset($_GET['espace_membre'])){
         require_once($chemin . 'espace_membre.php');
