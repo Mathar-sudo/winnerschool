@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'Bariol Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bariol Regular'), url('../font/Bariol_Regular_0.woff') format('woff');
+}
+    
+@font-face {
+    font-family: 'Bariol Regular Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bariol Regular Italic'), url('../font/Bariol_Regular_Italic.woff') format('woff');
+}
+
+body{
+    font-family: Bariol Regular !important;
+}
+
+p{
+    text-align: justify !important;
+}
+
+a{
+    color:#4085df;
+}
+
+.text-red{
+    color:#FF0000 !important;
+}
+
+.bg-dark{
+    background-color: #313131 !important;
+}
+
+.bg-primary{
+    background-color: #4085df !important;
+}
+
+.bg-lightgrey{
+    background-color: rgb(245, 245, 245) !important;
+}
+
+.text-primary{
+    color: #4085df !important;
+}
+
+nav{
+    padding:1rem !important;
+    box-shadow: 0px 5px 5px -5px #111 !important; 
+}
+
+footer{
+    box-shadow: 0 -5px 5px -5px #111 !important;
+}
+
+.text-secondary{
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.text-shadow{
+    text-shadow: 0.1em 0.1em 0.2em #111 !important;
+}
+
+.nav-link{
+    padding-left:15px !important;
+    padding-right:15px !important;
+}
+
+.nav-link:hover{
+    border-radius: 5px !important;
+    background-color: #d5e8fd !important;
+    color:#4085df !important;
+}
+
+.nav-link.active{
+    border-radius: 5px !important;
+    background-color: #d5e8fd !important;
+    color:#4085df !important;
+}
+
+.separateur{
+    border-right: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.dropdown-menu{
+    background-color: #fff !important;
+}
+
+.dropdown-item{
+    color: #4085df !important;
+}
+
+.dropdown-item:hover{
+    background-color: #d5e8fd !important;
+    color:#4085df !important;
+}
+
+hr{
+    border: 1px solid rgba(255,255,255,.55) !important;
+}
+
+.table-dark {
+    --bs-table-bg: #21252900;
+    --bs-table-striped-bg: #2c3034;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #373b3e;
+    --bs-table-active-color: rgb(182, 182, 182);
+    --bs-table-hover-bg: #323539;
+    --bs-table-hover-color: #fff;
+    color: rgba(255, 255, 255, 0.575);
+    border-color: #373b3e;
+}
+
+/* Format pc */
+@media(min-width:992px){
+    .container{
+        max-width:90% !important;
+    }
+    .footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+/* Format téléphone et tablette */
+@media (max-width: 991.98px) { 
+    .container{
+        max-width:98% !important;
+    }
+    .navbar-brand{
+        font-size:0.9em !important;
+    }
+    table{
+        font-size:0.7em !important;
+    }
+}
