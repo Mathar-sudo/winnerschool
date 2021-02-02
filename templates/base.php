@@ -59,12 +59,9 @@
                     </li>
                     <span class="mx-1"></span>
                     <li class="nav-item">
-                        <a class="nav-link <?php if(isset($active_choix_eleve)){ echo 'active'; } ?>" href="?choix_eleve">Choix Elève</a>
+                        <a class="nav-link <?php if(isset($active_choix_eleves)){ echo 'active'; } ?>" href="?choix_eleves">Choix Elèves</a>
                     </li>
-                    <span class="mx-1"></span>
-                    <li class="nav-item">
-                        <a class="nav-link <?php if(isset($active_espace_membre)){ echo 'active'; } ?>git" href="?espace_membre">Espace membre</a>
-                    </li>
+                   
                     <span class="separateur mx-1"></span>
                     <li class="nav-item">
                         <a class="nav-link <?php if(isset($active_connexion)){ echo 'active'; } ?>" href="?connexion"><i class="fas fa-user"></i> Connexion</a>

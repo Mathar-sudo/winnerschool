@@ -47,10 +47,6 @@
     } else if(isset($_GET['choix_eleves'])){
         require_once('controleur_choix_eleve.php');
 
-    // Espace membre
-    } else if(isset($_GET['espace_membre'])){
-        require_once($chemin . 'espace_membre.php');
-
     // Sinon renvoi vers l'accueil
     } else {
         header('Location: ?accueil');
