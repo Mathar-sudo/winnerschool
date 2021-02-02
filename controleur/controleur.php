@@ -43,10 +43,17 @@
     } else if(isset($_GET['eleves'])){
         require_once('controleur_eleve.php');
 
+<<<<<<< HEAD
     // Gestion des choix élèves
     } else if(isset($_GET['choix_eleves'])){
         require_once('controleur_choix_eleve.php');
 
+=======
+    // Gestion des responsables
+    } else if(isset($_GET['responsables'])){
+        require_once('controleur_responsable.php');
+    
+>>>>>>> 1fec68469e7a15c0d836a71653ea6d043235f28c
     // Espace membre
     } else if(isset($_GET['espace_membre'])){
         require_once($chemin . 'espace_membre.php');

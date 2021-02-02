@@ -58,12 +58,17 @@
                         <a class="nav-link <?php if(isset($active_pedagogues)){ echo 'active'; } ?>" href="?pedagogues">Pédagogues</a>
                     </li>
                     <span class="mx-1"></span>
+<<<<<<< HEAD
                     <li class="nav-item">
                         <a class="nav-link <?php if(isset($active_choix_eleve)){ echo 'active'; } ?>" href="?choix_eleve">Choix Elève</a>
                     </li>
                     <span class="mx-1"></span>
                     <li class="nav-item">
                         <a class="nav-link <?php if(isset($active_espace_membre)){ echo 'active'; } ?>git" href="?espace_membre">Espace membre</a>
+=======
+                    <li class="nav-item">
+                        <a class="nav-link <?php if(isset($active_responsables)){ echo 'active'; } ?>" href="?responsables">Responsables</a>
+>>>>>>> 1fec68469e7a15c0d836a71653ea6d043235f28c
                     </li>
                     <span class="separateur mx-1"></span>
                     <li class="nav-item">
