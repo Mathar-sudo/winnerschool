@@ -51,6 +51,14 @@
                     </li>
                     <span class="mx-3"></span>
                     <li class="nav-item">
+                        <a class="nav-link <?php if(isset($active_horaires)){ echo 'active'; } ?>" href="?horaires">Horaires</a>
+                    </li>
+                    <span class="mx-3"></span>
+                    <li class="nav-item">
+                        <a class="nav-link <?php if(isset($active_pedagogues)){ echo 'active'; } ?>" href="?pedagogues">Pédagogues</a>
+                    </li>
+                    <span class="mx-3"></span>
+                    <li class="nav-item">
                         <a class="nav-link <?php if(isset($active_espace_membre)){ echo 'active'; } ?>" href="?espace_membre">Espace membre</a>
                     </li>
                     <span class="separateur mx-3"></span>
