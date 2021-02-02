@@ -43,9 +43,9 @@
     } else if(isset($_GET['eleves'])){
         require_once('controleur_eleve.php');
 
-    // Gestion des responsables
-    } else if(isset($_GET['responsables'])){
-        require_once('controleur_responsable.php');
+    // Gestion des choix_eleves
+    } else if(isset($_GET['choix_eleves'])){
+        require_once('controleur_choix_eleve.php');
     
         // Gestion des plannings
     } else if(isset($_GET['plannings'])){
