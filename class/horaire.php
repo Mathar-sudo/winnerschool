@@ -27,7 +27,6 @@
             return $this->heure_horaire;
         }
 
-
         // Setters
         function set_id_horaire($id){
             if(!empty($id)){

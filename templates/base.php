@@ -59,7 +59,7 @@
                     </li>
                     <span class="mx-1"></span>
                     <li class="nav-item">
-                        <a class="nav-link <?php if(isset($active_espace_membre)){ echo 'active'; } ?>git" href="?espace_membre">Espace membre</a>
+                        <a class="nav-link <?php if(isset($active_choix_eleves)){ echo 'active'; } ?>git" href="?choix_eleves">Choix élèves</a>
                     </li>
                     <span class="mx-1"></span>
                     <li class="nav-item">
