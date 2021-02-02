@@ -1,41 +1,39 @@
-<?php
-$emplacement_actuel = dirname(__FILE__);
-require_once ($emplacement_actuel.'./fonction/autoload.php');
+<?php 
 
-//Table Salle
-class Salle {
+    $emplacement_actuel = dirname(__FILE__);
+    require_once($emplacement_actuel . '/../fonction/autoload.php');
 
-    //Attributs
-    private $id_salle;
-    private $nom_salle;
+    // Table salle
+    class Salle {
 
-    use hydrate;
+        // Attributs
+        private $id_salle;
+        private $nom_salle;
 
-    // Getters
-    function get_id_salle():int{
-        return $this->id_salle;
-    }
+        use hydrate;
 
-    function get_nom_salle():String{
-        return $this->nom_salle;
-    }
-
-    // Setters
-    function set_id_salle($id){
-        if(!empty($id)){
-            $this->id_salle = $id;
+        // Getters
+        function get_id_salle():int{
+            return $this->id_salle;
         }
-    }
 
-    function set_nom_salle($nom){
-        if(!empty($nom)){
-            $this->nom_salle = $nom;
+        function get_nom_salle():String{
+            return $this->nom_salle;
         }
+
+        // Setters
+        function set_id_salle($id){
+            if(!empty($id)){
+                $this->id_salle = $id;
+            }
+        }
+
+        function set_nom_salle($nom){
+            if(!empty($nom)){
+                $this->nom_salle = $nom;
+            }
+        }
+
     }
-
-}
-
-}
-
 
 ?>

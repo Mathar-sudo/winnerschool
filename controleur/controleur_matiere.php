@@ -8,7 +8,6 @@
 
     $use_matiere = new Use_Matiere();
 
-    //Afficher matières
     if(isset($_GET['matieres'])){
         $tableau_matieres = $use_matiere->findAll();
         require_once($chemin . 'matiere/index.php');

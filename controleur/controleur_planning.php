@@ -6,11 +6,11 @@
     // Chemin vers les templates
     $chemin = './templates/';
 
-    $use_salle = new Use_Salle();
+    $use_planning = new Use_planning();
 
-    if(isset($_GET['salles'])){
-        $tableau_salles = $use_salle->findAll();
-        require_once($chemin . 'salle/index.php');
+    if(isset($_GET['plannings'])){
+        $tableau_plannings = $use_planning->findAll();
+        require_once($chemin . 'planning/index.php');
     }
 
 ?>

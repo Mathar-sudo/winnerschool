@@ -21,7 +21,7 @@
                 if($salles_recup = $bdd->tabResultat){
                     // On ajoute un nouvel objet au tableau (avec hydrate)
                     foreach($salles_recup as $salle){
-                        $salles[] = new salle($salle);
+                        $salles[] = new Salle($salle);
                     }
                     // On retourne le tableau
                     return $salles;
