@@ -23,10 +23,9 @@
             return $this->jour_horaire;
         }
 
-        function get_heure_horaire():int{
+        function get_heure_horaire():String{
             return $this->heure_horaire;
         }
-
 
         // Setters
         function set_id_horaire($id){
