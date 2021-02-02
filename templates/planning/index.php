@@ -25,11 +25,11 @@
                     foreach($tableau_plannings as $planning){
                 ?>
                 <tr>
-                    <td><?= $planning->get_fk_id_interventant() ?></td>
-                    <td><?= $planning->get_fk_id_eleve() ?></td>
-                    <td><?= $planning->get_fk_id_pedagogue() ?></td>
-                    <td><?= $planning->get_fk_id_salle() ?></td>
-                    <td><?= $planning->get_fk_id_matiere() ?></td>
+                    <td><?= $planning->get_intervenant() ?></td>
+                    <td><?= $planning->get_eleve() ?></td>
+                    <td><?= $planning->get_pedagogue() ?></td>
+                    <td><?= $planning->get_salle() ?></td>
+                    <td><?= $planning->get_matiere() ?></td>
                     <td><?= $planning->get_numero_semaine() ?></td>
                     <td><?= $planning->get_annee() ?></td>
 

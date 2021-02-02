@@ -4,7 +4,7 @@ $emplacement_actuel = dirname(__FILE__);
     require_once($emplacement_actuel . '/../fonction/autoload.php');
 
     // Classe de gestion
-    class Use_planning {
+    class Use_Planning {
 
         function findAll(){
             // Connexion à la base de données
@@ -21,10 +21,10 @@ $emplacement_actuel = dirname(__FILE__);
                 if($plannings_recup = $bdd->tabResultat){
                     // On ajoute un nouvel objet au tableau (avec hydrate)
                     foreach($plannings_recup as $planning){
-                        $plannings[] = new planning($planning);
+                        $plannings[] = new Planning($planning);
                     }
                     // On retourne le tableau
-                    return $intervenants;
+                    return $plannings;
                 } else {
                     return false;
                 }

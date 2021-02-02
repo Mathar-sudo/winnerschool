@@ -59,12 +59,13 @@
                     </li>
                     <span class="mx-1"></span>
                     <li class="nav-item">
-                        <a class="nav-link <?php if(isset($active_choix_eleves)){ echo 'active'; } ?>git" href="?choix_eleves">Choix élèves</a>
+                        <a class="nav-link <?php if(isset($active_choix_eleves)){ echo 'active'; } ?>" href="?choix_eleves">Choix Elèves</a>
                     </li>
                     <span class="mx-1"></span>
                     <li class="nav-item">
-                        <a class="nav-link <?php if(isset($active_responsables)){ echo 'active'; } ?>" href="?responsables">Responsables</a>
+                        <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?plannings">Planning</a>
                     </li>
+                   
                     <span class="separateur mx-1"></span>
                     <li class="nav-item">
                         <a class="nav-link <?php if(isset($active_connexion)){ echo 'active'; } ?>" href="?connexion"><i class="fas fa-user"></i> Connexion</a>

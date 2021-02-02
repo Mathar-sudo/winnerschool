@@ -53,7 +53,7 @@
     // Gestion des plannings
     } else if(isset($_GET['plannings'])){
         require_once('controleur_planning.php');
-    
+
     // Sinon renvoi vers l'accueil
     } else {
         header('Location: ?accueil');
