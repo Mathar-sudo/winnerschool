@@ -4,7 +4,7 @@
     require_once($emplacement_actuel . '/../fonction/autoload.php');
 
     // Classe de gestion
-    class Use_pedagogue {
+    class Use_Pedagogue {
 
         function findAll(){
             // Connexion à la base de données
@@ -21,7 +21,7 @@
                 if($pedagogues_recup = $bdd->tabResultat){
                     // On ajoute un nouvel objet au tableau (avec hydrate)
                     foreach($pedagogues_recup as $pedagogue){
-                        $pedagogues[] = new pedagogue($pedagogue);
+                        $pedagogues[] = new Pedagogue($pedagogue);
                     }
                     // On retourne le tableau
                     return $pedagogues;

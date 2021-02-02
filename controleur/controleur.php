@@ -39,6 +39,10 @@
     } else if(isset($_GET['eleves'])){
         require_once('controleur_eleve.php');
 
+    // Gestion des responsables
+    } else if(isset($_GET['responsables'])){
+        require_once('controleur_responsable.php');
+    
     // Espace membre
     } else if(isset($_GET['espace_membre'])){
         require_once($chemin . 'espace_membre.php');
