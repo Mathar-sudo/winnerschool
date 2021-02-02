@@ -31,6 +31,10 @@
                     </li>
                     <span class="mx-3"></span>
                     <li class="nav-item">
+                        <a class="nav-link <?php if(isset($active_classes)){ echo 'active'; } ?>" href="?classes">Classes</a>
+                    </li>
+                    <span class="mx-3"></span>
+                    <li class="nav-item">
                         <a class="nav-link <?php if(isset($active_espace_membre)){ echo 'active'; } ?>" href="?espace_membre">Espace membre</a>
                     </li>
                     <span class="separateur mx-3"></span>
@@ -59,7 +63,7 @@
     <!-- Fin du contenu -->
 
     <!-- Pied de page -->
-    <footer class="sticky-bottom footer bg-primary">
+    <footer class="bg-primary">
         <div class="container text-center text-white py-4">
             Copyright © 2021 - Winner School Lyon
         </div>

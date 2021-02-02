@@ -11,9 +11,14 @@
     font-weight: normal;
     src: local('Bariol Regular Italic'), url('../font/Bariol_Regular_Italic.woff') format('woff');
 }
+html{
+    position: relative !important;
+    min-height: 100% !important; 
+}
 
 body{
     font-family: Bariol Regular !important;
+    margin: 0 0 100px !important;
 }
 
 p{
@@ -37,7 +42,7 @@ a{
 }
 
 .bg-lightgrey{
-    background-color: rgb(245, 245, 245) !important;
+    background-color: #f5f5f5 !important;
 }
 
 .text-primary{
@@ -51,6 +56,10 @@ nav{
 
 footer{
     box-shadow: 0 -5px 5px -5px #111 !important;
+    position: absolute !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
 }
 
 .text-secondary{
