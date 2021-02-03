@@ -55,7 +55,23 @@
                 }
             }
         }
+        function supprimer($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
 
+            //Requête SQL pour planning
+            $requete = 'DELETE FROM planning WHERE fk_id_pedagogue = ?';
+            // Exécution de la requête
+            $bdd->doQuery($requete, [$id]);
+            
+            // Requête SQL pour pedagogue
+            $requete = 'DELETE FROM pedagogue WHERE id_pedagogue = ?';
+            
+            // Exécution de la requête
+            $bdd->doQuery($requete, [$id]);
+
+            
     }
+}
 
 ?>
