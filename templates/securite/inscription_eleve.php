@@ -25,40 +25,40 @@
             <form class="row g-3">
                 <div class="col-md-6">
                     <label for="input_nom" class="form-label">Nom</label>
-                    <input type="text" name="nom_responsable" class="form-control" id="input_nom">
+                    <input type="text" name="nom_responsable" class="form-control" id="input_nom" required>
                 </div>
                 <div class="col-md-6">
                     <label for="input_prenom" class="form-label">Prénom</label>
-                    <input type="text" name="prenom_responsable" class="form-control" id="input_prenom">
+                    <input type="text" name="prenom_responsable" class="form-control" id="input_prenom" required>
                 </div>
                 <div class="col-md-6">
                     <label for="input_adresse" class="form-label">Adresse</label>
-                    <input type="text" name="adresse_responsable" class="form-control" id="input_adresse" placeholder="5 rue de ..">
+                    <input type="text" name="adresse_responsable" class="form-control" id="input_adresse" placeholder="5 rue de .." required>
                 </div>
                 <div class="col-md-2">
                     <label for="input_code_postal" class="form-label">Code postal</label>
-                    <input type="number" name="code_postal_responsable" class="form-control" id="input_code_postal">
+                    <input type="number" name="code_postal_responsable" class="form-control" id="input_code_postal" required>
                 </div>
                 <div class="col-md-4">
                     <label for="input_ville" class="form-label">Ville</label>
-                    <input type="text" name="ville_responsable" class="form-control" id="input_ville">
+                    <input type="text" name="ville_responsable" class="form-control" id="input_ville" required>
                 </div>
                 <div class="col-md-6">
                     <label for="input_fixe" class="form-label">Téléphone fixe</label>
-                    <input type="text" name="fixe_responsable" class="form-control" id="input_fixe">
+                    <input type="text" name="fixe_responsable" class="form-control" id="input_fixe" required>
                 </div>
                 <div class="col-md-6">
                     <label for="input_portable" class="form-label">Téléphone portable</label>
-                    <input type="text" name="portable_responsable" class="form-control" id="input_portable">
+                    <input type="text" name="portable_responsable" class="form-control" id="input_portable" required>
                 </div>
                 <span class="text-danger" style="font-size:1.2em">Identifiants</span>
                 <div class="col-md-6">
                     <label for="input_email" class="form-label">Adresse email</label>
-                    <input type="email" name="email_responsable" class="form-control" id="input_email">
+                    <input type="email" name="email_responsable" class="form-control" id="input_email" required>
                 </div>
                 <div class="col-md-6">
                     <label for="input_mdp" class="form-label">Mot de passe</label>
-                    <input type="password" name="mdp_responsable" class="form-control" id="input_mdp">
+                    <input type="password" name="mdp_responsable" class="form-control" id="input_mdp" required>
                 </div>
             </form>
         </div>
@@ -67,19 +67,19 @@
             <form class="row g-3">
                 <div class="col-md-6">
                     <label for="input_nom" class="form-label">Nom</label>
-                    <input type="text" name="nom_eleve" class="form-control" id="input_nom">
+                    <input type="text" name="nom_eleve" class="form-control" id="input_nom" required>
                 </div>
                 <div class="col-md-6">
                     <label for="input_prenom" class="form-label">Prénom</label>
-                    <input type="text" name="prenom_eleve" class="form-control" id="input_prenom">
+                    <input type="text" name="prenom_eleve" class="form-control" id="input_prenom" required>
                 </div>
                 <div class="col-md-6">
                     <label for="input_age" class="form-label">Âge</label>
-                    <input type="number" name="age_eleve" class="form-control" id="input_age">
+                    <input type="number" name="age_eleve" class="form-control" id="input_age" required>
                 </div>
                 <div class="col-md-6">
                     <label for="select_classe" class="form-label">Classe</label>
-                    <select name="classe_eleve" class="form-select" id="select_classe">
+                    <select name="classe_eleve" class="form-select" id="select_classe" required>
                         <option disabled selected value>Choisissez une classe</option>
                         <option>Seconde</option>
                         <option>Première</option>
@@ -88,24 +88,24 @@
                 </div>
                 <div class="col-md-6">
                     <label for="input_etablissement" class="form-label">Établissement scolaire</label>
-                    <input type="text" name="etablissement_eleve" class="form-control" id="input_etablissement">
+                    <input type="text" name="etablissement_eleve" class="form-control" id="input_etablissement" required>
                 </div>
                 <div class="col-md-6">
                     <label for="input_portable" class="form-label">Téléphone portable</label>
-                    <input type="text" name="portable_eleve" class="form-control" id="input_portable">
+                    <input type="text" name="portable_eleve" class="form-control" id="input_portable" required>
                 </div>
                 <div class="col-md-12">
                     <label for="input_particularite" class="form-label">Eléments spécifiques à prendre en compte (discipline, handicap, ...)</label>
-                    <input type="text" name="particulartie_eleve" class="form-control" id="input_particularite">
+                    <input type="text" name="particulartie_eleve" class="form-control" id="input_particularite" required>
                 </div>
                 <span class="text-danger" style="font-size:1.2em">Identifiants</span>
                 <div class="col-md-6">
                     <label for="input_email" class="form-label">Adresse email</label>
-                    <input type="email" name="email_eleve" class="form-control" id="input_email">
+                    <input type="email" name="email_eleve" class="form-control" id="input_email" required>
                 </div>
                 <div class="col-md-6">
                     <label for="input_mdp" class="form-label">Mot de passe</label>
-                    <input type="password" name="mdp_eleve" class="form-control" id="input_mdp">
+                    <input type="password" name="mdp_eleve" class="form-control" id="input_mdp" required>
                 </div>
                 <span class="text-danger" style="font-size:1.2em">Horaires de cours souhaités</span>
                 <div class="col">
