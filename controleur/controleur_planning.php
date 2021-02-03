@@ -11,6 +11,8 @@
     if(isset($_GET['plannings'])){
         $tableau_plannings = $use_planning->findAll();
         require_once($chemin . 'planning/index.php');
+    }else if(isset($_GET['supprimer_planning'])){
+        $use_planning->supprimer();
     }
 
 ?>

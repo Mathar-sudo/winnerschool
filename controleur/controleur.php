@@ -42,12 +42,12 @@
     // Gestion des élèves
     } else if(isset($_GET['eleves']) || isset($_GET['eleve']) || isset($_GET['supprimer_eleve'])){
         require_once('controleur_eleve.php');
-    
-    } else if(isset($_GET['choix_eleves']) || isset($_GET['choix_eleve']) || isset($_GET['supprimer_choix_eleve'])){
+    // Gestion des choix élèves
+    } else if(isset($_GET['choix_eleves']) || isset($_GET['supprimer_choix_eleve'])){
         require_once('controleur_choix_eleve.php');
 
     // Gestion des plannings
-    } else if(isset($_GET['plannings']) || isset($_GET['planning']) || isset($_GET['supprimer_planning'])){
+    } else if(isset($_GET['plannings']) || isset($_GET['supprimer_planning'])){
         require_once('controleur_planning.php');
 
     // Sinon renvoi vers l'accueil
