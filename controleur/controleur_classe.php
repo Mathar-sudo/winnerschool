@@ -14,6 +14,9 @@
     } else if(isset($_GET['classe'])){
         $classe = $use_classe->findById($_GET['classe']);
         require_once($chemin . 'classe/show.php');
+    }else if(isset($_GET['supprimer_classe'])){
+        $use_classe->supprimer($_GET['supprimer_classe']);
+        
     }
 
 ?>
