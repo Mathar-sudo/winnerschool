@@ -28,6 +28,7 @@
                 <th scope="col">Expérience</th>
                 <th scope="col">Connaissance</th>
                 <th scope="col">Aperçu</th>
+                <th scope="col">Supprimer</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,6 +54,8 @@
                     <td><?= $intervenant->get_experience_intervenant() ?></td>
                     <td><?= $intervenant->get_connaissance_intervenant() ?></td>
                     <td><a href="?intervenant=<?= $intervenant->get_id_intervenant() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <td><button class="btn btn-danger btn-sm" id="supprimer_intervenant"><i class="fas fa-trash-alt"></i></button>
+                    <a href="?supprimer_intervenant=<?= $intervenant->get_id_intervenant() ?>" id="confirm_suppression" class="collapse"><button class="btn btn-danger btn-sm">Confirmer</button></a></td>
                 </tr>
                 <?php 
                     }
@@ -60,7 +63,14 @@
             </tbody>
         </table>
     </div>
-
+<script>
+$(document).ready(function(){
+    $("#supprimer_intervenant").click(function(){
+        
+        $('#confirm_suppression').show();
+    });
+});
+</script>
 <?php } ?>
 
 <?php $contenu = ob_get_clean(); ?>

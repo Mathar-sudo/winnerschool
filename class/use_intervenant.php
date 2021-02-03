@@ -56,6 +56,21 @@
             }
         }
 
+        function supprimer($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            // Requête SQL
+            $requete = 'DELETE FROM intervenant WHERE id_intervenant = ?';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete, [$id])){
+                return false;
+            } else {
+               header("Location: ?intervenants") ;
+            }
+        }
+
     }
 
 ?>

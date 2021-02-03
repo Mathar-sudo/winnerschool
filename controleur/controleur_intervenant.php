@@ -14,6 +14,9 @@
     }else if(isset($_GET['intervenant'])){
         $intervenant = $use_intervenant->findById($_GET['intervenant']);
         require_once($chemin . 'intervenant/show.php');
+    }else if(isset($_GET['supprimer_intervenant'])){
+        $use_intervenant->supprimer($_GET['supprimer_intervenant']);
+        
     }
 
 ?>
