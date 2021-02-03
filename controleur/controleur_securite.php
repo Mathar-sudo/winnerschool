@@ -18,6 +18,9 @@
         require_once($chemin . 'securite/inscription_eleve.php');
     } else if(isset($_GET['inscription_pedagogue'])){
         require_once($chemin . 'securite/inscription_pedagogue.php');
+    } else if(isset($_GET['deconnexion'])){
+        session_destroy();
+        require_once($chemin . 'securite/connexion.php');
     }
 
 ?>
