@@ -8,7 +8,7 @@
         require_once($chemin . 'accueil.php');
 
     // Page de connexion
-    } else if(isset($_GET['connexion']) || isset($_GET['connexion_utilisateur']) || isset($_GET['inscription_intervenant']) || isset($_GET['inscription_eleve']) || isset($_GET['inscription_pedagogue'])){
+    } else if(isset($_GET['connexion']) || isset($_GET['connexion_utilisateur']) || isset($_GET['deconnexion']) || isset($_GET['inscription_intervenant']) || isset($_GET['inscription_eleve']) || isset($_GET['inscription_pedagogue'])){
         require_once('controleur_securite.php');
     
     // Gestion des classes

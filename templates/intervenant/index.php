@@ -27,7 +27,7 @@
                 <th scope="col">Profession</th>
                 <th scope="col">Expérience</th>
                 <th scope="col">Connaissance</th>
-                <th scope="col">Mot de passe</th>
+                <th scope="col">Aperçu</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,7 +52,7 @@
                     <td><?= $intervenant->get_profession_intervenant() ?></td>
                     <td><?= $intervenant->get_experience_intervenant() ?></td>
                     <td><?= $intervenant->get_connaissance_intervenant() ?></td>
-                    <td><?= $intervenant->get_mdp_intervenant() ?></td>
+                    <td><a href="?intervenant=<?= $intervenant->get_id_intervenant() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
                 </tr>
                 <?php 
                     }

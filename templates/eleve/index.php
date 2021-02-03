@@ -19,6 +19,7 @@
                 <th scope="col">Elèments spécifiques</th>
                 <th scope="col">Classe</th>
                 <th scope="col">Responsable</th>
+                <th scope="col">Aperçu</th>
                 </tr>
             </thead>
             <tbody>

@@ -31,6 +31,31 @@
             }
         }
 
+        function findById($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            // Requête SQL
+            $requete = 'SELECT * FROM pedagogue WHERE id_pedagogue =?';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete, [$id])){
+                return false;
+            } else {
+                // Récupération des résultats
+                if($pedagogue_recup = $bdd->tabResultat){
+                    // On ajoute un nouvel objet au tableau (avec hydrate)
+                    foreach($pedagogue_recup as $pedagogue){
+                        $pedagogue[] = new Pedagogue($pedagogue);
+                    }
+                    // On retourne le tableau
+                    return $pedagogue[0];
+                } else {
+                    return false;
+                }
+            }
+        }
+
     }
 
 ?>

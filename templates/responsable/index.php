@@ -19,6 +19,7 @@
                 <th scope="col">Numéro fixe</th>
                 <th scope="col">Numéro mobile</th>
                 <th scope="col">Mail</th>
+                <th scope="col">Aperçu</th>
 
                 </tr>
             </thead>
@@ -36,6 +37,7 @@
                     <td><?= $responsable->get_fixe_responsable() ?></td>
                     <td><?= $responsable->get_mobile_responsable() ?></td>
                     <td><?= $responsable->get_mail_responsable() ?></td>
+                    <td><a href="?responsable=<?= $responsable->get_id_responsable() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
                 </tr>
                 <?php 
                     }

@@ -30,12 +30,14 @@
                 }
             }
         }
+      
+
         function findById($id){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();
 
             // Requête SQL
-            $requete = 'SELECT * FROM matiere WHERE id_matiere = ?';
+            $requete = 'SELECT * FROM matiere WHERE id_matiere=?';
 
             // Exécution de la requête
             if(!$bdd->doQuery($requete, [$id])){
