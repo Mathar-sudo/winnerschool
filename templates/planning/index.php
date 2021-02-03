@@ -74,7 +74,7 @@ $(document).ready(function(){
                         'id_matiere': $("#id_matiere" + id_planning).text(),
                         'id_numero_semaine': $("#id_numero_semaine" + id_planning).text(),
                         'id_annee': $("#id_annee" + id_planning).text()
-                    }
+                    },
                     success: function(response){
                         $('#ligne' + id_planning).fadeOut('slow');
                     }

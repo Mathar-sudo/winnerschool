@@ -1,58 +1,66 @@
-<?php $titre_page = 'Inscription intervenant' ?>
-
-<?php $active_inscription = true ?>
-
-<?php ob_start(); ?>
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Winner School"/>
+    <!-- Titre de page -->
+    <title>Inscription d'un intervenant</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <!-- Références CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Scripts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</head>
+<body>
 <div class="container my-5">
-    <h1 class="text-primary">Formulaire d'inscription d'un intervenant</h1>
+    <h1 class="text-primary">Inscription d'un intervenant</h1>
     <hr style="width:15%">
     <form class="row g-3">
         <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
+            <label for="input_nom" class="form-label">Nom</label>
+            <input type="text" name="nom_intervenant" class="form-control" id="input_nom">
         </div>
         <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4">
-        </div>
-        <div class="col-12">
-            <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="col-12">
-            <label for="inputAddress2" class="form-label">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            <label for="input_prenom" class="form-label">Prénom</label>
+            <input type="text" class="form-control" id="input_prenom">
         </div>
         <div class="col-md-6">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
-            <option selected>Choose...</option>
-            <option>...</option>
-            </select>
+            <label for="input_adresse" class="form-label">Adresse</label>
+            <input type="text" name="adresse_intervenant" class="form-control" id="input_adresse" placeholder="5 rue de ..">
         </div>
         <div class="col-md-2">
-            <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
+            <label for="input_code_postal" class="form-label">Code postal</label>
+            <input type="number" name="code_postal_intervenant" class="form-control" id="input_code_postal">
         </div>
-        <div class="col-12">
-            <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-                Check me out
-            </label>
-            </div>
+        <div class="col-md-4">
+            <label for="input_ville" class="form-label">Ville</label>
+            <input type="text" name="ville_intervenant" class="form-control" id="input_ville">
+        </div>
+        <div class="col-md-6">
+            <label for="input_fixe" class="form-label">Téléphone fixe</label>
+            <input type="text" name="fixe_intervenant" class="form-control" id="input_fixe">
+        </div>
+        <div class="col-md-6">
+            <label for="input_portable" class="form-label">Téléphone portable</label>
+            <input type="text" name="portable_intervenant" class="form-control" id="input_portable">
+        </div>
+        <span class="text-danger" style="font-size:1.2em">Identifiants</span>
+        <div class="col-md-6">
+            <label for="input_email" class="form-label">Adresse email</label>
+            <input type="email" name="email_intervenant" class="form-control" id="input_email">
+        </div>
+        <div class="col-md-6">
+            <label for="input_mdp" class="form-label">Mot de passe</label>
+            <input type="password" name="mdp_intervenant" class="form-control" id="input_mdp">
         </div>
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Sign in</button>
         </div>
     </form>
 </div>
-
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require('templates/base.php'); ?>
+</body>
+</html>

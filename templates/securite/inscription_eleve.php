@@ -1,9 +1,21 @@
-<?php $titre_page = 'Inscription élève' ?>
-
-<?php $active_inscription = true ?>
-
-<?php ob_start(); ?>
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Winner School"/>
+    <!-- Titre de page -->
+    <title>Inscription d'un élève et son responsable</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <!-- Références CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Scripts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</head>
+<body>
 <div class="container my-5">
     <h1 class="text-primary">Inscription d'un élève et son responsable</h1>
     <hr style="width:15%">
@@ -154,11 +166,9 @@
             </form>
         </div>
     </div>
-    <div class="row text-center mt-3">
-        <button type="submit" class="btn btn-primary">Valider l'inscription</button>
+    <div class="row justify-content-center mt-5">
+        <button type="submit" class="btn btn-primary w-25">Valider l'inscription complète</button>
     </div>
 </div>
-
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require('templates/base.php'); ?>
+</body>
+</html>
