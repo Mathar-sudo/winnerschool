@@ -32,8 +32,6 @@
                 <span id="id_pedagogue<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_pedagogue() ?></span>
                 <span id="id_salle<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_salle() ?></span>
                 <span id="id_matiere<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_matiere() ?></span>
-                <span id="id_numero_semaine<?= $i ?>" style="display:none;"><?= $planning->get_numero_semaine() ?></span>
-                <span id="id_annee<?= $i ?>" style="display:none;"><?= $planning->get_annee() ?></span>
                     <td><?= $planning->get_intervenant() ?></td>
                     <td><?= $planning->get_eleve() ?></td>
                     <td><?= $planning->get_pedagogue() ?></td>
@@ -53,8 +51,7 @@
     </div>
     <script>
 $(document).ready(function(){
-    $(".supprimer_planning").click(function(){    
-        alert('OK');  
+    $(".supprimer_planning").click(function(){     
       // Récupération de l'id de la planning / id de la ligne
       var id_planning = $(this).val();
             // Affichage du bouton de confirmation
@@ -62,7 +59,7 @@ $(document).ready(function(){
             // Lors du click sur le bouton de confirmation
             $('#confirm_suppression' + id_planning).click(function(){
                 // Appel à ajax
-                alert('Ca marche');
+                console.log($("#id_intervenant" + id_planning).text()+" "+$("#id_eleve" + id_planning).text()+" "+ $("#id_pedagogue" + id_planning).text()+" "+$("#id_salle" + id_planning).text()+" "+$("#id_matiere" + id_planning).text());
                 $.ajax({
                     type:'POST',
                     url: '?supprimer_planning',
@@ -72,9 +69,7 @@ $(document).ready(function(){
                         'id_pedagogue': $("#id_pedagogue" + id_planning).text(),
                         'id_salle': $("#id_salle" + id_planning).text(),
                         'id_matiere': $("#id_matiere" + id_planning).text(),
-                        'id_numero_semaine': $("#id_numero_semaine" + id_planning).text(),
-                        'id_annee': $("#id_annee" + id_planning).text()
-                    }
+                    },
                     success: function(response){
                         $('#ligne' + id_planning).fadeOut('slow');
                     }
