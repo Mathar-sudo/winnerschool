@@ -13,6 +13,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Jour</th>
                 <th scope="col">Heure</th>
+                <th scope="col">Aperçu</th>
                 </tr>
             </thead>
             <tbody>
