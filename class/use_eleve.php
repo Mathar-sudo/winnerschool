@@ -30,7 +30,30 @@
                 }
             }
         }
+        function findById($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
 
+            // Requête SQL
+            $requete = 'SELECT * FROM eleve WHERE id_eleve = ?';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete, [$id])){
+                return false;
+            } else {
+                // Récupération des résultats
+                if($eleve_recup = $bdd->tabResultat){
+                    // On ajoute un nouvel objet au tableau (avec hydrate)
+                    foreach($eleve_recup as $eleve){
+                        $eleve[] = new Eleve($eleve);
+                    }
+                    // On retourne le tableau
+                    return $eleve[0];
+                } else {
+                    return false;
+                }
+            }
+        }
     }
 
 ?>

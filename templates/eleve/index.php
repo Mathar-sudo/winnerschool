@@ -35,6 +35,7 @@
                     <td><?= $eleve->get_particularite_eleve() ?></td>
                     <td><?= $eleve->get_classe() ?></td>
                     <td><?= $eleve->get_responsable() ?></td>
+                    <td><a href="?eleve=<?= $eleve->get_id_eleve() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
                 </tr>
                 <?php 
                     }

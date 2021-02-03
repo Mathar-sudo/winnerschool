@@ -30,7 +30,30 @@
                 }
             }
         }
+        function findById($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
 
+            // Requête SQL
+            $requete = 'SELECT * FROM horaire WHERE id_horaire = ?';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete, [$id])){
+                return false;
+            } else {
+                // Récupération des résultats
+                if($horaire_recup = $bdd->tabResultat){
+                    // On ajoute un nouvel objet au tableau (avec hydrate)
+                    foreach($horaire_recup as $horaire){
+                        $horaire[] = new Horaire($horaire);
+                    }
+                    // On retourne le tableau
+                    return $horaire[0];
+                } else {
+                    return false;
+                }
+            }
+        }
     }
 
 ?>

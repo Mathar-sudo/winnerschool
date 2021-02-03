@@ -31,6 +31,30 @@
             }
         }
 
+        function findById($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            // Requête SQL
+            $requete = 'SELECT * FROM salle WHERE id_salle = ?';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete, [$id])){
+                return false;
+            } else {
+                // Récupération des résultats
+                if($salle_recup = $bdd->tabResultat){
+                    // On ajoute un nouvel objet au tableau (avec hydrate)
+                    foreach($salle_recup as $salle){
+                        $salle[] = new Salle($salle);
+                    }
+                    // On retourne le tableau
+                    return $salle[0];
+                } else {
+                    return false;
+                }
+            }
+        }
     }
 
 ?>
