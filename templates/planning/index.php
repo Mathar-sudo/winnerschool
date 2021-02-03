@@ -58,11 +58,7 @@
             // Lors du click sur le bouton de confirmation
             $('#confirm_suppression' + id_planning).click(function(){
                 // Appel à ajax
-<<<<<<< HEAD
                $.ajax({
-=======
-                $.ajax({
->>>>>>> 65965868fa1ec6ab5079c58fba56d2b95c4b8750
                     type: 'POST',
                     url: '?supprimer_planning',
                     data: {

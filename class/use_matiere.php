@@ -56,6 +56,22 @@
                 }
             }
         }
+
+        function supprimer($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            //suppression du liebn avec planning
+            $requete = 'DELETE FROM planning WHERE fk_id_matiere = ?';
+            $bdd->doQuery($requete, [$id]);
+
+            // Requête SQL
+            $requete = 'DELETE FROM matiere WHERE id_matiere = ?';
+
+            // Exécution de la requête
+           $bdd->doQuery($requete, [$id]);
+            
+        }
     }
 
 ?>

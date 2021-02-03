@@ -14,6 +14,8 @@
     }else if(isset($_GET['matiere'])){
         $matiere = $use_matiere->findById($_GET['matiere']);
         require_once($chemin . 'matiere/show.php');
+    }else if(isset($_GET['supprimer_matiere'])) {
+        $use_matiere->supprimer($_GET['supprimer_matiere']);
     }
 
 ?>
