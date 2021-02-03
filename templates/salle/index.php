@@ -20,12 +20,12 @@
                 <?php 
                     foreach($tableau_salles as $salle){
                 ?>
-                <tr>
+                <tr id="ligne<?= $salle->get_id_salle() ?>">
                     <td><?= $salle->get_id_salle() ?></td>
                     <td><?= $salle->get_nom_salle() ?></td>
                     <td><a href="?salle=<?= $salle->get_id_salle() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
-                    <td><button id="supprimer_salle" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                    <a href="?supprimer_salle=<?= $salle->get_id_salle()?>" id="confirm_suppression" style="display:none;"><button class="btn btn-danger btn-sm">Confirmer</button></a></td>
+                    <td><button class="supprimer_salle btn btn-danger btn-sm" value="<?= $salle->get_id_salle() ?>"><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $salle->get_id_salle() ?>" style="display:none;">Confirmer</button></a></td>
                 </tr>
                 <?php 
                     }
@@ -35,11 +35,24 @@
     </div>
 
     <script>
-        $(document).ready(function(){
-            $("#supprimer_salle").click(function(){
-                $("#confirm_suppression").show();
+    $(document).ready(function(){
+        $(".supprimer_salle").click(function(){
+            // Récupération de l'id de la salle / id de la ligne
+            var id_salle = $(this).val();
+            // Affichage du bouton de confirmation
+            $('#confirm_suppression' + id_salle).show();
+            // Lors du click sur le bouton de confirmation
+            $('#confirm_suppression' + id_salle).click(function(){
+                // Appel à ajax
+                $.ajax({
+                    url: '?supprimer_salle=' + id_salle,
+                    success: function(response){
+                        $('#ligne' + id_salle).fadeOut('slow');
+                    }
+                });
             });
         });
+    });
     </script>
 
 <?php } ?>
