@@ -30,6 +30,21 @@
                 }
             }
         }
+        function supprimer(){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            $id_eleve=$_POST['id_eleve'];
+            $id_matiere=$_POST['id_matiere'];
+            $id_horaire=$_POST['id_horaire'];
+
+            // Requête SQL
+            $requete = 'DELETE FROM choix_eleve WHERE fk_id_eleve=? AND fk_id_matiere=? AND fk_id_horaire=?';
+
+            // Exécution de la requête
+            $bdd->doQuery($requete, [$id_eleve,$id_matiere,$id_horaire]);
+            
+        }
 
     }
 

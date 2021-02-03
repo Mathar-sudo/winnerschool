@@ -11,6 +11,8 @@
     if(isset($_GET['choix_eleves'])){
         $tableau_choix_eleves = $use_choix_eleve->findAll();
         require_once($chemin . 'choix_eleve/index.php');
+    } else if(isset($_GET['supprimer_choix_eleve'])){
+        $use_choix_eleve->supprimer();
     }
 
 ?>
