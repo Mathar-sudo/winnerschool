@@ -5,10 +5,11 @@
 <?php ob_start(); ?>
 
 <?php if(isset($intervenant)){ ?>
-
-    <p>Id de la intervenant : <?= $intervenant->get_id_intervenant() ?></p>
-    <p>Nom de la intervenant : <?= $intervenant->get_nom_intervenant() ?></p>
-    <p>Prénom de la intervenant : <?= $intervenant->get_prenom_intervenant() ?></p>
+    <div class="container">
+        <p>Id de la intervenant : <?= $intervenant->get_id_intervenant() ?></p>
+        <p>Nom de la intervenant : <?= $intervenant->get_nom_intervenant() ?></p>
+        <p>Prénom de la intervenant : <?= $intervenant->get_prenom_intervenant() ?></p>
+    </div>
 
 
 <?php } ?>
