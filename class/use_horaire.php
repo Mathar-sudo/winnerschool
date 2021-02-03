@@ -54,6 +54,20 @@
                 }
             }
         }
+        function supprimer($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            // Requête SQL
+            $requete = 'DELETE FROM horaire WHERE id_horaire = ?';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete, [$id])){
+                return false;
+            } else {
+               header("Location: ?horaires") ;
+            }
+        }
     }
 
 ?>

@@ -14,6 +14,9 @@
     }else if(isset($_GET['horaire'])){
         $horaire = $use_horaire->findById($_GET['horaire']);
         require_once($chemin . 'horaire/show.php');
+    }else if(isset($_GET['supprimer_horaire'])){
+        $use_horaire->supprimer($_GET['supprimer_horaire']);
+        
     }
 
 

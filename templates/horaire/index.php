@@ -24,7 +24,9 @@
                     <td><?= $horaire->get_id_horaire() ?></td>
                     <td><?= $horaire->get_jour_horaire() ?></td>
                     <td><?= $horaire->get_heure_horaire() ?></td>
-                    <td><a href="?horaire=<?= $horaire->get_id_horaire() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <td><a href="?horaire=<?= $horaire->get_id_horaire() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a><td>
+                    <td><button class="btn btn-danger btn-sm" id="supprimer_horaire"><i class="fas fa-trash-alt"></i></button>
+                    <a href="?supprimer_horaire=<?= $horaire->get_id_horaire() ?>" id="confirm_suppression" class="collapse"><button class="btn btn-danger btn-sm">Confirmer</button></a></td>
                 </tr>
                 <?php 
                     }
@@ -32,7 +34,14 @@
             </tbody>
         </table>
     </div>
-
+    <script>
+$(document).ready(function(){
+    $("#supprimer_horaire").click(function(){
+        
+        $('#confirm_suppression').show();
+    });
+});
+</script>
 <?php } ?>
 
 <?php $contenu = ob_get_clean(); ?>
