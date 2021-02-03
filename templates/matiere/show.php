@@ -5,10 +5,10 @@
 <?php ob_start(); ?>
 
 <?php if(isset($matiere)){ ?>
-
-    <p>Id de la matiere : <?= $matiere->get_id_matiere() ?></p>
-    <p>Nom de la matiere : <?= $matiere->get_nom_matiere() ?></p>
-
+    <div class="container">
+        <p>Id de la matiere : <?= $matiere->get_id_matiere() ?></p>
+        <p>Nom de la matiere : <?= $matiere->get_nom_matiere() ?></p>
+    </div>
 
 <?php } ?>
 

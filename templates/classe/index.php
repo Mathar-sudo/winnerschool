@@ -13,6 +13,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Aperçu</th>
+                <th scope="col">Supprimer</th>
                 </tr>
             </thead>
             <tbody>

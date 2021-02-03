@@ -11,9 +11,11 @@
     if(isset($_GET['salles'])){
         $tableau_salles = $use_salle->findAll();
         require_once($chemin . 'salle/index.php');
-    }else if(isset($_GET['salle'])){
+    } else if(isset($_GET['salle'])){
         $salle = $use_salle->findById($_GET['salle']);
         require_once($chemin . 'salle/show.php');
+    } else if(isset($_GET['supprimer_salle'])) {
+        $use_salle->supprimer($_GET['supprimer_salle']);
     }
 
 ?>
