@@ -59,9 +59,8 @@ $(document).ready(function(){
             // Lors du click sur le bouton de confirmation
             $('#confirm_suppression' + id_planning).click(function(){
                 // Appel à ajax
-                console.log($("#id_intervenant" + id_planning).text()+" "+$("#id_eleve" + id_planning).text()+" "+ $("#id_pedagogue" + id_planning).text()+" "+$("#id_salle" + id_planning).text()+" "+$("#id_matiere" + id_planning).text());
-                $.ajax({
-                    type:'POST',
+               $.ajax({
+                    type: 'POST',
                     url: '?supprimer_planning',
                     data: {
                         'id_intervenant': $("#id_intervenant" + id_planning).text(),
