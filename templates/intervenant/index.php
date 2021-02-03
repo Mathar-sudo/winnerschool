@@ -35,7 +35,7 @@
                 <?php 
                     foreach($tableau_intervenants as $intervenant){
                 ?>
-                <tr>
+                <tr id="ligne<?= $intervenant->get_id_intervenant() ?>">
                     <td><?= $intervenant->get_id_intervenant() ?></td>
                     <td><?= $intervenant->get_nom_intervenant() ?></td>
                     <td><?= $intervenant->get_prenom_intervenant() ?></td>
@@ -54,8 +54,8 @@
                     <td><?= $intervenant->get_experience_intervenant() ?></td>
                     <td><?= $intervenant->get_connaissance_intervenant() ?></td>
                     <td><a href="?intervenant=<?= $intervenant->get_id_intervenant() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
-                    <td><button class="btn btn-danger btn-sm" id="supprimer_intervenant"><i class="fas fa-trash-alt"></i></button>
-                    <a href="?supprimer_intervenant=<?= $intervenant->get_id_intervenant() ?>" id="confirm_suppression" class="collapse"><button class="btn btn-danger btn-sm">Confirmer</button></a></td>
+                    <td><button class="supprimer_intervenant btn btn-danger btn-sm" value="<?= $intervenant->get_id_intervenant() ?>"><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $intervenant->get_id_intervenant() ?>" style="display:none;">Confirmer</button></td>
                 </tr>
                 <?php 
                     }
@@ -65,9 +65,21 @@
     </div>
 <script>
 $(document).ready(function(){
-    $("#supprimer_intervenant").click(function(){
-        
-        $('#confirm_suppression').show();
+    $(".supprimer_intervenant").click(function(){      
+      // Récupération de l'id de la intervenant / id de la ligne
+      var id_intervenant = $(this).val();
+            // Affichage du bouton de confirmation
+            $('#confirm_suppression' + id_intervenant).show();
+            // Lors du click sur le bouton de confirmation
+            $('#confirm_suppression' + id_intervenant).click(function(){
+                // Appel à ajax
+                $.ajax({
+                    url: '?supprimer_intervenant=' + id_intervenant,
+                    success: function(response){
+                        $('#ligne' + id_intervenant).fadeOut('slow');
+                    }
+                });
+            });
     });
 });
 </script>
