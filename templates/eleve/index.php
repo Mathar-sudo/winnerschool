@@ -53,7 +53,6 @@ $(document).ready(function(){
         $("#confirm_suppression").show();
     });
 });
-
 </script>
 <?php } ?>
 

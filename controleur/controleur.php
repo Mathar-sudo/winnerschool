@@ -16,7 +16,7 @@
         require_once('controleur_classe.php');
 
     // Gestion des salles
-    } else if(isset($_GET['salles']) || isset($_GET['salle'])){
+    } else if(isset($_GET['salles']) || isset($_GET['salle']) || isset($_GET['supprimer_salle'])){
         require_once('controleur_salle.php');
 
     // Gestion des matières
