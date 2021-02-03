@@ -19,6 +19,7 @@
                 <th scope="col">Elèments spécifiques</th>
                 <th scope="col">Classe</th>
                 <th scope="col">Responsable</th>
+                <th scope="col">Aperçu</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +37,8 @@
                     <td><?= $eleve->get_classe() ?></td>
                     <td><?= $eleve->get_responsable() ?></td>
                     <td><a href="?eleve=<?= $eleve->get_id_eleve() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <td><button id="supprimer_eleve" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                    <a href="?supprimer_eleve=<?= $eleve->get_id_eleve()?>" id="confirm_suppression" ><button class="btn btn-danger btn-sm">Confirmer</button></a></td>
                 </tr>
                 <?php 
                     }
@@ -43,7 +46,14 @@
             </tbody>
         </table>
     </div>
+<script>
+$(document).ready(function(){
+        $("#supprimer_eleve").click(function(){
+        $("#confirm_suppression").show();
+    });
+});
 
+</script>
 <?php } ?>
 
 <?php $contenu = ob_get_clean(); ?>
