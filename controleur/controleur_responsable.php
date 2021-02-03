@@ -17,6 +17,11 @@
         require_once($chemin . 'responsable/show.php');
     } else if(isset($_GET['supprimer_responsable'])){
         $use_responsable->supprimer($_GET['supprimer_responsable']);
+    }else if(isset($_GET['formulaire_ajout_responsable'])){
+        require_once($chemin . 'responsable/ajouter.php');
+    } else if(isset($_GET['ajouter_responsable'])){
+        $use_responsable->ajouter();
     }
+
 
 ?>

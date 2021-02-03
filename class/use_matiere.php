@@ -57,6 +57,32 @@
             }
         }
 
+        function ajouter(){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            $nom_matiere = trim($_POST['nom_matiere']);
+            // Requête SQL
+            $requete = 'SELECT * FROM matiere WHERE UPPER(nom_matiere) LIKE UPPER(?)';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete,[$nom_matiere])){
+                return false;
+            } else {
+                if($bdd->tabResultat){
+                    $erreur = '<div class="alert alert-danger text-center mb-3 w-25">Cette matiere existe déjà</div>';
+                    require_once('templates/matiere/ajouter.php');
+                } else {
+                    $requete = 'INSERT INTO matiere(nom_matiere) VALUES(?)';
+                    if($bdd->doQuery($requete, [$nom_matiere])){
+                        header('Location: ?matieres');
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+
         function supprimer($id){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();

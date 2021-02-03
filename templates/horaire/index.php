@@ -7,6 +7,7 @@
 <?php if(isset($tableau_horaires)){ ?>
 
     <div class="container">
+    <a href="?formulaire_ajout_horaire"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter une horaire</button></a>
         <table class="table">
             <thead>
                 <tr>

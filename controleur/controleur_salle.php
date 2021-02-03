@@ -16,6 +16,10 @@
         require_once($chemin . 'salle/show.php');
     } else if(isset($_GET['supprimer_salle'])) {
         $use_salle->supprimer($_GET['supprimer_salle']);
+    } else if(isset($_GET['formulaire_ajout_salle'])){
+        require_once($chemin . 'salle/ajouter.php');
+    } else if(isset($_GET['ajouter_salle'])){
+        $use_salle->ajouter();
     }
 
 ?>
