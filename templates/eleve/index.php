@@ -27,7 +27,7 @@
                 <?php 
                     foreach($tableau_eleves as $eleve){
                 ?>
-                <tr>
+                <tr id="ligne<?= $eleve->get_id_eleve() ?>">
                     <td><?= $eleve->get_id_eleve() ?></td>
                     <td><?= $eleve->get_prenom_eleve() ?></td>
                     <td><?= $eleve->get_nom_eleve() ?></td>
@@ -38,8 +38,8 @@
                     <td><?= $eleve->get_classe() ?></td>
                     <td><?= $eleve->get_responsable() ?></td>
                     <td><a href="?eleve=<?= $eleve->get_id_eleve() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
-                    <td><button id="supprimer_eleve" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                    <a href="?supprimer_eleve=<?= $eleve->get_id_eleve()?>" id="confirm_suppression" style="display:none;"><button class="btn btn-danger btn-sm">Confirmer</button></a></td>
+                    <td><button class="supprimer_eleve btn btn-danger btn-sm" value="<?= $eleve->get_id_eleve() ?>"><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $eleve->get_id_eleve() ?>" style="display:none;">Confirmer</button></td>
                 </tr>
                 <?php 
                     }
@@ -47,13 +47,26 @@
             </tbody>
         </table>
     </div>
-<script>
-$(document).ready(function(){
-    $("#supprimer_eleve").click(function(){
-        $("#confirm_suppression").show();
-    });
-});
-</script>
+    <script>
+        $(document).ready(function(){
+            $(".supprimer_eleve").click(function(){
+                // Récupération de l'id de l'élève / id de la ligne
+                var id_eleve = $(this).val();
+                // Affichage du bouton de confirmation
+                $('#confirm_suppression' + id_eleve).show();
+                // Lors du click sur le bouton de confirmation
+                $('#confirm_suppression' + id_eleve).click(function(){
+                    // Appel à ajax
+                    $.ajax({
+                        url: '?supprimer_eleve=' + id_eleve,
+                        success: function(response){
+                            $('#ligne' + id_eleve).fadeOut('slow');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 <?php } ?>
 
 <?php $contenu = ob_get_clean(); ?>

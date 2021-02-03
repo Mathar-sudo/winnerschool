@@ -60,15 +60,10 @@
             $bdd = new Connexion_bdd();
 
             // Requête SQL
-            $requete = 'DELETE * FROM eleve WHERE id_eleve = ?';
+            $requete = 'DELETE FROM eleve WHERE id_eleve = ?';
 
             // Exécution de la requête
-            if(!$bdd->doQuery($requete, [$id])){
-                return false;
-            } else {
-                header("Location: ?eleves");
-            }
-
+            $bdd->doQuery($requete, [$id]);
         }
     }
 

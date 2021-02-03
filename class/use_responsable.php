@@ -56,6 +56,17 @@
             }
         }
 
+        function supprimer($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            // Requête SQL
+            $requete = 'DELETE FROM responsable WHERE id_responsable = ?';
+
+            // Exécution de la requête
+            $bdd->doQuery($requete, [$id]);
+        }
+
 
     }
 
