@@ -15,6 +15,7 @@
                 <th scope="col">Prénom</th>
                 <th scope="col">Mail</th>
                 <th scope="col">Mobile</th>
+                <th scope="col">Aperçu</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,7 +28,7 @@
                     <td><?= $pedagogue->get_prenom_pedagogue() ?></td>
                     <td><?= $pedagogue->get_mail_pedagogue() ?></td>
                     <td><?= $pedagogue->get_mobile_pedagogue() ?></td>
-                
+                    <td><a href="?pedagogue=<?= $pedagogue->get_id_pedagogue() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
                 </tr>
                 <?php 
                     }

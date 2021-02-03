@@ -21,6 +21,7 @@
                 <tr>
                     <td><?= $salle->get_id_salle() ?></td>
                     <td><?= $salle->get_nom_salle() ?></td>
+                    <td><a href="?salle=<?= $salle->get_id_salle() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
                 </tr>
                 <?php 
                     }
