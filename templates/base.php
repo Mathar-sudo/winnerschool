@@ -60,6 +60,10 @@
                     </li>
                     <span class="mx-1"></span>
                     <li class="nav-item">
+                        <a class="nav-link <?php if(isset($active_responsables)){ echo 'active'; } ?>" href="?responsables">Responsables</a>
+                    </li>
+                    <span class="mx-1"></span>
+                    <li class="nav-item">
                         <a class="nav-link <?php if(isset($active_pedagogues)){ echo 'active'; } ?>" href="?pedagogues">Pédagogues</a>
                     </li>
                     <span class="mx-1"></span>
