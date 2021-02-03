@@ -8,7 +8,7 @@
         require_once($chemin . 'accueil.php');
 
     // Page de connexion
-    } else if(isset($_GET['connexion']) || isset($_GET['connexion_utilisateur']) || isset($_GET['deconnexion']) || isset($_GET['inscription_intervenant']) || isset($_GET['inscription_eleve']) || isset($_GET['inscription_pedagogue'])){
+    } else if(isset($_GET['connexion']) || isset($_GET['connexion_utilisateur']) || isset($_GET['deconnexion']) || isset($_GET['formulaire_inscription_intervenant']) || isset($_GET['formulaire_inscription_eleve']) || isset($_GET['formulaire_inscription_pedagogue'])){
         require_once('controleur_securite.php');
     
     // Gestion des classes
@@ -24,7 +24,7 @@
         require_once('controleur_matiere.php');
 
     // Gestion des intervenants
-    } else if(isset($_GET['intervenants']) || isset($_GET['intervenant']) || isset($_GET['supprimer_intervenant'])){
+    } else if(isset($_GET['intervenants']) || isset($_GET['intervenant']) || isset($_GET['supprimer_intervenant']) || isset($_GET['inscription_intervenant'])){
         require_once('controleur_intervenant.php');
 
     // Gestion des horaires

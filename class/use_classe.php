@@ -60,7 +60,7 @@
             // Connexion à la base de données
             $bdd = new Connexion_bdd();
 
-            $nom_classe = $_POST['nom_classe'];
+            $nom_classe = trim($_POST['nom_classe']);
 
             $requete = 'SELECT * FROM classe WHERE UPPER(nom_classe) LIKE UPPER(?)';
             if(!$bdd->doQuery($requete,[$nom_classe])){

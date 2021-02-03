@@ -11,7 +11,7 @@
         <form class="row g-3 w-25" method="POST" action="?ajouter_classe">
             <div class="col-12">
                 <label for="input_nom" class="form-label">Nom de la classe</label>
-                <input type="text" name="nom_classe" class="form-control" id="input_nom">
+                <input type="text" name="nom_classe" class="form-control" id="input_nom" required>
             </div>
             <div class="col-12 text-center">
                 <button type="submit" class="btn btn-primary">Ajouter</button>
