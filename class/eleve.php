@@ -36,7 +36,7 @@
             return $this->age_eleve;
         }
 
-        function get_mobile_eleve():int{
+        function get_mobile_eleve():String{
             return $this->mobile_eleve;
         }
         function get_mail_eleve():String{

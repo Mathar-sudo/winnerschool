@@ -33,7 +33,7 @@
             return $this->mail_pedagogue;
         }
 
-        function get_mobile_pedagogue():int{
+        function get_mobile_pedagogue():String{
             return $this->mobile_pedagogue;
         }
 
