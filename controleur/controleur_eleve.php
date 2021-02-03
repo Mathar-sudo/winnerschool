@@ -12,6 +12,9 @@
     if(isset($_GET['eleves'])){
         $tableau_eleves = $use_eleve->findAll();
         require_once($chemin . 'eleve/index.php');
+    } else if(isset($_GET['eleve'])){
+        $eleve = $use_eleve->findById($_GET['eleve']);
+        require_once($chemin . 'eleve/show.php');
     }
 
 ?>

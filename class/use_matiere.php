@@ -30,7 +30,30 @@
                 }
             }
         }
+        function findById($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
 
+            // Requête SQL
+            $requete = 'SELECT * FROM matiere WHERE id_matiere = ?';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete, [$id])){
+                return false;
+            } else {
+                // Récupération des résultats
+                if($matiere_recup = $bdd->tabResultat){
+                    // On ajoute un nouvel objet au tableau (avec hydrate)
+                    foreach($matiere_recup as $matiere){
+                        $matiere[] = new Matiere($matiere);
+                    }
+                    // On retourne le tableau
+                    return $matiere[0];
+                } else {
+                    return false;
+                }
+            }
+        }
     }
 
 ?>

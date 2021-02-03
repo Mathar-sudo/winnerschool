@@ -23,6 +23,7 @@
                     <td><?= $horaire->get_id_horaire() ?></td>
                     <td><?= $horaire->get_jour_horaire() ?></td>
                     <td><?= $horaire->get_heure_horaire() ?></td>
+                    <td><a href="?horaire=<?= $horaire->get_id_horaire() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
                 </tr>
                 <?php 
                     }
