@@ -13,6 +13,7 @@
                 <th scope="col">Élève</th>
                 <th scope="col">Matière</th>
                 <th scope="col">Horaire</th>
+                <th scope="col">Supprimer</th>
                 </tr>
             </thead>
             <tbody>

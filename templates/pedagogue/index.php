@@ -16,6 +16,7 @@
                 <th scope="col">Mail</th>
                 <th scope="col">Mobile</th>
                 <th scope="col">Aperçu</th>
+                <th scope="col">Supprimer</th>
                 </tr>
             </thead>
             <tbody>
