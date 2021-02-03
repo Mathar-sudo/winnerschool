@@ -47,7 +47,7 @@
         require_once('controleur_choix_eleve.php');
 
     // Gestion des plannings
-    } else if(isset($_GET['plannings']) || isset($_GET['planning']) || isset($_GET['planning'])){
+    } else if(isset($_GET['plannings']) || isset($_GET['planning']) || isset($_GET['supprimer_planning'])){
         require_once('controleur_planning.php');
 
     // Sinon renvoi vers l'accueil
