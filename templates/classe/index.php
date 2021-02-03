@@ -12,6 +12,7 @@
                 <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nom</th>
+                <th scope="col">Aperçu</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,7 @@
                 <tr>
                     <td><?= $classe->get_id_classe() ?></td>
                     <td><?= $classe->get_nom_classe() ?></td>
+                    <td><a href="?classe=<?= $classe->get_id_classe() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
                 </tr>
                 <?php 
                     }

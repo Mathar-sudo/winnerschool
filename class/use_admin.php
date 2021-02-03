@@ -21,7 +21,8 @@
                             header('Location: ?accueil');
                         }
                     } else {
-                        return false;
+                        $erreur = '<span class="alert alert-danger">Les identifiants ne correspondent pas</span>';
+                        require($emplacement_actuel . '/../templates/securite/connexion.php');
                     }
                 } else {
                     return false;

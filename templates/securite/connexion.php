@@ -17,6 +17,7 @@
 </head>
 <body class="text-center">
     <div style="margin:15% 35%;">
+        <?php if(isset($erreur)){ echo $erreur; } ?>
         <form method="POST" action="?connexion_utilisateur">
             <h1 class="text-primary text-uppercase mb-3"><i class="fas fa-chalkboard-teacher"></i> Winner School</h1>
             <input type="text" name="email" class="form-control" placeholder="Adresse email" required>

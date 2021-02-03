@@ -31,6 +31,31 @@
             }
         }
 
+        function findById($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            // Requête SQL
+            $requete = 'SELECT * FROM classe WHERE id_classe = ?';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete, [$id])){
+                return false;
+            } else {
+                // Récupération des résultats
+                if($classe_recup = $bdd->tabResultat){
+                    // On ajoute un nouvel objet au tableau (avec hydrate)
+                    foreach($classe_recup as $classe){
+                        $classe[] = new Classe($classe);
+                    }
+                    // On retourne le tableau
+                    return $classe[0];
+                } else {
+                    return false;
+                }
+            }
+        }
+
     }
 
 ?>

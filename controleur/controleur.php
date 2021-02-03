@@ -12,7 +12,7 @@
         require_once('controleur_securite.php');
     
     // Gestion des classes
-    } else if(isset($_GET['classes'])){
+    } else if(isset($_GET['classes']) || isset($_GET['classe'])){
         require_once('controleur_classe.php');
 
     // Gestion des salles

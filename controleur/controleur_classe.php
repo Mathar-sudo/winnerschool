@@ -11,6 +11,9 @@
     if(isset($_GET['classes'])){
         $tableau_classes = $use_classe->findAll();
         require_once($chemin . 'classe/index.php');
+    } else if(isset($_GET['classe'])){
+        $classe = $use_classe->findById($_GET['classe']);
+        require_once($chemin . 'classe/show.php');
     }
 
 ?>
