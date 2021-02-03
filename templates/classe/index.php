@@ -7,7 +7,8 @@
 <?php if(isset($tableau_classes)){ ?>
 
     <div class="container">
-        <table class="table">
+        <a href="?formulaire_ajout_classe"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter une classe</button></a>
+        <table class="table mt-3">
             <thead>
                 <tr>
                 <th scope="col">Id</th>

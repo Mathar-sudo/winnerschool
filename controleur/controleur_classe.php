@@ -16,6 +16,10 @@
         require_once($chemin . 'classe/show.php');
     } else if(isset($_GET['supprimer_classe'])){
         $use_classe->supprimer($_GET['supprimer_classe']);
+    } else if(isset($_GET['formulaire_ajout_classe'])){
+        require_once($chemin . 'classe/ajouter.php');
+    } else if(isset($_GET['ajouter_classe'])){
+        $use_classe->ajouter();
     }
 
 ?>

@@ -56,6 +56,30 @@
             }
         }
 
+        function ajouter(){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            $nom_classe = $_POST['nom_classe'];
+
+            $requete = 'SELECT * FROM classe WHERE UPPER(nom_classe) LIKE UPPER(?)';
+            if(!$bdd->doQuery($requete,[$nom_classe])){
+                return false;
+            } else {
+                if($bdd->tabResultat){
+                    $erreur = '<div class="alert alert-danger text-center mb-3 w-25">Cette classe existe déjà</div>';
+                    require_once('templates/classe/ajouter.php');
+                } else {
+                    $requete = 'INSERT INTO classe(nom_classe) VALUES(?)';
+                    if($bdd->doQuery($requete, [$nom_classe])){
+                        header('Location: ?classes');
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+
         function supprimer($id){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();
