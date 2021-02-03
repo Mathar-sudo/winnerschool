@@ -41,7 +41,6 @@ $emplacement_actuel = dirname(__FILE__);
             $id_salle=$_POST['id_salle'];
             $id_matiere=$_POST['id_matiere'];
 
-
             // Requête SQL
             $requete = 'DELETE FROM planning WHERE fk_id_intervenant = ? AND fk_id_eleve = ? AND fk_id_pedagogue = ? AND fk_id_salle = ? AND fk_id_matiere = ?';
 

@@ -33,6 +33,11 @@
             </select>
             <button type="submit" name="" class="w-25 btn btn-primary" id="btn_connexion">Se connecter</button>
         </form>
+        <div class="my-4"><hr></div>
+        <h5>Réaliser des inscriptions</h5>
+        <a href="?inscription_eleve"><button class="btn btn-warning">Reponsable et élève</button></a>
+        <a href="?inscription_intervenant"><button class="btn btn-warning mx-3">Intervenant</button></a>
+        <a href="?inscription_pedagogue"><button class="btn btn-warning">Pédagogue</button></a>
     </div>
     <script>
         $(document).ready(function(){

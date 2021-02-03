@@ -42,6 +42,7 @@
     // Gestion des élèves
     } else if(isset($_GET['eleves']) || isset($_GET['eleve']) || isset($_GET['supprimer_eleve'])){
         require_once('controleur_eleve.php');
+        
     // Gestion des choix élèves
     } else if(isset($_GET['choix_eleves']) || isset($_GET['supprimer_choix_eleve'])){
         require_once('controleur_choix_eleve.php');
