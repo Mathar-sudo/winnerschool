@@ -22,18 +22,16 @@
             </thead>
             <tbody>
                 <?php 
-                $i=0;
+                    $i=0;
                     foreach($tableau_plannings as $planning){
                         $i++;
                 ?>
                 <tr id="ligne<?= $i ?>">
-                <span id="id_intervenant<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_intervenant() ?></span>
-                <span id="id_eleve<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_eleve() ?></span>
-                <span id="id_pedagogue<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_pedagogue() ?></span>
-                <span id="id_salle<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_salle() ?></span>
-                <span id="id_matiere<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_matiere() ?></span>
-                <span id="id_numero_semaine<?= $i ?>" style="display:none;"><?= $planning->get_numero_semaine() ?></span>
-                <span id="id_annee<?= $i ?>" style="display:none;"><?= $planning->get_annee() ?></span>
+                    <span id="id_intervenant<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_intervenant() ?></span>
+                    <span id="id_eleve<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_eleve() ?></span>
+                    <span id="id_pedagogue<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_pedagogue() ?></span>
+                    <span id="id_salle<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_salle() ?></span>
+                    <span id="id_matiere<?= $i ?>" style="display:none;"><?= $planning->get_fk_id_matiere() ?></span>
                     <td><?= $planning->get_intervenant() ?></td>
                     <td><?= $planning->get_eleve() ?></td>
                     <td><?= $planning->get_pedagogue() ?></td>
@@ -43,7 +41,6 @@
                     <td><?= $planning->get_annee() ?></td>
                     <td><button class="supprimer_planning btn btn-danger btn-sm" value="<?= $i ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $i ?>" style="display:none;">Confirmer</button></td>
-                
                 </tr>
                 <?php 
                     }
@@ -52,19 +49,17 @@
         </table>
     </div>
     <script>
-$(document).ready(function(){
-    $(".supprimer_planning").click(function(){    
-        alert('OK');  
-      // Récupération de l'id de la planning / id de la ligne
-      var id_planning = $(this).val();
+    $(document).ready(function(){
+        $(".supprimer_planning").click(function(){     
+        // Récupération de l'id de la planning / id de la ligne
+        var id_planning = $(this).val();
             // Affichage du bouton de confirmation
             $('#confirm_suppression' + id_planning).show();
             // Lors du click sur le bouton de confirmation
             $('#confirm_suppression' + id_planning).click(function(){
                 // Appel à ajax
-                alert('Ca marche');
                 $.ajax({
-                    type:'POST',
+                    type: 'POST',
                     url: '?supprimer_planning',
                     data: {
                         'id_intervenant': $("#id_intervenant" + id_planning).text(),
@@ -80,9 +75,9 @@ $(document).ready(function(){
                     }
                 });
             });
+        });
     });
-});
-</script>
+    </script>
 <?php } ?>
 
 <?php $contenu = ob_get_clean(); ?>
