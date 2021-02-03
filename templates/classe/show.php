@@ -6,8 +6,10 @@
 
 <?php if(isset($classe)){ ?>
 
-    <p>Id de la classe : <?= $classe->get_id_classe() ?></p>
-    <p>Nom de la classe : <?= $classe->get_nom_classe() ?></p>
+    <div class="container">
+        <p>Id de la classe : <?= $classe->get_id_classe() ?></p>
+        <p>Nom de la classe : <?= $classe->get_nom_classe() ?></p>
+    </div>
 
 <?php } ?>
 
