@@ -31,6 +31,32 @@
             }
         }
 
+        function findById($id){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            // Requête SQL
+            $requete = 'SELECT * FROM responsable WHERE id_responsable =?';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete, [$id])){
+                return false;
+            } else {
+                // Récupération des résultats
+                if($responsable_recup = $bdd->tabResultat){
+                    // On ajoute un nouvel objet au tableau (avec hydrate)
+                    foreach($responsable_recup as $responsable){
+                        $responsable[] = new Responsable($responsable);
+                    }
+                    // On retourne le tableau
+                    return $responsable[0];
+                } else {
+                    return false;
+                }
+            }
+        }
+
+
     }
 
 ?>

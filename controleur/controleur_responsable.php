@@ -12,6 +12,9 @@
     if(isset($_GET['responsables'])){
         $tableau_responsables = $use_responsable->findAll();
         require_once($chemin . 'responsable/index.php');
+    }else if(isset($_GET['responsable'])){
+        $responsable = $use_responsable->findById($_GET['responsable']);
+        require_once($chemin . 'responsable/show.php');
     }
 
 ?>

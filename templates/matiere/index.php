@@ -12,6 +12,7 @@
                 <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nom</th>
+                <th scope="col">Aperçu</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,7 @@
                 <tr>
                     <td><?= $matiere->get_id_matiere() ?></td>
                     <td><?= $matiere->get_nom_matiere() ?></td>
+                    <td><a href="?matiere=<?= $matiere->get_id_matiere() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
                 </tr>
                 <?php 
                     }
