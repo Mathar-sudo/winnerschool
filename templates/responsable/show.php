@@ -38,6 +38,9 @@
              
         
             </div>
+            <div class="text-center mt-3">
+                <a href="?formulaire_modifier_responsable=<?= $responsable->get_id_responsable();?> "class="btn btn-primary w-25" >Modifier</a>
+            </div>
          </div>
         </div>
       
