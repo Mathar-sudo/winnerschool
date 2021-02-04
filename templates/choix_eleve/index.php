@@ -31,6 +31,7 @@
                     <td><?= $choix_eleve->get_eleve() ?></td>
                     <td><?= $choix_eleve->get_matiere() ?></td>
                     <td><?= $choix_eleve->get_horaire() ?></td>
+                    
                     <td><button class="supprimer_choix_eleve btn btn-danger btn-sm" value="<?= $i ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $i ?>" style="display:none;">Confirmer</button></td>
                 </tr>

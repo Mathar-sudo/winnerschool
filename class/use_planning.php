@@ -40,6 +40,7 @@ $emplacement_actuel = dirname(__FILE__);
             $pedagogue_planning = $_POST['pedagogue_planning'];
             $salle_planning = $_POST['salle_planning'];
             $matiere_planning = $_POST['matiere_planning'];
+            $horaire_planning = $_POST['horaire_planning'];
             $numero_semaine_planning = trim($_POST['numero_semaine_planning']);
             $annee_planning = trim($_POST['annee_planning']);
             
@@ -50,11 +51,12 @@ $emplacement_actuel = dirname(__FILE__);
             AND UPPER(fk_id_pedagogue) LIKE UPPER(?)
             AND UPPER(fk_id_salle) LIKE UPPER(?)
             AND UPPER(fk_id_matiere) LIKE UPPER(?)
+            AND UPPER(fk_id_horaire) LIKE UPPER(?)
             AND UPPER(numero_semaine) LIKE UPPER(?)
             AND UPPER(annee) LIKE UPPER(?)';
             
             // Exécution de la requête
-            if(!$bdd->doQuery($requete,[$intervenant_planning,$eleve_planning,$pedagogue_planning,$salle_planning,$matiere_planning,$numero_semaine_planning,$annee_planning])){
+            if(!$bdd->doQuery($requete,[$intervenant_planning,$eleve_planning,$pedagogue_planning,$salle_planning,$matiere_planning,$horaire_planning,$numero_semaine_planning,$annee_planning])){
                 return false;
             } else {
                 if($bdd->tabResultat){
@@ -62,8 +64,8 @@ $emplacement_actuel = dirname(__FILE__);
                     require_once('templates/planning/ajouter.php');
                 } else {
                     
-                    $requete = 'INSERT INTO planning (fk_id_intervenant,fk_id_eleve,fk_id_pedagogue,fk_id_salle,fk_id_matiere,numero_semaine,annee) VALUES(?,?,?,?,?,?,?)';
-                    if($bdd->doQuery($requete, [$intervenant_planning,$eleve_planning,$pedagogue_planning,$salle_planning,$matiere_planning,$numero_semaine_planning,$annee_planning])){
+                    $requete = 'INSERT INTO planning (fk_id_intervenant,fk_id_eleve,fk_id_pedagogue,fk_id_salle,fk_id_matiere,fk_id_horaire,numero_semaine,annee) VALUES(?,?,?,?,?,?,?,?)';
+                    if($bdd->doQuery($requete, [$intervenant_planning,$eleve_planning,$pedagogue_planning,$salle_planning,$matiere_planning,$horaire_planning,$numero_semaine_planning,$annee_planning])){
                         header('Location: ?plannings');
                     } else {
                         return false;
@@ -81,12 +83,13 @@ $emplacement_actuel = dirname(__FILE__);
             $id_pedagogue=$_POST['id_pedagogue'];
             $id_salle=$_POST['id_salle'];
             $id_matiere=$_POST['id_matiere'];
+            $id_horaire=$_POST['id_horaire'];
 
             // Requête SQL
-            $requete = 'DELETE FROM planning WHERE fk_id_intervenant = ? AND fk_id_eleve = ? AND fk_id_pedagogue = ? AND fk_id_salle = ? AND fk_id_matiere = ?';
+            $requete = 'DELETE FROM planning WHERE fk_id_intervenant = ? AND fk_id_eleve = ? AND fk_id_pedagogue = ? AND fk_id_salle = ? AND fk_id_matiere = ? AND fk_id_horaire = ?';
 
             // Exécution de la requête
-            $bdd->doQuery($requete, [$id_intervenant,$id_eleve,$id_pedagogue,$id_salle,$id_matiere]);
+            $bdd->doQuery($requete, [$id_intervenant,$id_eleve,$id_pedagogue,$id_salle,$id_matiere,$id_horaire]);
         }
     }
 

@@ -44,11 +44,11 @@
         require_once('controleur_eleve.php');
         
     // Gestion des choix élèves
-    } else if(isset($_GET['choix_eleves']) || isset($_GET['supprimer_choix_eleve']) || isset($_GET['formulaire_ajout_choix_eleve']) || isset($_GET['ajouter_choix_eleve']) || isset($_GET['formulaire_modifier_choix_eleve']) || isset($_GET['modifier_choix_eleve'])){
+    } else if(isset($_GET['choix_eleves']) || isset($_GET['supprimer_choix_eleve']) || isset($_GET['formulaire_ajout_choix_eleve']) || isset($_GET['ajouter_choix_eleve']) ){
         require_once('controleur_choix_eleve.php');
 
     // Gestion des plannings
-    } else if(isset($_GET['plannings']) || isset($_GET['supprimer_planning']) || isset($_GET['formulaire_ajout_planning']) || isset($_GET['ajouter_planning']) || isset($_GET['formulaire_modifier_planning']) || isset($_GET['modifier_planning'])){
+    } else if(isset($_GET['plannings']) || isset($_GET['supprimer_planning']) || isset($_GET['formulaire_ajout_planning']) || isset($_GET['ajouter_planning'])){
         require_once('controleur_planning.php');
 
     // Sinon renvoi vers l'accueil
