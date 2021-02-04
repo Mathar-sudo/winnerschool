@@ -7,6 +7,7 @@
 <?php if(isset($tableau_plannings)){ ?>
 
     <div class="container">
+    <a href="?formulaire_ajout_planning"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter un planning</button></a>
         <table class="table">
             <thead>
                 <tr>

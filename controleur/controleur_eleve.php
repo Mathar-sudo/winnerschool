@@ -7,6 +7,8 @@
     $chemin = './templates/';
 
     $use_eleve = new Use_Eleve();
+    $use_responsable = new Use_Responsable();
+    $use_classe = new Use_Classe();
 
     //Afficher élèves
     if(isset($_GET['eleves'])){
@@ -15,8 +17,15 @@
     } else if(isset($_GET['eleve'])){
         $eleve = $use_eleve->findById($_GET['eleve']);
         require_once($chemin . 'eleve/show.php');
-    }else if(isset($_GET['supprimer_eleve'])){
+    } else if(isset($_GET['supprimer_eleve'])){
         $use_eleve->supprimer($_GET['supprimer_eleve']);
-    } 
+    } else if(isset($_GET['formulaire_ajout_eleve'])){
+        $responsables = $use_responsable->findAll();
+        $classes = $use_classe->findAll();
+        require_once($chemin . 'eleve/ajouter.php');
+    } else if(isset($_GET['ajouter_eleve'])){
+        $use_eleve->ajouter();
+    }
+
 
 ?>
