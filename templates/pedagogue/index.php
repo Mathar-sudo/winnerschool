@@ -17,6 +17,7 @@
                 <th scope="col">Mail</th>
                 <th scope="col">Mobile</th>
                 <th scope="col">Aperçu</th>
+                <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
                 </tr>
             </thead>
@@ -31,6 +32,7 @@
                     <td><?= $pedagogue->get_mail_pedagogue() ?></td>
                     <td><?= $pedagogue->get_mobile_pedagogue() ?></td>
                     <td><a href="?pedagogue=<?= $pedagogue->get_id_pedagogue() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <td><a href="?formulaire_modifier_pedagogue=<?= $pedagogue->get_id_pedagogue() ?>"><button class="btn btn-info btn-sm"><i class="far fa-edit"></i></button></a></td>
                     <td><button class="supprimer_pedagogue btn btn-danger btn-sm" value="<?= $pedagogue->get_id_pedagogue() ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $pedagogue->get_id_pedagogue() ?>" style="display:none;">Confirmer</button></td>
                 </tr>

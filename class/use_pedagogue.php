@@ -87,6 +87,29 @@
             }
         }
 
+        function modifier($id_pedagogue){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+   
+            $nom_pedagogue = trim($_POST['nom_pedagogue']);
+            $prenom_pedagogue = trim($_POST['prenom_pedagogue']);
+            $mail_pedagogue = trim($_POST['mail_pedagogue']);
+            $mobile_pedagogue = trim($_POST['mobile_pedagogue']);
+            $mdp_pedagogue = password_hash(trim($_POST['mdp_pedagogue']), PASSWORD_DEFAULT);
+
+            // Requête SQL
+            $requete = 'UPDATE pedagogue SET nom_pedagogue = ?, prenom_pedagogue = ?, mail_pedagogue = ?, mobile_pedagogue = ?, mdp_pedagogue = ? WHERE id_pedagogue = ?';
+            
+                    if($bdd->doQuery($requete, [$nom_pedagogue,$prenom_pedagogue,$mail_pedagogue,$mobile_pedagogue,$mdp_pedagogue,$id_pedagogue])){
+                        header('Location: ?pedagogues');
+                    } else {
+                        echo("coucou");
+                        return false;
+                    }
+                
+            
+        }
+
         function inscription(){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();
