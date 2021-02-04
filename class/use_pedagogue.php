@@ -103,7 +103,6 @@
                     if($bdd->doQuery($requete, [$nom_pedagogue,$prenom_pedagogue,$mail_pedagogue,$mobile_pedagogue,$mdp_pedagogue,$id_pedagogue])){
                         header('Location: ?pedagogues');
                     } else {
-                        echo("coucou");
                         return false;
                     }
                 
