@@ -20,6 +20,11 @@
         require_once($chemin . 'matiere/ajouter.php');
     } else if(isset($_GET['ajouter_matiere'])){
         $use_matiere->ajouter();
+    }else if(isset($_GET['formulaire_modifier_matiere'])){
+        $matiere = $use_matiere->findById($_GET['formulaire_modifier_matiere']);
+        require_once($chemin . 'matiere/modifier.php');
+    }else if(isset($_GET['modifier_matiere'])){
+            $use_matiere->modifier($_GET['modifier_matiere']);
     }
 
 ?>
