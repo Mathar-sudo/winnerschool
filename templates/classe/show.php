@@ -13,8 +13,15 @@
             </ol>
         </nav>
         <hr class="w-25">
-        <p>Id de la classe : <?= $classe->get_id_classe() ?></p>
-        <p>Nom de la classe : <?= $classe->get_nom_classe() ?></p>
+        <div class="row ">
+         <div class="col-5">
+            <div class="card">
+                <div class="card-body text-center">
+                <p>Nom de la classe : <?= $classe->get_nom_classe() ?></p>
+                  </div>
+                </div>
+            </div>
+       
     </div>
 <?php } ?>
 
