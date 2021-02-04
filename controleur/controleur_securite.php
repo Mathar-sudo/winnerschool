@@ -9,6 +9,7 @@
     $use_admin = new Use_Admin();
     $use_horaire = new Use_Horaire();
     $use_classe = new Use_Classe();
+    $use_matiere = new Use_Matiere();
 
     if(isset($_GET['connexion'])){
         require_once($chemin . 'securite/connexion.php');
@@ -19,6 +20,7 @@
     } else if(isset($_GET['formulaire_inscription_eleve'])){
         $horaires = $use_horaire->findAll();
         $classes = $use_classe->findAll();
+        $matieres = $use_matiere->findAll();
         require_once($chemin . 'securite/inscription_eleve.php');
     } else if(isset($_GET['formulaire_inscription_pedagogue'])){
         require_once($chemin . 'securite/inscription_pedagogue.php');
