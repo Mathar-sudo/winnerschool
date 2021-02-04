@@ -15,8 +15,10 @@
     } else if(isset($_GET['eleve'])){
         $eleve = $use_eleve->findById($_GET['eleve']);
         require_once($chemin . 'eleve/show.php');
-    }else if(isset($_GET['supprimer_eleve'])){
+    } else if(isset($_GET['supprimer_eleve'])){
         $use_eleve->supprimer($_GET['supprimer_eleve']);
-    } 
+    } else if(isset($_GET['inscription_eleve'])){
+        $use_eleve->inscription();
+    }
 
 ?>

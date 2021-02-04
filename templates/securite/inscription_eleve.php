@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12" style="border-right: 1px solid #cccccc">
             <h3 class="text-info">Responsable</h3>
-            <form class="row g-3">
+            <form class="row g-3" method="POST" action="?inscription_eleve">
                 <div class="col-md-6">
                     <label for="input_nom" class="form-label">Nom</label>
                     <input type="text" name="nom_responsable" class="form-control" id="input_nom" required>
@@ -81,9 +81,9 @@
                     <label for="select_classe" class="form-label">Classe</label>
                     <select name="classe_eleve" class="form-select" id="select_classe" required>
                         <option disabled selected value>Choisissez une classe</option>
-                        <option>Seconde</option>
-                        <option>Première</option>
-                        <option>Terminale</option>
+                        <?php foreach($classes as $classe) { ?>
+                            <option value="<?= $classe->get_id_classe() ?>"><?= $classe->get_nom_classe() ?></option>
+                        <?php } ?>
                     </select>
                 </div>
                 <div class="col-md-6">
@@ -108,61 +108,11 @@
                     <input type="password" name="mdp_eleve" class="form-control" id="input_mdp" required>
                 </div>
                 <span class="text-danger" style="font-size:1.2em">Horaires de cours souhaités</span>
-                <div class="col">
-                    <label for="" class="form-label">Lundi</label>
-                    <select multiple class="form-select" id="">
-                        <option>Mathématiques : 17h55 - 18h55</option>
-                        <option>Mathématiques : 19h05 - 20h05</option>
-                        <option>Français : 17h55 - 18h55</option>
-                        <option>Français : 19h05 - 20h05</option>
-                        <option>Sciences : 17h55 - 18h55</option>
-                        <option>Sciences : 19h05 - 20h05</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label for="" class="form-label">Mardi</label>
-                    <select multiple class="form-select" id="">
-                        <option>Mathématiques : 17h55 - 18h55</option>
-                        <option>Mathématiques : 19h05 - 20h05</option>
-                        <option>Français : 17h55 - 18h55</option>
-                        <option>Français : 19h05 - 20h05</option>
-                        <option>Sciences : 17h55 - 18h55</option>
-                        <option>Sciences : 19h05 - 20h05</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label for="" class="form-label">Mercredi</label>
-                    <select multiple class="form-select" id="">
-                        <option>Mathématiques : 17h55 - 18h55</option>
-                        <option>Mathématiques : 19h05 - 20h05</option>
-                        <option>Français : 17h55 - 18h55</option>
-                        <option>Français : 19h05 - 20h05</option>
-                        <option>Sciences : 17h55 - 18h55</option>
-                        <option>Sciences : 19h05 - 20h05</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label for="" class="form-label">Jeudi</label>
-                    <select multiple class="form-select" id="">
-                        <option>Mathématiques : 17h55 - 18h55</option>
-                        <option>Mathématiques : 19h05 - 20h05</option>
-                        <option>Français : 17h55 - 18h55</option>
-                        <option>Français : 19h05 - 20h05</option>
-                        <option>Sciences : 17h55 - 18h55</option>
-                        <option>Sciences : 19h05 - 20h05</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label for="" class="form-label">Vendredi</label>
-                    <select multiple class="form-select" id="">
-                        <option>Mathématiques : 17h55 - 18h55</option>
-                        <option>Mathématiques : 19h05 - 20h05</option>
-                        <option>Français : 17h55 - 18h55</option>
-                        <option>Français : 19h05 - 20h05</option>
-                        <option>Sciences : 17h55 - 18h55</option>
-                        <option>Sciences : 19h05 - 20h05</option>
-                    </select>
-                </div>
+                <select multiple name="horaires[]" class="form-select">
+                    <?php foreach($horaires as $horaire) { ?>
+                        <option value="<?= $horaire->get_id_horaire() ?>"><?= $horaire->get_jour_horaire() . ' à ' . $horaire->get_heure_horaire() ?></option>
+                    <?php } ?>
+                </select>
             </form>
         </div>
     </div>
