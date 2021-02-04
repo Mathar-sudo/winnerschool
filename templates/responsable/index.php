@@ -28,6 +28,7 @@
             </thead>
             <tbody>
                 <?php 
+                if($tableau_responsables != null){
                     foreach($tableau_responsables as $responsable){
                 ?>
                 <tr id="ligne<?= $responsable->get_id_responsable() ?>">
@@ -47,6 +48,9 @@
                 </tr>
                 <?php 
                     }
+                } else {
+                    echo '<tr><td colspan="100%">Aucun enregistrement</td></tr>';
+                }
                 ?>
             </tbody>
         </table>

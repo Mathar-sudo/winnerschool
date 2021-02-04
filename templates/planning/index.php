@@ -25,6 +25,7 @@
             <tbody>
                 <?php 
                     $i=0;
+                    if($tableau_plannings != null){
                     foreach($tableau_plannings as $planning){
                         $i++;
                 ?>
@@ -48,6 +49,9 @@
                 </tr>
                 <?php 
                     }
+                } else {
+                    echo '<tr><td colspan="100%">Aucun enregistrement</td></tr>';
+                }
                 ?>
             </tbody>
         </table>

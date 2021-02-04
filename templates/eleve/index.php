@@ -28,6 +28,7 @@
             </thead>
             <tbody>
                 <?php 
+                if($tableau_eleves != null){
                     foreach($tableau_eleves as $eleve){
                 ?>
                 <tr id="ligne<?= $eleve->get_id_eleve() ?>">
@@ -48,6 +49,9 @@
                 </tr>
                 <?php 
                     }
+                } else {
+                    echo '<tr><td colspan="100%">Aucun enregistrement</td></tr>';
+                }
                 ?>
             </tbody>
         </table>

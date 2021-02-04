@@ -36,7 +36,7 @@
                     </li>
                     <span class="mx-1"></span>
                     <!-- MENU POUR SECRETAIRE ET PEDAGOGUE -->
-                    <?php if(isset($_SESSION['admin']) || isset($_SESSION['secretaire']) || isset($_SESSION['pedagogue'])) { ?>
+                    <?php if(isset($_SESSION['secretaire']) || isset($_SESSION['pedagogue'])) { ?>
                         <li class="nav-item">
                             <a class="nav-link <?php if(isset($active_intervenants)){ echo 'active'; } ?>" href="?intervenants">Intervenants</a>
                         </li>
@@ -74,6 +74,26 @@
                         </li>
                     <?php } else if(isset($_SESSION['admin'])) { ?>
                         <li class="nav-item">
+                            <a class="nav-link <?php if(isset($active_intervenants)){ echo 'active'; } ?>" href="?intervenants">Intervenants</a>
+                        </li>
+                        <span class="mx-1"></span>
+                        <li class="nav-item">
+                            <a class="nav-link <?php if(isset($active_responsables)){ echo 'active'; } ?>" href="?responsables">Responsables</a>
+                        </li>
+                        <span class="mx-1"></span>
+                        <li class="nav-item">
+                            <a class="nav-link <?php if(isset($active_pedagogues)){ echo 'active'; } ?>" href="?pedagogues">Pédagogues</a>
+                        </li>
+                        <span class="mx-1"></span>
+                        <li class="nav-item">
+                            <a class="nav-link <?php if(isset($active_eleves)){ echo 'active'; } ?>" href="?eleves">Élèves</a>
+                        </li>
+                        <span class="mx-1"></span>
+                        <li class="nav-item">
+                            <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?plannings">Planning</a>
+                        </li>
+                        <span class="mx-1"></span>
+                        <li class="nav-item">
                             <a class="nav-link <?php if(isset($active_classes)){ echo 'active'; } ?>" href="?classes">Classes</a>
                         </li>
                         <span class="mx-1"></span>
@@ -87,10 +107,6 @@
                         <span class="mx-1"></span>
                         <li class="nav-item">
                             <a class="nav-link <?php if(isset($active_horaires)){ echo 'active'; } ?>" href="?horaires">Horaires</a>
-                        </li>
-                        <span class="mx-1"></span>
-                        <li class="nav-item">
-                            <a class="nav-link <?php if(isset($active_responsables)){ echo 'active'; } ?>" href="?responsables">Responsables</a>
                         </li>
                         <span class="mx-1"></span>
                         <li class="nav-item">

@@ -33,7 +33,8 @@
             </thead>
             <tbody>
                 <?php 
-                    foreach($tableau_intervenants as $intervenant){
+                    if($tableau_intervenants != null){
+                        foreach($tableau_intervenants as $intervenant){
                 ?>
                 <tr id="ligne<?= $intervenant->get_id_intervenant() ?>">
                     <td><?= $intervenant->get_id_intervenant() ?></td>
@@ -56,6 +57,9 @@
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $intervenant->get_id_intervenant() ?>" style="display:none;">Confirmer</button></td>
                 </tr>
                 <?php 
+                        } 
+                    } else {
+                        echo '<tr><td colspan="100%">Aucun enregistrement</td></tr>';
                     }
                 ?>
             </tbody>
@@ -65,20 +69,20 @@
 <script>
 $(document).ready(function(){
     $(".supprimer_intervenant").click(function(){      
-      // Récupération de l'id de la intervenant / id de la ligne
-      var id_intervenant = $(this).val();
-            // Affichage du bouton de confirmation
-            $('#confirm_suppression' + id_intervenant).show();
-            // Lors du click sur le bouton de confirmation
-            $('#confirm_suppression' + id_intervenant).click(function(){
-                // Appel à ajax
-                $.ajax({
-                    url: '?supprimer_intervenant=' + id_intervenant,
-                    success: function(response){
-                        $('#ligne' + id_intervenant).fadeOut('slow');
-                    }
-                });
+        // Récupération de l'id de la intervenant / id de la ligne
+        var id_intervenant = $(this).val();
+        // Affichage du bouton de confirmation
+        $('#confirm_suppression' + id_intervenant).show();
+        // Lors du click sur le bouton de confirmation
+        $('#confirm_suppression' + id_intervenant).click(function(){
+            // Appel à ajax
+            $.ajax({
+                url: '?supprimer_intervenant=' + id_intervenant,
+                success: function(response){
+                    $('#ligne' + id_intervenant).fadeOut('slow');
+                }
             });
+        });
     });
 });
 </script>

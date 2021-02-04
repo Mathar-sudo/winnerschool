@@ -23,6 +23,7 @@
             </thead>
             <tbody>
                 <?php 
+                if($tableau_pedagogues != null){
                     foreach($tableau_pedagogues as $pedagogue){
                 ?>
                 <tr id="ligne<?= $pedagogue->get_id_pedagogue() ?>">
@@ -38,6 +39,9 @@
                 </tr>
                 <?php 
                     }
+                } else {
+                    echo '<tr><td colspan="100%">Aucun enregistrement</td></tr>';
+                }
                 ?>
             </tbody>
         </table>

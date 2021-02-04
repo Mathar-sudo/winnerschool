@@ -266,13 +266,8 @@
 
             // Requête SQL
             $requete = 'DELETE FROM intervenant WHERE id_intervenant = ?';
-
             // Exécution de la requête
-            if(!$bdd->doQuery($requete, [$id])){
-                return false;
-            } else {
-               header("Location: ?intervenants") ;
-            }
+            $bdd->doQuery($requete, [$id]);
         }
 
     }

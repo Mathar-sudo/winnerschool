@@ -20,6 +20,7 @@
             </thead>
             <tbody>
                 <?php 
+                if($tableau_matieres != null){
                     foreach($tableau_matieres as $matiere){
                 ?>
                 <tr id="ligne<?= $matiere->get_id_matiere() ?>">
@@ -32,6 +33,9 @@
                 </tr>
                 <?php 
                     }
+                } else {
+                    echo '<tr><td colspan="100%">Aucun enregistrement</td></tr>';
+                }
                 ?>
             </tbody>
         </table>
