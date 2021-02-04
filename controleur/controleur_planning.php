@@ -12,6 +12,7 @@
     $use_pedagogue = new Use_pedagogue();
     $use_salle = new Use_salle();
     $use_matiere = new Use_matiere();
+    $use_horaire = new Use_Horaire();
 
     if(isset($_GET['plannings'])){
         $tableau_plannings = $use_planning->findAll();
@@ -24,6 +25,7 @@
         $pedagogues = $use_pedagogue->findAll();
         $salles = $use_salle->findAll();
         $matieres = $use_matiere->findAll();
+        $horaires = $use_horaire->findAll();
         require_once($chemin . 'planning/ajouter.php');
     } else if(isset($_GET['ajouter_planning'])){
         $use_planning->ajouter();

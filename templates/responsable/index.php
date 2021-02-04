@@ -21,6 +21,7 @@
                 <th scope="col">Numéro mobile</th>
                 <th scope="col">Mail</th>
                 <th scope="col">Aperçu</th>
+                <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
 
                 </tr>
@@ -40,6 +41,7 @@
                     <td><?= $responsable->get_mobile_responsable() ?></td>
                     <td><?= $responsable->get_mail_responsable() ?></td>
                     <td><a href="?responsable=<?= $responsable->get_id_responsable() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <td><a href="?formulaire_modifier_responsable=<?= $responsable->get_id_responsable() ?>"><button class="btn btn-info btn-sm"><i class="far fa-edit"></i></button></a></td>
                     <td><button class="supprimer_responsable btn btn-danger btn-sm" value="<?= $responsable->get_id_responsable() ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $responsable->get_id_responsable() ?>" style="display:none;">Confirmer</button></td>
                 </tr>
