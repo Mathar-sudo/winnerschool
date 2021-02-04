@@ -12,6 +12,7 @@
         private $fk_id_pedagogue;
         private $fk_id_salle;
         private $fk_id_matiere;
+        private $fk_id_horaire;
         private $numero_semaine;
         private $annee;
 
@@ -32,6 +33,9 @@
         }
         function get_fk_id_matiere():int{
             return $this->fk_id_matiere;
+        }
+        function get_fk_id_horaire():int{
+            return $this->fk_id_horaire;
         }
         function get_numero_semaine():int{
             return $this->numero_semaine;
@@ -115,6 +119,21 @@
             }
         }
 
+        // Récupérer l'horaire'
+        function get_horaire():String{
+            $bdd = new Connexion_bdd();
+            $requete = 'SELECT * FROM horaire WHERE id_horaire = ?';
+            if($bdd->doQuery($requete, [$this->fk_id_horaire])){
+                if($horaire_result = $bdd->tabResultat){
+                    return $horaire_result[0]['jour_horaire'] . ' à ' . $horaire_result[0]['heure_horaire'];
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+
 
         // Setters
         function set_fk_id_intervenant($fk_id_intervenant){
@@ -144,6 +163,13 @@
                 $this->fk_id_matiere = $fk_id_matiere;
             }
         }
+
+        function set_fk_id_horaire($fk_id_horaire){
+            if(!empty($fk_id_horaire)){
+                $this->fk_id_horaire = $fk_id_horaire;
+            }
+        }
+
         function set_numero_semaine($numero_semaine){
             if(!empty($numero_semaine)){
                 $this->numero_semaine = $numero_semaine;
