@@ -26,7 +26,7 @@
                     <td><?= $matiere->get_id_matiere() ?></td>
                     <td><?= $matiere->get_nom_matiere() ?></td>
                     <td><a href="?matiere=<?= $matiere->get_id_matiere() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
-                    <td><a href="?formulaire_modif_matiere=<?= $matiere->get_id_matiere() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <td><a href="?formulaire_modif_matiere=<?= $matiere->get_id_matiere() ?>"><button class="btn btn-info btn-sm"><i class="far fa-edit"></i></button></a></td>
                     <td><button class="supprimer_matiere btn btn-danger btn-sm" value="<?= $matiere->get_id_matiere() ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $matiere->get_id_matiere() ?>" style="display:none;">Confirmer</button></td>
                 </tr>

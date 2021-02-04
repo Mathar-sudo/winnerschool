@@ -83,7 +83,7 @@
             }
         }
 
-        function modifier(){
+        function modifier($id_matiere){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();
 
