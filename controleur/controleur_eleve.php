@@ -21,6 +21,11 @@
         $use_eleve->supprimer($_GET['supprimer_eleve']);
     } else if(isset($_GET['inscription_eleve'])){
         $use_eleve->inscription();
+    }else if(isset($_GET['formulaire_modifier_eleve'])){
+        $eleve = $use_eleve->findById($_GET['formulaire_modifier_eleve']);
+        require_once($chemin . 'eleve/modifier.php');
+    } else if(isset($_GET['modifier_eleve'])) {
+        $use_eleve->modifier($_GET['modifier_eleve']);
     }
 
 ?>

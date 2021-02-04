@@ -17,10 +17,12 @@
                 <th scope="col">Age</th>
                 <th scope="col">Numéro mobile</th>
                 <th scope="col">Mail</th>
+                <th scope="col">Etablissement</th>
                 <th scope="col">Elèments spécifiques</th>
                 <th scope="col">Classe</th>
                 <th scope="col">Responsable</th>
                 <th scope="col">Aperçu</th>
+                <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
                 </tr>
             </thead>
@@ -34,11 +36,13 @@
                     <td><?= $eleve->get_nom_eleve() ?></td>
                     <td><?= $eleve->get_age_eleve() ?></td>
                     <td><?= $eleve->get_mobile_eleve() ?></td>
+                    <td><?= $eleve->get_mail_eleve() ?></td>
                     <td><?= $eleve->get_etablissement_eleve() ?></td>
                     <td><?= $eleve->get_particularite_eleve() ?></td>
                     <td><?= $eleve->get_classe() ?></td>
                     <td><?= $eleve->get_responsable() ?></td>
                     <td><a href="?eleve=<?= $eleve->get_id_eleve() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <td><a href="?formulaire_modifier_eleve=<?= $eleve->get_id_eleve() ?>"><button class="btn btn-info btn-sm"><i class="far fa-edit"></i></button></a></td>
                     <td><button class="supprimer_eleve btn btn-danger btn-sm" value="<?= $eleve->get_id_eleve() ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $eleve->get_id_eleve() ?>" style="display:none;">Confirmer</button></td>
                 </tr>
