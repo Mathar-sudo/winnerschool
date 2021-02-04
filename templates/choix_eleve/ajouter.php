@@ -18,7 +18,6 @@
                     <label for="" class="form-label">Choisir un élève</label>
                     <select name="eleve" class="form-select" id="">
                     <?php
-                    echo ("coucou");
                         foreach ($eleves as $eleve){
                             ?>
                             <option value="<?= $eleve->get_id_eleve() ?>"><?= $eleve->get_nom_eleve(). " ".$eleve->get_prenom_eleve() ?></option>
