@@ -59,8 +59,6 @@
         function inscription(){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();
-            echo 'coucou';
-            var_dump($_POST);
             // Récupération des valeurs du formulaire
             $nom_intervenant = trim($_POST['nom_intervenant']);
             $prenom_intervenant = trim($_POST['prenom_intervenant']);

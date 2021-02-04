@@ -20,7 +20,7 @@
     <h1 class="text-primary">Inscription d'un intervenant</h1>
     <hr style="width:15%">
     <?php if(isset($erreur)){ echo $erreur; } ?>
-    <form class="g-3" method="POST" action="?inscription_intervenant">
+    <form class="g-3" method="POST" action="?inscription_intervenant" enctype="multipart/form-data">
     <div class="row">
         <div class="col-6" style="border-right: 1px solid #cccccc">
             <div class="row">
