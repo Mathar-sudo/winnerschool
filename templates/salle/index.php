@@ -14,6 +14,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Aperçu</th>
+                <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
                 </tr>
             </thead>
@@ -25,6 +26,7 @@
                     <td><?= $salle->get_id_salle() ?></td>
                     <td><?= $salle->get_nom_salle() ?></td>
                     <td><a href="?salle=<?= $salle->get_id_salle() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <td><a href="?formulaire_modifier_salle=<?= $salle->get_id_salle() ?>"><button class="btn btn-info btn-sm"><i class="far fa-edit"></i></button></a></td>
                     <td><button class="supprimer_salle btn btn-danger btn-sm" value="<?= $salle->get_id_salle() ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $salle->get_id_salle() ?>" style="display:none;">Confirmer</button></a></td>
                 </tr>

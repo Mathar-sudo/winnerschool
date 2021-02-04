@@ -81,7 +81,33 @@
                 }
             }
         }
-
+        
+        
+        function modifier($id_intervenant){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+            // Récupération des valeurs
+            $nom_intervenant = trim($_POST['nom_intervenant']);
+            // Requête SQL
+            $requete = 'SELECT * FROM intervenant WHERE UPPER(nom_intervenant) LIKE UPPER(?)';
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete,[$nom_intervenant])){
+                return false;
+            } else {
+                if($bdd->tabResultat){
+                    $erreur = '<div class="alert alert-danger text-center mb-3 w-25">Cette intervenant existe déjà</div>';
+                    $intervenant = $this->findById($id_intervenant);
+                    require_once('templates/intervenant/modifier.php');
+                } else {
+                    $requete = 'UPDATE intervenant SET nom_intervenant = ? WHERE id_intervenant = ?';
+                    if($bdd->doQuery($requete, [$nom_intervenant, $id_intervenant])){
+                        header('Location: ?intervenants');
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
     
         function supprimer($id){
             // Connexion à la base de données

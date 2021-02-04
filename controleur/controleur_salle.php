@@ -20,6 +20,11 @@
         require_once($chemin . 'salle/ajouter.php');
     } else if(isset($_GET['ajouter_salle'])){
         $use_salle->ajouter();
+    } else if(isset($_GET['formulaire_modifier_salle'])){
+        $salle = $use_salle->findById($_GET['formulaire_modifier_salle']);
+        require_once($chemin . 'salle/modifier.php');
+    } else if(isset($_GET['modifier_salle'])) {
+        $use_salle->modifier($_GET['modifier_salle']);
     }
 
 ?>

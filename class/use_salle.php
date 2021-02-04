@@ -82,6 +82,31 @@
             }
         }
 
+        function modifier($id_salle){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+            // Récupération des valeurs
+            $nom_salle = trim($_POST['nom_salle']);
+            // Requête SQL
+            $requete = 'SELECT * FROM salle WHERE UPPER(nom_salle) LIKE UPPER(?)';
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete,[$nom_salle])){
+                return false;
+            } else {
+                if($bdd->tabResultat){
+                    $erreur = '<div class="alert alert-danger text-center mb-3 w-25">Cette salle existe déjà</div>';
+                    $salle = $this->findById($id_salle);
+                    require_once('templates/salle/modifier.php');
+                } else {
+                    $requete = 'UPDATE salle SET nom_salle = ? WHERE id_salle = ?';
+                    if($bdd->doQuery($requete, [$nom_salle, $id_salle])){
+                        header('Location: ?salles');
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
 
         function supprimer($id){
             // Connexion à la base de données
