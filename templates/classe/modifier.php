@@ -8,7 +8,7 @@
         <h1 class="text-primary">Modifier la classe : <?= $classe->get_nom_classe() ?></h1>
         <hr style="width:15%">
         <?php if(isset($erreur)){ echo $erreur; } ?>
-        <form class="row g-3 w-25" method="POST" action="?modifier_classe=<?= $classe->get_id_classe() ?>">
+        <form class="row g-3 w-25" method="POST" action="?modifier_classe=<?= $classe->get_id_classe(); ?>">
             <div class="col-12">
                 <label for="input_nom" class="form-label">Nom de la classe</label>
                 <input type="text" name="nom_classe" value="<?= $classe->get_nom_classe() ?>" class="form-control" id="input_nom" required>
