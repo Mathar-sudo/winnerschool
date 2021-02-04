@@ -7,6 +7,7 @@
 <?php if(isset($tableau_intervenants)){ ?>
 
     <div class="container">
+    <a href="?formulaire_ajout_intervenant"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter un intervenant</button></a>
         <table class="table">
             <thead>
                 <tr>

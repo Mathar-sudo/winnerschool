@@ -14,8 +14,12 @@
     }else if(isset($_GET['intervenant'])){
         $intervenant = $use_intervenant->findById($_GET['intervenant']);
         require_once($chemin . 'intervenant/show.php');
-    } else if(isset($_GET['supprimer_intervenant'])){
-        $use_intervenant->supprimer($_GET['supprimer_intervenant']);
+    }else if(isset($_GET['supprimer_intervenant'])){
+        $use_intervenant->supprimer($_GET['supprimer_intervenant']);     
+    } else if(isset($_GET['formulaire_ajout_intervenant'])){
+        require_once($chemin . 'intervenant/ajouter.php');
+    } else if(isset($_GET['ajouter_intervenant'])){
+        $use_intervenant->ajouter();
     } else if(isset($_GET['inscription_intervenant'])){
         $use_intervenant->inscription();
     }

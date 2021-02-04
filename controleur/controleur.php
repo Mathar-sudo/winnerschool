@@ -24,7 +24,7 @@
         require_once('controleur_matiere.php');
 
     // Gestion des intervenants
-    } else if(isset($_GET['intervenants']) || isset($_GET['intervenant']) || isset($_GET['supprimer_intervenant']) || isset($_GET['inscription_intervenant'])){
+    } else if(isset($_GET['intervenants']) || isset($_GET['intervenant']) || isset($_GET['supprimer_intervenant']) || isset($_GET['formulaire_ajout_intervenant']) || isset($_GET['ajouter_intervenant']) || isset($_GET['inscription_intervenant'])){
         require_once('controleur_intervenant.php');
 
     // Gestion des horaires
