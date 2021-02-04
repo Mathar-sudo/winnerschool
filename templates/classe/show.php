@@ -6,6 +6,13 @@
 
 <?php if(isset($classe)){ ?>
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="?classes">Toutes les classes</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><?= $classe->get_nom_classe() ?></li>
+            </ol>
+        </nav>
+        <hr class="w-25">
         <p>Id de la classe : <?= $classe->get_id_classe() ?></p>
         <p>Nom de la classe : <?= $classe->get_nom_classe() ?></p>
     </div>

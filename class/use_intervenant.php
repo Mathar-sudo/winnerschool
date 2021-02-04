@@ -183,7 +183,8 @@
                 } else {
                     $requete = 'INSERT INTO intervenant(nom_intervenant, prenom_intervenant, adresse_intervenant, cdp_intervenant, ville_intervenant, fixe_intervenant, mobile_intervenant, mail_intervenant, casier_intervenant, photo1_intervenant, photo2_intervenant, niveau_intervenant, specialite_intervenant, profession_intervenant, experience_intervenant, connaissance_intervenant, mdp_intervenant) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
                     if($bdd->doQuery($requete, [$nom_intervenant, $prenom_intervenant, $adresse_intervenant, $cdp_intervenant, $ville_intervenant, $fixe_intervenant, $portable_intervenant, $email_intervenant, $casier_intervenant, $photo1_intervenant, $photo2_intervenant, $niveau_intervenant, $specialite_intervenant, $profession_intervenant, $experience_intervenant, $connaissance_intervenant, $mdp_intervenant])){
-                        header('Location: ?connexion');
+                        $success = '<div class="alert alert-success text-center mb-3">Intervenant ajouté avec succès. Vous pouvez vous connecter</div>';
+                        require_once('templates/securite/connexion.php');
                     } else {
                         echo('coucou');
                         return false;

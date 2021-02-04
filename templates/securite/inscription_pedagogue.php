@@ -19,48 +19,22 @@
 <div class="container my-5">
     <h1 class="text-primary">Inscription d'un pédagogue</h1>
     <hr style="width:15%">
-    <form class="row g-3">
-        <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4">
-        </div>
+    <?php if(isset($erreur)){ echo $erreur; } ?>
+    <form class="row g-3 w-25" method="POST" action="?inscription_pedagogue">
         <div class="col-12">
-            <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <label for="input_nom" class="form-label">Nom du pédagogue</label>
+            <input type="text" name="nom_pedagogue" class="form-control" id="input_nom" required>
+            <label for="input_prenom" class="form-label">Prénom du pédagogue</label>
+            <input type="text" name="prenom_pedagogue" class="form-control" id="input_prenom" required>
+            <label for="input_mail" class="form-label">Mail du pédagogue</label>
+            <input type="email" name="mail_pedagogue" class="form-control" id="input_mail" required>
+            <label for="input_mobile" class="form-label">Mobile du pédagogue</label>
+            <input type="text" name="mobile_pedagogue" class="form-control" id="input_mobile" required>
+            <label for="input_mdp" class="form-label">Mot de passe du pédagogue</label>
+            <input type="password" value="winnerschool" name="mdp_pedagogue" class="form-control" id="input_mdp" readonly>
         </div>
-        <div class="col-12">
-            <label for="inputAddress2" class="form-label">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
-        <div class="col-md-6">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
-            <option selected>Choose...</option>
-            <option>...</option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-        </div>
-        <div class="col-12">
-            <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-                Check me out
-            </label>
-            </div>
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary">Inscription</button>
         </div>
     </form>
 </div>

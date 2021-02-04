@@ -6,6 +6,13 @@
 
 <?php if(isset($matiere)){ ?>
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="?matieres">Toutes les matières</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><?= $matiere->get_nom_matiere() ?></li>
+            </ol>
+        </nav>
+        <hr class="w-25">
         <p>Id de la matiere : <?= $matiere->get_id_matiere() ?></p>
         <p>Nom de la matiere : <?= $matiere->get_nom_matiere() ?></p>
     </div>

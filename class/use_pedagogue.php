@@ -87,6 +87,38 @@
             }
         }
 
+        function inscription(){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+                        
+            $nom_pedagogue = trim($_POST['nom_pedagogue']);
+            $prenom_pedagogue = trim($_POST['prenom_pedagogue']);
+            $mail_pedagogue = trim($_POST['mail_pedagogue']);
+            $mobile_pedagogue = trim($_POST['mobile_pedagogue']);
+            $mdp_pedagogue = password_hash(trim($_POST['mdp_pedagogue']), PASSWORD_DEFAULT);
+
+            // Requête SQL
+            $requete = 'SELECT * FROM pedagogue WHERE UPPER(mail_pedagogue) LIKE UPPER(?)';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete,[$mail_pedagogue])){
+                return false;
+            } else {
+                if($bdd->tabResultat){
+                    $erreur = '<div class="alert alert-danger text-center mb-3 w-25">Ce pedagogue existe déjà</div>';
+                    require_once('templates/securite/inscription_pedagogue.php');
+                } else {
+                    $requete = 'INSERT INTO pedagogue(nom_pedagogue,prenom_pedagogue,mail_pedagogue,mobile_pedagogue,mdp_pedagogue) VALUES(?,?,?,?,?)';
+                    if($bdd->doQuery($requete, [$nom_pedagogue,$prenom_pedagogue,$mail_pedagogue,$mobile_pedagogue,$mdp_pedagogue])){
+                        $success = '<div class="alert alert-success text-center mb-3">Pédagogue ajouté avec succès. Vous pouvez vous connecter</div>';
+                        require_once('templates/securite/connexion.php');
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+
         function supprimer($id){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();

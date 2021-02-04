@@ -12,7 +12,7 @@
         require_once('controleur_securite.php');
     
     // Gestion des classes
-    } else if(isset($_GET['classes']) || isset($_GET['classe']) || isset($_GET['supprimer_classe']) || isset($_GET['formulaire_ajout_classe']) || isset($_GET['ajouter_classe'])){
+    } else if(isset($_GET['classes']) || isset($_GET['classe']) || isset($_GET['supprimer_classe']) || isset($_GET['formulaire_ajout_classe']) || isset($_GET['ajouter_classe']) || isset($_GET['formulaire_modifier_classe']) || isset($_GET['modifier_classe'])){
         require_once('controleur_classe.php');
 
     // Gestion des salles
@@ -32,7 +32,7 @@
         require_once('controleur_horaire.php');
 
     // Gestion des pédagogues
-    } else if(isset($_GET['pedagogues']) || isset($_GET['pedagogue']) || isset($_GET['supprimer_pedagogue']) || isset($_GET['formulaire_ajout_pedagogue']) || isset($_GET['ajouter_pedagogue'])){
+    } else if(isset($_GET['pedagogues']) || isset($_GET['pedagogue']) || isset($_GET['supprimer_pedagogue']) || isset($_GET['formulaire_ajout_pedagogue']) || isset($_GET['ajouter_pedagogue']) || isset($_GET['inscription_pedagogue'])){
         require_once('controleur_pedagogue.php');
 
     // Gestion des responsables
@@ -40,7 +40,7 @@
         require_once('controleur_responsable.php');
 
     // Gestion des élèves
-    } else if(isset($_GET['eleves']) || isset($_GET['eleve']) || isset($_GET['supprimer_eleve']) || isset($_GET['formulaire_ajout_eleve']) || isset($_GET['ajouter_eleve'])){
+    } else if(isset($_GET['eleves']) || isset($_GET['eleve']) || isset($_GET['supprimer_eleve']) || isset($_GET['formulaire_ajout_eleve']) || isset($_GET['ajouter_eleve']) || isset($_GET['inscription_eleve'])){
         require_once('controleur_eleve.php');
         
     // Gestion des choix élèves

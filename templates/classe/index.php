@@ -14,6 +14,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Aperçu</th>
+                <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
                 </tr>
             </thead>
@@ -25,6 +26,7 @@
                     <td><?= $classe->get_id_classe() ?></td>
                     <td><?= $classe->get_nom_classe() ?></td>
                     <td><a href="?classe=<?= $classe->get_id_classe() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <td><a href="?formulaire_modifier_classe=<?= $classe->get_id_classe() ?>"><button class="btn btn-info btn-sm"><i class="far fa-edit"></i></button></a></td>
                     <td><button class="supprimer_classe btn btn-danger btn-sm" value="<?= $classe->get_id_classe() ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $classe->get_id_classe() ?>" style="display:none;">Confirmer</button></td>
                 </tr>

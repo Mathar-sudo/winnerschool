@@ -19,13 +19,8 @@
         require_once($chemin . 'eleve/show.php');
     } else if(isset($_GET['supprimer_eleve'])){
         $use_eleve->supprimer($_GET['supprimer_eleve']);
-    } else if(isset($_GET['formulaire_ajout_eleve'])){
-        $responsables = $use_responsable->findAll();
-        $classes = $use_classe->findAll();
-        require_once($chemin . 'eleve/ajouter.php');
-    } else if(isset($_GET['ajouter_eleve'])){
-        $use_eleve->ajouter();
+    } else if(isset($_GET['inscription_eleve'])){
+        $use_eleve->inscription();
     }
-
 
 ?>

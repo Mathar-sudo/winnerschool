@@ -14,7 +14,6 @@
                 <th scope="col">Id</th>
                 <th scope="col">Jour</th>
                 <th scope="col">Heure</th>
-                <th scope="col">Aperçu</th>
                 <th scope="col">Supprimer</th>
                 </tr>
             </thead>
@@ -26,7 +25,6 @@
                     <td><?= $horaire->get_id_horaire() ?></td>
                     <td><?= $horaire->get_jour_horaire() ?></td>
                     <td><?= $horaire->get_heure_horaire() ?></td>
-                    <td><a href="?horaire=<?= $horaire->get_id_horaire() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
                     <td><button class="supprimer_horaire btn btn-danger btn-sm" value="<?= $horaire->get_id_horaire() ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $horaire->get_id_horaire() ?>" style="display:none;">Confirmer</button></a></td>
                 </tr>

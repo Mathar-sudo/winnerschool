@@ -20,6 +20,8 @@
         require_once($chemin . 'pedagogue/ajouter.php');
     } else if(isset($_GET['ajouter_pedagogue'])){
         $use_pedagogue->ajouter();
+    } else if(isset($_GET['inscription_pedagogue'])){
+        $use_pedagogue->inscription();
     }
 
 ?>
