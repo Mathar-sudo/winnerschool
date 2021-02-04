@@ -83,6 +83,33 @@
             }
         }
 
+        function modifier(){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            $nom_matiere = trim($_POST['nom_matiere']);
+            // Requête SQL
+            $requete = 'SELECT * FROM matiere WHERE UPPER(nom_matiere) LIKE UPPER(?)';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete,[$nom_matiere])){
+                return false;
+            } else {
+                if($bdd->tabResultat){
+                    $erreur = '<div class="alert alert-danger text-center mb-3 w-25">Cette matiere existe déjà</div>';
+                    $matiere = $this->findById($id_matiere);
+                    require_once('templates/matiere/modifier.php');
+                } else {
+                    $requete = 'UPDATE matiere SET nom_matiere = ? WHERE id_matiere = ?';
+                    if($bdd->doQuery($requete, [$nom_matiere, $id_matiere])){
+                        header('Location: ?matieres');
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+
         function supprimer($id){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();

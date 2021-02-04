@@ -20,7 +20,7 @@
         require_once('controleur_salle.php');
 
     // Gestion des matières
-    } else if(isset($_GET['matieres']) || isset($_GET['matiere']) || isset($_GET['supprimer_matiere']) || isset($_GET['formulaire_ajout_matiere']) || isset($_GET['ajouter_matiere'])){
+    } else if(isset($_GET['matieres']) || isset($_GET['matiere']) || isset($_GET['supprimer_matiere']) || isset($_GET['formulaire_ajout_matiere']) || isset($_GET['ajouter_matiere']) || isset($_GET['formulaire_modif_matiere']) || isset($_GET['modifier_matiere'])){
         require_once('controleur_matiere.php');
 
     // Gestion des intervenants
