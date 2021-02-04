@@ -13,9 +13,34 @@
                 <li class="breadcrumb-item active" aria-current="page"><?= $responsable->get_prenom_responsable() . ' ' . $responsable->get_nom_responsable() ?></li>
             </ol>
         </nav>
-        <hr class="w-25">
-        <p>Id de la responsable : <?= $responsable->get_id_responsable() ?></p>
-        <p>Nom de la responsable : <?= $responsable->get_nom_responsable() ?></p>
+        <hr class="w-55">
+        <div class="row ">
+         <div class="col-5">
+            <div class="card">
+                <div class="card-body text-center">
+                <img src="images/avatar.jpg" alt="..." class="img-thumbnail" width='100' height='100'>
+                <p class="mt-3">Nom : <?= $responsable->get_nom_responsable() ?></p>
+                <p>Prénom : <?= $responsable->get_prenom_responsable() ?></p>
+                </div>
+        
+            </div>
+            <div class="card mt-3">
+                <div class="card-body text-center">
+                <h5 class="text-danger">Coordonnées</h5>
+                <p>Adresse : <?= $responsable->get_adresse_responsable() ?></p>
+                <p>Code Postale : <?= $responsable->get_cdp_responsable() ?></p>
+                <p>Ville : <?= $responsable->get_ville_responsable() ?></p>
+                <p>Téléphone fixe : <?= $responsable->get_fixe_responsable() ?></p>
+                <p>Téléphone mobile : <?= $responsable->get_mobile_responsable() ?></p>
+                <p>Email : <?= $responsable->get_mail_responsable() ?></p>
+              </div>
+
+             
+        
+            </div>
+         </div>
+        </div>
+      
     </div>
 
 <?php } ?>
