@@ -16,6 +16,10 @@
         require_once($chemin . 'matiere/show.php');
     }else if(isset($_GET['supprimer_matiere'])) {
         $use_matiere->supprimer($_GET['supprimer_matiere']);
+    }else if(isset($_GET['formulaire_ajout_matiere'])){
+        require_once($chemin . 'matiere/ajouter.php');
+    } else if(isset($_GET['ajouter_matiere'])){
+        $use_matiere->ajouter();
     }
 
 ?>

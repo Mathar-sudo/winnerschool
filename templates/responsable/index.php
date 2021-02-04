@@ -7,6 +7,7 @@
 <?php if(isset($tableau_responsables)){ ?>
 
     <div class="container">
+    <a href="?formulaire_ajout_responsable"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter un responsable</button></a>
         <table class="table">
             <thead>
                 <tr>
