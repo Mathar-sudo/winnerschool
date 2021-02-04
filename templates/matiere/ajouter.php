@@ -1,17 +1,17 @@
-<?php $titre_page = 'Ajouter une classe' ?>
+<?php $titre_page = 'Ajouter une matière' ?>
 
-<?php $active_classes = true ?>
+<?php $active_matieres = true ?>
 
 <?php ob_start(); ?>
 
     <div class="container">
-        <h1 class="text-primary">Ajouter une nouvelle classe</h1>
+        <h1 class="text-primary">Ajouter une nouvelle matière</h1>
         <hr style="width:15%">
         <?php if(isset($erreur)){ echo $erreur; } ?>
-        <form class="row g-3 w-25" method="POST" action="?ajouter_classe">
+        <form class="row g-3 w-25" method="POST" action="?ajouter_matiere">
             <div class="col-12">
-                <label for="input_nom" class="form-label">Nom de la classe</label>
-                <input type="text" name="nom_classe" class="form-control" id="input_nom" required>
+                <label for="input_nom" class="form-label">Nom de la matiere</label>
+                <input type="text" name="nom_matiere" class="form-control" id="input_nom" required>
             </div>
             <div class="col-12 text-center">
                 <button type="submit" class="btn btn-primary">Ajouter</button>

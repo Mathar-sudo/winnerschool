@@ -8,7 +8,7 @@
         <h1 class="text-primary">Ajouter un intervenant</h1>
         <hr style="width:15%">
         <?php if(isset($erreur)){ echo $erreur; } ?>
-        <form class="row g-3 " method="POST" action="?ajouter_intervenant">
+        <form class="row g-3 " method="POST" action="?ajouter_intervenant" enctype="multipart/form-data">
             <div class="col-md-6">
                 <label for="input_nom" class="form-label">Nom de l'intervenant</label>
                 <input type="text" name="nom_intervenant" class="form-control" id="input_nom">

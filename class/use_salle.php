@@ -56,6 +56,33 @@
             }
         }
 
+        function ajouter(){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            $nom_salle = trim($_POST['nom_salle']);
+            // Requête SQL
+            $requete = 'SELECT * FROM salle WHERE UPPER(nom_salle) LIKE UPPER(?)';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete,[$nom_salle])){
+                return false;
+            } else {
+                if($bdd->tabResultat){
+                    $erreur = '<div class="alert alert-danger text-center mb-3 w-25">Cette salle existe déjà</div>';
+                    require_once('templates/salle/ajouter.php');
+                } else {
+                    $requete = 'INSERT INTO salle(nom_salle) VALUES(?)';
+                    if($bdd->doQuery($requete, [$nom_salle])){
+                        header('Location: ?salles');
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+
+
         function supprimer($id){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();

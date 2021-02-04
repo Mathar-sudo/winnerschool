@@ -66,17 +66,42 @@
             $cdp_intervenant = $_POST['code_postale_intervenant'];
             $ville_intervenant = trim($_POST['ville_intervenant']);
             $fixe_intervenant = trim($_POST['fixe_intervenant']);
-            $mobile_intervenant = trim($_POST['mobile_intervenant']);            
             $mail_intervenant = trim($_POST['mail_intervenant']);
-            $casier_intervenant = trim($_POST['casier_intervenant']);
-            $photo1_intervenant = trim($_POST['photo1_intervenant']);
-            $photo2_intervenant = trim($_POST['photo2_intervenant']);
+            $mobile_intervenant = trim($_POST['mobile_intervenant']);
             $niveau_intervenant = trim($_POST['niveau_intervenant']);
             $specialite_intervenant = trim($_POST['specialite_intervenant']);
             $profession_intervenant = trim($_POST['profession_intervenant']);
             $experience_intervenant = trim($_POST['experience_intervenant']);
             $connaissance_intervenant = trim($_POST['connaissance_intervenant']);
             $mdp_intervenant = password_hash(trim($_POST['mdp_intervenant']), PASSWORD_DEFAULT);
+
+            if(!empty($_FILES['casier_intervenant']['name'])){
+                $dossier_cible = 'documents';
+                $tmp_name = $_FILES['casier_intervenant']['tmp_name'];
+                $casier_intervenant = basename($_FILES['casier_intervenant']['name']);
+                $fichier_cible = $dossier_cible . '/' . $casier_intervenant;
+                move_uploaded_file($tmp_name, $fichier_cible);
+            } else {
+                $casier_intervenant = null;
+            }
+            if(!empty($_FILES['photo1_intervenant']['name'])){
+                $dossier_cible = 'documents';
+                $tmp_name = $_FILES['photo1_intervenant']['tmp_name'];
+                $photo1_intervenant = basename($_FILES['photo1_intervenant']['name']);
+                $fichier_cible = $dossier_cible . '/' . $photo1_intervenant;
+                move_uploaded_file($tmp_name, $fichier_cible);
+            } else {
+                $photo1_intervenant = null;
+            }
+            if(!empty($_FILES['photo2_intervenant']['name'])){
+                $dossier_cible = 'documents';
+                $tmp_name = $_FILES['photo2_intervenant']['tmp_name'];
+                $photo2_intervenant = basename($_FILES['photo2_intervenant']['name']);
+                $fichier_cible = $dossier_cible . '/' . $photo2_intervenant;
+                move_uploaded_file($tmp_name, $fichier_cible);
+            } else {
+                $photo2_intervenant = null;
+            }
 
             $requete = 'SELECT * FROM intervenant WHERE UPPER(mail_intervenant) LIKE UPPER(?)';
            
@@ -89,20 +114,78 @@
                     $erreur = '<div class="alert alert-danger text-center mb-3 w-25">Cette intervenant existe déjà</div>';
                     require_once('templates/intervenant/ajouter.php');
                 } else {
-                    $requete = 'INSERT INTO intervenant(nom_intervenant, prenom_intervenant, adresse_intervenant, 
-                    cdp_intervenant, ville_intervenant, fixe_intervenant, mobile_intervenant, mail_intervenant, 
-                    casier_intervenant, photo1_intervenant, photo2_intervenant, niveau_intervenant, 
-                    specialite_intervenant, profession_intervenant, experience_intervenant, connaissance_intervenant, mdp_intervenant) 
-                    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
-                   
-                    if($bdd->doQuery($requete, [$nom_intervenant, $prenom_intervenant, $adresse_intervenant, 
-                    $cdp_intervenant, $ville_intervenant, $fixe_intervenant, $mobile_intervenant, 
-                    $mail_intervenant, $casier_intervenant, $photo1_intervenant, $photo2_intervenant, 
-                    $niveau_intervenant, $specialite_intervenant, $profession_intervenant, $experience_intervenant, 
-                    $connaissance_intervenant, $mdp_intervenant])){
+                    $requete = 'INSERT INTO intervenant(nom_intervenant, prenom_intervenant, adresse_intervenant, cdp_intervenant, ville_intervenant, fixe_intervenant, mobile_intervenant, mail_intervenant, casier_intervenant, photo1_intervenant, photo2_intervenant, niveau_intervenant, specialite_intervenant, profession_intervenant, experience_intervenant, connaissance_intervenant, mdp_intervenant) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+                    var_dump($requete);
+                    if($bdd->doQuery($requete, [$nom_intervenant, $prenom_intervenant, $adresse_intervenant, $cdp_intervenant, $ville_intervenant, $fixe_intervenant, $mobile_intervenant, $mail_intervenant, $casier_intervenant, $photo1_intervenant, $photo2_intervenant, $niveau_intervenant, $specialite_intervenant, $profession_intervenant, $experience_intervenant, $connaissance_intervenant, $mdp_intervenant])){
                         header('Location: ?intervenants');
                     } else {
                         echo ("coucou");
+                        return false;
+                    }
+                }
+            }
+        }
+
+        function inscription(){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+            // Récupération des valeurs du formulaire
+            $nom_intervenant = trim($_POST['nom_intervenant']);
+            $prenom_intervenant = trim($_POST['prenom_intervenant']);
+            $adresse_intervenant = trim($_POST['adresse_intervenant']);
+            $cdp_intervenant = trim($_POST['code_postal_intervenant']);
+            $ville_intervenant = trim($_POST['ville_intervenant']);
+            $fixe_intervenant = trim($_POST['fixe_intervenant']);
+            $portable_intervenant = trim($_POST['portable_intervenant']);
+            $email_intervenant = trim($_POST['email_intervenant']);
+            $mdp_intervenant = password_hash(trim($_POST['mdp_intervenant']), PASSWORD_DEFAULT);
+            $niveau_intervenant = trim($_POST['niveau_intervenant']);
+            $specialite_intervenant = trim($_POST['specialite_intervenant']);
+            $profession_intervenant = trim($_POST['profession_intervenant']);
+            $experience_intervenant = trim($_POST['experience_intervenant']);
+            $connaissance_intervenant = trim($_POST['connaissance_intervenant']);
+            if(!empty($_FILES['casier_intervenant']['name'])){
+                $dossier_cible = 'documents';
+                $tmp_name = $_FILES['casier_intervenant']['tmp_name'];
+                $casier_intervenant = basename($_FILES['casier_intervenant']['name']);
+                $fichier_cible = $dossier_cible . '/' . $casier_intervenant;
+                move_uploaded_file($tmp_name, $fichier_cible);
+            } else {
+                $casier_intervenant = null;
+            }
+            if(!empty($_FILES['photo1_intervenant']['name'])){
+                $dossier_cible = 'documents';
+                $tmp_name = $_FILES['photo1_intervenant']['tmp_name'];
+                $photo1_intervenant = basename($_FILES['photo1_intervenant']['name']);
+                $fichier_cible = $dossier_cible . '/' . $photo1_intervenant;
+                move_uploaded_file($tmp_name, $fichier_cible);
+            } else {
+                $photo1_intervenant = null;
+            }
+            if(!empty($_FILES['photo2_intervenant']['name'])){
+                $dossier_cible = 'documents';
+                $tmp_name = $_FILES['photo2_intervenant']['tmp_name'];
+                $photo2_intervenant = basename($_FILES['photo2_intervenant']['name']);
+                $fichier_cible = $dossier_cible . '/' . $photo2_intervenant;
+                move_uploaded_file($tmp_name, $fichier_cible);
+            } else {
+                $photo2_intervenant = null;
+            }
+
+            // Requête d'insertion
+            $requete = 'SELECT * FROM intervenant WHERE UPPER(mail_intervenant) LIKE UPPER (?)';
+            if(!$bdd->doQuery($requete,[$email_intervenant])){
+                return false;
+            } else {
+                if($bdd->tabResultat){
+                    $erreur = '<div class="alert alert-danger text-center mb-3 w-25">Cette adresse email est déjà attribuée</div>';
+                    require_once('templates/securite/inscription_intervenant.php');
+                } else {
+                    $requete = 'INSERT INTO intervenant(nom_intervenant, prenom_intervenant, adresse_intervenant, cdp_intervenant, ville_intervenant, fixe_intervenant, mobile_intervenant, mail_intervenant, casier_intervenant, photo1_intervenant, photo2_intervenant, niveau_intervenant, specialite_intervenant, profession_intervenant, experience_intervenant, connaissance_intervenant, mdp_intervenant) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+                    if($bdd->doQuery($requete, [$nom_intervenant, $prenom_intervenant, $adresse_intervenant, $cdp_intervenant, $ville_intervenant, $fixe_intervenant, $portable_intervenant, $email_intervenant, $casier_intervenant, $photo1_intervenant, $photo2_intervenant, $niveau_intervenant, $specialite_intervenant, $profession_intervenant, $experience_intervenant, $connaissance_intervenant, $mdp_intervenant])){
+                        header('Location: ?connexion');
+                    } else {
+                        echo('coucou');
                         return false;
                     }
                 }

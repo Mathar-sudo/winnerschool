@@ -7,6 +7,7 @@
 <?php if(isset($tableau_matieres)){ ?>
 
     <div class="container">
+    <a href="?formulaire_ajout_matiere"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter une matière</button></a>
         <table class="table">
             <thead>
                 <tr>

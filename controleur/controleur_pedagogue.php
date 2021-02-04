@@ -14,6 +14,12 @@
     }else if(isset($_GET['pedagogue'])){
         $pedagogue = $use_pedagogue->findById($_GET['pedagogue']);
         require_once($chemin . 'pedagogue/show.php');
+    }else if (isset($_GET['supprimer_pedagogue'])){
+        $use_pedagogue->supprimer($_GET['supprimer_pedagogue']);
+    }else if(isset($_GET['formulaire_ajout_pedagogue'])){
+        require_once($chemin . 'pedagogue/ajouter.php');
+    } else if(isset($_GET['ajouter_pedagogue'])){
+        $use_pedagogue->ajouter();
     }
 
 ?>

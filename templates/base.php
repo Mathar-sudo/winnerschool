@@ -80,9 +80,9 @@
                             <i class="fas fa-user-plus"></i> Inscription
                         </a>
                         <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="?inscription_intervenant"><i class="fas fa-plus"></i> Intervenant</a></li>
-                            <li><a class="dropdown-item" href="?inscription_eleve"><i class="fas fa-plus"></i> Elève</a></li>
-                            <li><a class="dropdown-item" href="?inscription_pedagogue"><i class="fas fa-plus"></i> Pédagogue</a></li>
+                            <li><a class="dropdown-item" href="?formulaire_inscription_intervenant"><i class="fas fa-plus"></i> Intervenant</a></li>
+                            <li><a class="dropdown-item" href="?formulaire_inscription_eleve"><i class="fas fa-plus"></i> Elève</a></li>
+                            <li><a class="dropdown-item" href="?formulaire_inscription_pedagogue"><i class="fas fa-plus"></i> Pédagogue</a></li>
                         </ul>
                     </li>
                     <span class="mx-1"></span>

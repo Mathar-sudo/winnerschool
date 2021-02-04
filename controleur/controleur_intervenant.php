@@ -20,6 +20,8 @@
         require_once($chemin . 'intervenant/ajouter.php');
     } else if(isset($_GET['ajouter_intervenant'])){
         $use_intervenant->ajouter();
+    } else if(isset($_GET['inscription_intervenant'])){
+        $use_intervenant->inscription();
     }
 
 ?>

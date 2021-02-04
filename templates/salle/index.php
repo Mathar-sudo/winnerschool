@@ -7,7 +7,8 @@
 <?php if(isset($tableau_salles)){ ?>
 
     <div class="container">
-        <table class="table">
+    <a href="?formulaire_ajout_salle"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter une salle</button></a>
+        <table class="table mt-3">
             <thead>
                 <tr>
                 <th scope="col">Id</th>
