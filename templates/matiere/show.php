@@ -14,15 +14,14 @@
         </nav>
         <hr class="w-25">
         <div class="row ">
-         <div class="col-5">
-            <div class="card">
-                <div class="card-body text-center">
-                <img src="images/<?= $matiere->get_nom_matiere() ?>.png" alt="Espagnol" class="img-thumbnail" width='300' height='200'>
-                <p class="mt-3">Nom matière: <?= $matiere->get_nom_matiere() ?></p>
-                
+            <div class="col-5">
+                <div class="card">
+                    <div class="card-body text-center">
+                    <img src="images/<?= htmlspecialchars($matiere->get_nom_matiere()) ?>.png" alt="<?= $matiere->get_nom_matiere() ?>" width='400' height='200'>
+                    <h3 class="text-uppercase"><?= $matiere->get_nom_matiere() ?></p>
                 </div>
-                </div>
-                </div>
+            </div>
+        </div>
 
     </div>
 
