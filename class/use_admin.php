@@ -137,6 +137,23 @@
             }
         }
 
+        function ajouter_secretaire(){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+            // Récupération des valeurs
+            $login = trim($_POST['login_secretaire']);
+            $mdp = password_hash(trim($_POST['mdp_secretaire']), PASSWORD_DEFAULT);
+
+            $requete = 'SELECT * FROM admin WHERE UPPER(login_admin) LIKE UPPER(?) AND statut LIKE (\'Secrétaire\')';
+            if($bdd->doQuery($requete, [$login])){
+                if(!$bdd->tabResultat){
+                    $requete = 'INSERT INTO admin (login_admin, mdp_admin, statut) VALUES (?,?,?)';
+                    $bdd->doQuery($requete, [$login, $mdp, 'Secrétaire']);
+                    header('Location: ?connexion');
+                }
+            }
+        }
+
     }
 
 ?>

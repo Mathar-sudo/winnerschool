@@ -51,6 +51,10 @@
     } else if(isset($_GET['plannings']) || isset($_GET['supprimer_planning']) || isset($_GET['formulaire_ajout_planning']) || isset($_GET['ajouter_planning'])){
         require_once('controleur_planning.php');
 
+    // Gestion des admins
+    } else if(isset($_GET['formulaire_ajout_secretaire']) || isset($_GET['ajouter_secretaire'])){
+        require_once('controleur_admin.php');
+
     // Sinon renvoi vers l'accueil
     } else {
         header('Location: ?accueil');

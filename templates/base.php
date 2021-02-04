@@ -73,6 +73,9 @@
                     <span class="mx-1"></span>
                     <li class="nav-item">
                         <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?plannings">Planning</a>
+                    </li><span class="mx-1"></span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?formulaire_ajout_secretaire">+ Secrétaire</a>
                     </li>
                     <span class="separateur mx-1"></span>
                     <?php if(isset($_SESSION['admin'])){ ?>
