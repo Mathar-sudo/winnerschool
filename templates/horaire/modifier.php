@@ -17,6 +17,7 @@
             </div>
             <div class="col-12 text-center">
                 <button type="submit" class="btn btn-primary">Modifier</button>
+                <a href="?classes" class="btn btn-success">Retour</a>
             </div>
         </form>
     </div>

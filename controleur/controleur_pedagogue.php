@@ -22,6 +22,11 @@
         $use_pedagogue->ajouter();
     } else if(isset($_GET['inscription_pedagogue'])){
         $use_pedagogue->inscription();
+    }else if(isset($_GET['formulaire_modifier_pedagogue'])){
+        $pedagogue = $use_pedagogue->findById($_GET['formulaire_modifier_pedagogue']);
+        require_once($chemin . 'pedagogue/modifier.php');
+    } else if(isset($_GET['modifier_pedagogue'])) {
+        $use_pedagogue->modifier($_GET['modifier_pedagogue']);
     }
 
 ?>
