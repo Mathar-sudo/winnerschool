@@ -13,8 +13,17 @@
             </ol>
         </nav>
         <hr class="w-25">
-        <p>Id de la matiere : <?= $matiere->get_id_matiere() ?></p>
-        <p>Nom de la matiere : <?= $matiere->get_nom_matiere() ?></p>
+        <div class="row ">
+         <div class="col-5">
+            <div class="card">
+                <div class="card-body text-center">
+                <img src="images/<?= $matiere->get_nom_matiere() ?>.png" alt="Espagnol" class="img-thumbnail" width='300' height='200'>
+                <p class="mt-3">Nom matière: <?= $matiere->get_nom_matiere() ?></p>
+                
+                </div>
+                </div>
+                </div>
+
     </div>
 
 <?php } ?>
