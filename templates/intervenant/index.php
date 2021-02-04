@@ -21,9 +21,6 @@
                 <th scope="col">Fixe</th>
                 <th scope="col">Mobile</th>
                 <th scope="col">Mail</th>
-                <th scope="col">Casier</th>
-                <th scope="col">Photo1</th>
-                <th scope="col">Photo2</th>
                 <th scope="col">Niveau</th>
                 <th scope="col">Specialité</th>
                 <th scope="col">Profession</th>
@@ -48,9 +45,6 @@
                     <td><?= $intervenant->get_fixe_intervenant() ?></td>
                     <td><?= $intervenant->get_mobile_intervenant() ?></td>
                     <td><?= $intervenant->get_mail_intervenant() ?></td>
-                    <td><?= $intervenant->get_casier_intervenant() ?></td>
-                    <td><?= $intervenant->get_photo1_intervenant() ?></td>
-                    <td><?= $intervenant->get_photo2_intervenant() ?></td>
                     <td><?= $intervenant->get_niveau_intervenant() ?></td>
                     <td><?= $intervenant->get_specialite_intervenant() ?></td>
                     <td><?= $intervenant->get_profession_intervenant() ?></td>

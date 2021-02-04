@@ -13,9 +13,30 @@
             </ol>
         </nav>
         <hr class="w-25">
-        <p>Id de la intervenant : <?= $intervenant->get_id_intervenant() ?></p>
-        <p>Nom de la intervenant : <?= $intervenant->get_nom_intervenant() ?></p>
-        <p>Prénom de la intervenant : <?= $intervenant->get_prenom_intervenant() ?></p>
+        <div class="row">
+            <div class="col-5">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <?php if($intervenant->get_photo1_intervenant() != null) { ?>
+                            <img src="images/profil.png" width="100" height="100">
+                        <?php } else { ?>
+                            <img src="images/profil.png" width="100" height="100">
+                        <?php } ?>
+                        <h3 class="mt-2 text-uppercase"><?= $intervenant->get_prenom_intervenant() . ' ' . $intervenant->get_nom_intervenant() ?></h3>
+                    </div>
+                </div>
+                <div class="card mt-3 p-3">
+                    <h5 class="text-primary">Coordonnées</h5>
+                    <div class="card-body text-center">
+                        <p>Adresse email : <?= $intervenant->get_mail_intervenant() ?> </p>
+                        <p>Téléphone portable : <?= $intervenant->get_mobile_intervenant() ?> </p>
+                        <p>Téléphone fixe : <?= $intervenant->get_fixe_intervenant() ?> </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-7">
+            </div>
+        </div>
     </div>
 
 
