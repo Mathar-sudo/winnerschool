@@ -23,6 +23,8 @@
         $use_eleve->inscription();
     }else if(isset($_GET['formulaire_modifier_eleve'])){
         $eleve = $use_eleve->findById($_GET['formulaire_modifier_eleve']);
+        $responsables = $use_responsable->findAll();
+        $classes = $use_classe->findAll();
         require_once($chemin . 'eleve/modifier.php');
     } else if(isset($_GET['modifier_eleve'])) {
         $use_eleve->modifier($_GET['modifier_eleve']);

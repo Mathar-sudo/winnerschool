@@ -29,15 +29,32 @@
                 <input type="text" name="particularite_eleve" value="<?= $eleve->get_particularite_eleve() ?>" class="form-control" id="input_particularite" required>
                 <label for="input_mdp" class="form-label">Mot de passe de l'élève</label>
                 <input type="password" value="winnerschool" name="mdp_eleve" class="form-control" id="input_mdp" required>
-                <label for="input_responsable" class="form-label">Responsable de l'élève</label>
-                <input type="text" name="responsable_eleve" value="<?= $eleve->get_responsable() ?>" class="form-control" id="input_responsable" required>                
+                <select name="responsable_eleve" class="form-select" id="input_responsable" required>
+                    <option value selected disabled>Choisissez un responsable</option>
+                    <?php 
+                        foreach($responsables as $responsable){
+                    ?>  
+                    <option value="<?= $responsable->get_id_responsable();?>"><?= $responsable->get_nom_responsable() . ' ' . $responsable->get_prenom_responsable();?></option>
+                <?php 
+                    } 
+                ?>
+                </select>
                 <label for="input_classe" class="form-label">Classe de l'élève</label>
-                <input type="text" name="classe_eleve" value="<?= $eleve->get_classe() ?>" class="form-control" id="input_classe" required>
+                <select name="classe_eleve" class="form-select" id="input_classe" required>
+                    <option value selected disabled>Choisissez une classe</option>
+                    <?php 
+                        foreach($classes as $classe){
+                    ?>  
+                    <option value="<?= $classe->get_id_classe();?>"><?= $classe->get_nom_classe();?></option>
+                <?php 
+                    } 
+                ?>
+                </select>
                 
             </div>
             </div>
             <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" class="btn btn-primary">Modifier</button>
                 <a href="?eleves" class="btn btn-success">Retour</a>
             </div>
         </form>
