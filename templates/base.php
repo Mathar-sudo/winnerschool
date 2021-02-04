@@ -75,17 +75,6 @@
                         <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?plannings">Planning</a>
                     </li>
                     <span class="separateur mx-1"></span>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle <?php if(isset($active_inscription)){ echo 'active'; } ?>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user-plus"></i> Inscription
-                        </a>
-                        <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="?formulaire_inscription_intervenant"><i class="fas fa-plus"></i> Intervenant</a></li>
-                            <li><a class="dropdown-item" href="?formulaire_inscription_eleve"><i class="fas fa-plus"></i> Elève</a></li>
-                            <li><a class="dropdown-item" href="?formulaire_inscription_pedagogue"><i class="fas fa-plus"></i> Pédagogue</a></li>
-                        </ul>
-                    </li>
-                    <span class="mx-1"></span>
                     <?php if(isset($_SESSION['admin'])){ ?>
                     <li class="nav-item">
                         <a class="nav-link"><i class="fas fa-user"></i> <?= $_SESSION['admin'] ?></a>
