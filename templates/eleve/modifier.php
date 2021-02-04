@@ -8,7 +8,7 @@
         <h1 class="text-primary">Modifier l'élève <?= $eleve->get_nom_eleve() ?></h1>
         <hr style="width:15%">
         <?php if(isset($erreur)){ echo $erreur; } ?>
-        <form class="row g-3" method="POST" action="?modifier_eleve="<?= $eleve->get_id_eleve() ?>>
+        <form class="row g-3" method="POST" action="?modifier_eleve=<?= $eleve->get_id_eleve() ?>">
             <div class="row">
             <div class="col-6">
                 <label for="input_nom" class="form-label">Nom de l'élève</label>
