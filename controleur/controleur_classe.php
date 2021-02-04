@@ -20,6 +20,11 @@
         require_once($chemin . 'classe/ajouter.php');
     } else if(isset($_GET['ajouter_classe'])){
         $use_classe->ajouter();
+    } else if(isset($_GET['formulaire_modifier_classe'])){
+        $classe = $use_classe->findById($_GET['formulaire_modifier_classe']);
+        require_once($chemin . 'classe/modifier.php');
+    } else if(isset($_GET['modifier_classe'])) {
+        $use_classe->modifier($_GET['modifier_classe']);
     }
 
 ?>

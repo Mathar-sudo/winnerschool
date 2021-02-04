@@ -6,6 +6,13 @@
 
 <?php if(isset($eleve)){ ?>
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="?eleves">Tous les élèves</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><?= $eleve->get_nom_eleve() ?></li>
+            </ol>
+        </nav>
+        <hr class="w-25">
         <p>Id de l'élève : <?= $eleve->get_id_eleve() ?></p>
         <p>Nom de l'élève : <?= $eleve->get_nom_eleve() ?></p>
         <p>Prénom de l'élève : <?= $eleve->get_prenom_eleve() ?></p>

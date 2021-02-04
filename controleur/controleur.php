@@ -12,7 +12,7 @@
         require_once('controleur_securite.php');
     
     // Gestion des classes
-    } else if(isset($_GET['classes']) || isset($_GET['classe']) || isset($_GET['supprimer_classe']) || isset($_GET['formulaire_ajout_classe']) || isset($_GET['ajouter_classe'])){
+    } else if(isset($_GET['classes']) || isset($_GET['classe']) || isset($_GET['supprimer_classe']) || isset($_GET['formulaire_ajout_classe']) || isset($_GET['ajouter_classe']) || isset($_GET['formulaire_modifier_classe']) || isset($_GET['modifier_classe'])){
         require_once('controleur_classe.php');
 
     // Gestion des salles

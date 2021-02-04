@@ -82,6 +82,32 @@
             }
         }
 
+        function modifier($id_classe){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+            // Récupération des valeurs
+            $nom_classe = trim($_POST['nom_classe']);
+            // Requête SQL
+            $requete = 'SELECT * FROM classe WHERE UPPER(nom_classe) LIKE UPPER(?)';
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete,[$nom_classe])){
+                return false;
+            } else {
+                if($bdd->tabResultat){
+                    $erreur = '<div class="alert alert-danger text-center mb-3 w-25">Cette classe existe déjà</div>';
+                    $classe = $this->findById($id_classe);
+                    require_once('templates/classe/modifier.php');
+                } else {
+                    $requete = 'UPDATE classe SET nom_classe = ? WHERE id_classe = ?';
+                    if($bdd->doQuery($requete, [$nom_classe, $id_classe])){
+                        header('Location: ?classes');
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+
         function supprimer($id){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();
