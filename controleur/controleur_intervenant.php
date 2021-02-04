@@ -22,6 +22,11 @@
         $use_intervenant->ajouter();
     } else if(isset($_GET['inscription_intervenant'])){
         $use_intervenant->inscription();
+    } else if(isset($_GET['formulaire_modifier_intervenant'])){
+        $intervenant = $use_intervenant->findById($_GET['formulaire_modifier_intervenant']);
+        require_once($chemin . 'intervenant/modifier.php');
+    } else if(isset($_GET['modifier_intervenant'])) {
+        $use_intervenant->modifier($_GET['modifier_intervenant']);
     }
 
 ?>

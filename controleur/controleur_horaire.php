@@ -20,6 +20,11 @@
         require_once($chemin . 'horaire/ajouter.php');
     } else if(isset($_GET['ajouter_horaire'])){
         $use_horaire->ajouter();
+    } else if(isset($_GET['formulaire_modifier_horaire'])){
+        $horaire = $use_horaire->findById($_GET['formulaire_modifier_horaire']);
+        require_once($chemin . 'horaire/modifier.php');
+    } else if(isset($_GET['modifier_horaire'])) {
+        $use_horaire->modifier($_GET['modifier_horaire']);
     }
 
 

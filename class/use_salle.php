@@ -85,11 +85,18 @@
         function modifier($id_salle){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();
+<<<<<<< HEAD
+            // Récupération des valeurs
+            $nom_salle = trim($_POST['nom_salle']);
+            // Requête SQL
+            $requete = 'SELECT * FROM salle WHERE UPPER(nom_salle) LIKE UPPER(?)';
+=======
 
             $nom_salle = trim($_POST['nom_salle']);
             // Requête SQL
             $requete = 'SELECT * FROM salle WHERE UPPER(nom_salle) LIKE UPPER(?)';
 
+>>>>>>> 02b6e98838e824afd8f8cd996a102c2dac8fadf8
             // Exécution de la requête
             if(!$bdd->doQuery($requete,[$nom_salle])){
                 return false;

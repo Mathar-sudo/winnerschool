@@ -8,6 +8,7 @@
 
     <div class="container">
     <a href="?formulaire_ajout_intervenant"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter un intervenant</button></a>
+        <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
@@ -29,6 +30,7 @@
                 <th scope="col">Expérience</th>
                 <th scope="col">Connaissance</th>
                 <th scope="col">Aperçu</th>
+                <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
                 </tr>
             </thead>
@@ -55,6 +57,7 @@
                     <td><?= $intervenant->get_experience_intervenant() ?></td>
                     <td><?= $intervenant->get_connaissance_intervenant() ?></td>
                     <td><a href="?intervenant=<?= $intervenant->get_id_intervenant() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <td><a href="?formulaire_modifier_intervenant=<?= $intervenant->get_id_intervenant() ?>"><button class="btn btn-info btn-sm"><i class="far fa-edit"></i></button></a></td>
                     <td><button class="supprimer_intervenant btn btn-danger btn-sm" value="<?= $intervenant->get_id_intervenant() ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $intervenant->get_id_intervenant() ?>" style="display:none;">Confirmer</button></td>
                 </tr>
@@ -63,6 +66,7 @@
                 ?>
             </tbody>
         </table>
+        </div>
     </div>
 <script>
 $(document).ready(function(){
