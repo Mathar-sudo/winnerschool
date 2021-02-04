@@ -34,6 +34,13 @@
         require_once($chemin . 'eleve/modifier.php');
     } else if(isset($_GET['modifier_eleve'])) {
         $use_eleve->modifier($_GET['modifier_eleve']);
+    } else if(isset($_GET['page_eleve'])){
+        $eleve = $use_eleve->findById($_GET['page_eleve']);
+        $classes = $use_classe->findAll();
+        $responsables = $use_responsable->findAll();
+        require_once($chemin . 'eleve/perso_eleve.php');
+    } else if(isset($_GET['modifier_eleve_perso'])){
+        $use_eleve->modifier_perso($_GET['modifier_eleve_perso']);
     }
 
 ?>

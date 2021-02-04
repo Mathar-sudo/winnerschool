@@ -113,6 +113,35 @@
             } else {
                 return false;
             }
+        }
+
+        function modifier_perso($id_responsable){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+            
+            $nom_responsable = trim($_POST['nom_responsable']);
+            $prenom_responsable = trim($_POST['prenom_responsable']);
+            $adresse_responsable = trim($_POST['adresse_responsable']);
+            $cdp_responsable = trim($_POST['cdp_responsable']);
+            $ville_responsable = trim($_POST['ville_responsable']);
+            $fixe_responsable = trim($_POST['fixe_responsable']);
+            $mobile_responsable = trim($_POST['mobile_responsable']);
+            $mail_responsable = trim($_POST['mail_responsable']);
+            $mdp_responsable = password_hash(trim($_POST['mdp_responsable']), PASSWORD_DEFAULT);
+            
+            // Requête SQL
+            $requete = 'UPDATE responsable SET nom_responsable = ? ,prenom_responsable = ? ,adresse_responsable = ? ,cdp_responsable = ? ,ville_responsable = ? ,fixe_responsable = ? ,mobile_responsable = ? ,mail_responsable = ? ,mdp_responsable = ? WHERE id_responsable = ?';
+            if($bdd->doQuery($requete, [$nom_responsable,$prenom_responsable,$adresse_responsable,$cdp_responsable,$ville_responsable,$fixe_responsable,$mobile_responsable,$mail_responsable,$mdp_responsable,$id_responsable])){
+                $_SESSION['responsable'] = $prenom_responsable . ' ' . $nom_responsable;
+                echo '<script>
+                    window.setTimeout(function() {
+                        window.location = "?page_responsable=' . $id_responsable . '";
+                    }, 1000);
+                    </script>';
+                echo '<script>alert("Mise à jour effectuée. Cliquez sur OK pour continuer.")</script>';
+            } else {
+                return false;
+            }
                 
             
         }

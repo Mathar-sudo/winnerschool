@@ -24,7 +24,7 @@
         require_once('controleur_matiere.php');
 
     // Gestion des intervenants
-    } else if(isset($_GET['intervenants']) || isset($_GET['intervenant']) || isset($_GET['supprimer_intervenant']) || isset($_GET['formulaire_ajout_intervenant']) || isset($_GET['ajouter_intervenant']) || isset($_GET['inscription_intervenant']) || isset($_GET['formulaire_modifier_intervenant']) || isset($_GET['modifier_intervenant'])){
+    } else if(isset($_GET['intervenants']) || isset($_GET['intervenant']) || isset($_GET['supprimer_intervenant']) || isset($_GET['formulaire_ajout_intervenant']) || isset($_GET['ajouter_intervenant']) || isset($_GET['inscription_intervenant']) || isset($_GET['formulaire_modifier_intervenant']) || isset($_GET['modifier_intervenant']) || isset($_GET['page_intervenant']) || isset($_GET['modifier_intervenant_perso'])){
         require_once('controleur_intervenant.php');
 
     // Gestion des horaires
@@ -32,15 +32,15 @@
         require_once('controleur_horaire.php');
 
     // Gestion des pédagogues
-    } else if(isset($_GET['pedagogues']) || isset($_GET['pedagogue']) || isset($_GET['supprimer_pedagogue']) || isset($_GET['formulaire_ajout_pedagogue']) || isset($_GET['ajouter_pedagogue']) || isset($_GET['inscription_pedagogue']) || isset($_GET['formulaire_modifier_pedagogue']) || isset($_GET['modifier_pedagogue'])){
+    } else if(isset($_GET['pedagogues']) || isset($_GET['pedagogue']) || isset($_GET['supprimer_pedagogue']) || isset($_GET['formulaire_ajout_pedagogue']) || isset($_GET['ajouter_pedagogue']) || isset($_GET['inscription_pedagogue']) || isset($_GET['formulaire_modifier_pedagogue']) || isset($_GET['modifier_pedagogue']) || isset($_GET['page_pedagogue']) || isset($_GET['modifier_pedagogue_perso'])){
         require_once('controleur_pedagogue.php');
 
     // Gestion des responsables
-    } else if(isset($_GET['responsables']) || isset($_GET['responsable']) || isset($_GET['supprimer_responsable']) || isset($_GET['formulaire_ajout_responsable']) || isset($_GET['ajouter_responsable']) || isset($_GET['formulaire_modifier_responsable']) || isset($_GET['modifier_responsable'])){
+    } else if(isset($_GET['responsables']) || isset($_GET['responsable']) || isset($_GET['supprimer_responsable']) || isset($_GET['formulaire_ajout_responsable']) || isset($_GET['ajouter_responsable']) || isset($_GET['formulaire_modifier_responsable']) || isset($_GET['modifier_responsable']) || isset($_GET['page_responsable']) || isset($_GET['modifier_responsable_perso'])){
         require_once('controleur_responsable.php');
 
     // Gestion des élèves
-    } else if(isset($_GET['eleves']) || isset($_GET['eleve']) || isset($_GET['supprimer_eleve']) || isset($_GET['formulaire_ajout_eleve']) || isset($_GET['ajouter_eleve']) || isset($_GET['inscription_eleve']) || isset($_GET['formulaire_modifier_eleve']) || isset($_GET['modifier_eleve'])){
+    } else if(isset($_GET['eleves']) || isset($_GET['eleve']) || isset($_GET['supprimer_eleve']) || isset($_GET['formulaire_ajout_eleve']) || isset($_GET['ajouter_eleve']) || isset($_GET['inscription_eleve']) || isset($_GET['formulaire_modifier_eleve']) || isset($_GET['modifier_eleve']) || isset($_GET['page_eleve']) || isset($_GET['modifier_eleve_perso'])){
         require_once('controleur_eleve.php');
         
     // Gestion des choix élèves
@@ -52,7 +52,7 @@
         require_once('controleur_planning.php');
 
     // Gestion des admins
-    } else if(isset($_GET['formulaire_ajout_secretaire']) || isset($_GET['ajouter_secretaire'])){
+    } else if(isset($_GET['formulaire_ajout_secretaire']) || isset($_GET['ajouter_secretaire']) || isset($_GET['secretaire']) || isset($_GET['modifier_secretaire'])){
         require_once('controleur_admin.php');
 
     // Sinon renvoi vers l'accueil

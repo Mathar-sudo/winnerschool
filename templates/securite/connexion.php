@@ -35,10 +35,7 @@
             <button type="submit" name="" class="w-25 btn btn-primary" id="btn_connexion">Se connecter</button>
         </form>
         <div class="my-4"><hr></div>
-        <h5>Réaliser des inscriptions</h5>
-        <a href="?formulaire_inscription_eleve"><button class="btn btn-warning">Reponsable et élève</button></a>
-        <a href="?formulaire_inscription_intervenant"><button class="btn btn-warning mx-3">Intervenant</button></a>
-        <a href="?formulaire_inscription_pedagogue"><button class="btn btn-warning">Pédagogue</button></a>
+        <a href="?formulaire_inscription_eleve"><button class="btn btn-warning">Inscription reponsable / élève</button></a>
     </div>
     <script>
         $(document).ready(function(){

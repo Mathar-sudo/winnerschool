@@ -83,6 +83,21 @@ footer{
     color:#4085df !important;
 }
 
+.nav-link2{
+    display: block;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    padding-left:15px !important;
+    padding-right:15px !important;
+}
+
+.nav-link2.active{
+    border-radius: 5px !important;
+    background-color: #d5e8fd !important;
+    color:#4085df !important;
+}
+
 .separateur{
     border-right: 1px solid rgba(255, 255, 255, 0.5) !important;
 }

@@ -41,7 +41,7 @@
             <div class="col-7">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="text-primary">Pièces jointes</h5>
+                        <h5 class="text-primary">Caractéristiques</h5>
                         <hr class="w-25">
                         <p>Niveau : <?= $intervenant->get_niveau_intervenant() ?></p>
                         <p>Spécialité : <?= $intervenant->get_specialite_intervenant() ?></p>
