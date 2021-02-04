@@ -27,6 +27,10 @@
         require_once($chemin . 'eleve/ajouter.php');
     } else if(isset($_GET['ajouter_eleve'])){
         $use_eleve->ajouter();
+
+    } else if(isset($_GET['formulaire_modifier_eleve'])){
+        $eleve = $use_eleve->findById($_GET['formulaire_modifier_eleve']);
+
     }else if(isset($_GET['formulaire_modifier_eleve'])){
         $eleve = $use_eleve->findById($_GET['formulaire_modifier_eleve']);
         $responsables = $use_responsable->findAll();

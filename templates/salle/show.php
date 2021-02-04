@@ -8,7 +8,7 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="?salles">Tous les salles</a></li>
+                <li class="breadcrumb-item"><a href="?salles">Toutes les salles</a></li>
                 <li class="breadcrumb-item active" aria-current="page"><?= $salle->get_nom_salle() ?></li>
             </ol>
         </nav>
