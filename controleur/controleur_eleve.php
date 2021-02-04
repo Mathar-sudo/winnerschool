@@ -7,6 +7,8 @@
     $chemin = './templates/';
 
     $use_eleve = new Use_Eleve();
+    $use_responsable = new Use_Responsable();
+    $use_classe = new Use_Classe();
 
     //Afficher élèves
     if(isset($_GET['eleves'])){

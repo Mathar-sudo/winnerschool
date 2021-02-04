@@ -7,6 +7,7 @@
 <?php if(isset($tableau_eleves)){ ?>
 
     <div class="container">
+    <a href="?formulaire_ajout_eleve"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter un élève</button></a>
         <table class="table">
             <thead>
                 <tr>

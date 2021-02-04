@@ -69,7 +69,7 @@
             $mobile_responsable = trim($_POST['mobile_responsable']);
             $mail_responsable = trim($_POST['mail_responsable']);
             $mdp_responsable = password_hash(trim($_POST['mdp_responsable']), PASSWORD_DEFAULT);
-
+            
             // Requête SQL
             $requete = 'SELECT * FROM responsable WHERE UPPER(mail_responsable) LIKE UPPER(?)';
 

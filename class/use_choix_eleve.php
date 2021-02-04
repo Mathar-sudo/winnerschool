@@ -30,6 +30,42 @@
                 }
             }
         }
+
+        function ajouter(){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+
+            $id_eleve=$_POST['eleve'];
+            $id_matiere=$_POST['matiere'];
+            $horaires=$_POST['horaire'];
+            foreach($horaires as $horaire){
+               
+                // Requête SQL
+            $requete = 'SELECT * FROM choix_eleve WHERE UPPER(fk_id_eleve) LIKE UPPER(?) AND UPPER(fk_id_matiere) LIKE UPPER(?) AND UPPER(fk_id_horaire) LIKE UPPER(?)';
+
+            // Exécution de la requête
+            if(!$bdd->doQuery($requete,[$id_eleve, $id_matiere, $horaire])){
+                return false;
+            } else {
+                if($bdd->tabResultat){
+                    $erreur = '<div class="alert alert-danger text-center mb-3 w-25">Ce choix d\'élève existe déjà</div>';
+                    require_once('templates/choix_eleve/ajouter.php');
+                } else {
+                    $requete = 'INSERT INTO choix_eleve(fk_id_eleve,fk_id_matiere,fk_id_horaire) VALUES(?,?,?)';
+                    if($bdd->doQuery($requete, [$id_eleve, $id_matiere, $horaire])){
+                        header('Location: ?choix_eleves');
+                    } else {
+                        return false;
+                    }
+                }
+            }
+
+            }
+            
+            
+        }
+
+
         function supprimer(){
             // Connexion à la base de données
             $bdd = new Connexion_bdd();

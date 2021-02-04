@@ -115,7 +115,7 @@
                     require_once('templates/intervenant/ajouter.php');
                 } else {
                     $requete = 'INSERT INTO intervenant(nom_intervenant, prenom_intervenant, adresse_intervenant, cdp_intervenant, ville_intervenant, fixe_intervenant, mobile_intervenant, mail_intervenant, casier_intervenant, photo1_intervenant, photo2_intervenant, niveau_intervenant, specialite_intervenant, profession_intervenant, experience_intervenant, connaissance_intervenant, mdp_intervenant) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
-                    var_dump($requete);
+                 
                     if($bdd->doQuery($requete, [$nom_intervenant, $prenom_intervenant, $adresse_intervenant, $cdp_intervenant, $ville_intervenant, $fixe_intervenant, $mobile_intervenant, $mail_intervenant, $casier_intervenant, $photo1_intervenant, $photo2_intervenant, $niveau_intervenant, $specialite_intervenant, $profession_intervenant, $experience_intervenant, $connaissance_intervenant, $mdp_intervenant])){
                         header('Location: ?intervenants');
                     } else {
