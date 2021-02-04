@@ -7,6 +7,8 @@
 <?php if(isset($tableau_choix_eleves)){ ?>
 
     <div class="container">
+        
+    <a href="?formulaire_ajout_choix_eleve"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter un choix</button></a>
         <table class="table">
             <thead>
                 <tr>
