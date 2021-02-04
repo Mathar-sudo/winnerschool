@@ -22,13 +22,18 @@
     } else if(isset($_GET['inscription_eleve'])){
         $use_eleve->inscription();
     }  else if(isset($_GET['formulaire_ajout_eleve'])){
-        $responsable = $use_responsable->findAll();
-        $classe= $use_classe->findAll();
+        $classes = $use_classe->findAll();
+        $responsables = $use_responsable->findAll();
         require_once($chemin . 'eleve/ajouter.php');
     } else if(isset($_GET['ajouter_eleve'])){
         $use_eleve->ajouter();
     } else if(isset($_GET['formulaire_modifier_eleve'])){
         $eleve = $use_eleve->findById($_GET['formulaire_modifier_eleve']);
+<<<<<<< HEAD
+=======
+        $classes = $use_classe->findAll();
+        $responsables = $use_responsable->findAll();
+>>>>>>> e4d5a8802a6f7565d4ddc385f64abc8cfc8cbcb6
         require_once($chemin . 'eleve/modifier.php');
     } else if(isset($_GET['modifier_eleve'])) {
         $use_eleve->modifier($_GET['modifier_eleve']);

@@ -112,14 +112,12 @@
             $requete = 'UPDATE eleve SET prenom_eleve = ?,nom_eleve = ?,age_eleve = ?,mobile_eleve = ?,mail_eleve = ?,etablissement_eleve = ?,particularite_eleve = ?,mdp_eleve = ?,fk_id_responsable = ?,fk_id_classe = ? WHERE id_eleve = ?';
                     
             if($bdd->doQuery($requete, [$prenom_eleve,$nom_eleve,$age_eleve,$mobile_eleve,$mail_eleve,$etablissement_eleve,$particularite_eleve,$mdp_eleve,$responsable_eleve,$classe_eleve, $id_eleve])){
-                        header('Location: ?eleves');
-                    } else {
-                        return false;
-                    }
-                
+                header('Location: ?eleves');
+            } else {
+                return false;
+            }
             
         }
-
 
         /**
          * Inscription responsable + élève en même temps
