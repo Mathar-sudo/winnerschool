@@ -59,16 +59,16 @@
     $jeudi_2_3 = $use_planning->findByHoraireSalle(11, 3, $semaine);
     $jeudi_2_4 = $use_planning->findByHoraireSalle(11, 4, $semaine);
     $jeudi_2_5 = $use_planning->findByHoraireSalle(11, 5, $semaine);
-    $vendredi_1_1 = $use_planning->findByHoraireSalle(11, 1, $semaine);
-    $vendredi_1_2 = $use_planning->findByHoraireSalle(11, 2, $semaine);
-    $vendredi_1_3 = $use_planning->findByHoraireSalle(11, 3, $semaine);
-    $vendredi_1_4 = $use_planning->findByHoraireSalle(11, 4, $semaine);
-    $vendredi_1_5 = $use_planning->findByHoraireSalle(11, 5, $semaine);
-    $vendredi_2_1 = $use_planning->findByHoraireSalle(12, 1, $semaine);
-    $vendredi_2_2 = $use_planning->findByHoraireSalle(12, 2, $semaine);
-    $vendredi_2_3 = $use_planning->findByHoraireSalle(12, 3, $semaine);
-    $vendredi_2_4 = $use_planning->findByHoraireSalle(12, 4, $semaine);
-    $vendredi_2_5 = $use_planning->findByHoraireSalle(12, 5, $semaine);
+    $vendredi_1_1 = $use_planning->findByHoraireSalle(12, 1, $semaine);
+    $vendredi_1_2 = $use_planning->findByHoraireSalle(12, 2, $semaine);
+    $vendredi_1_3 = $use_planning->findByHoraireSalle(12, 3, $semaine);
+    $vendredi_1_4 = $use_planning->findByHoraireSalle(12, 4, $semaine);
+    $vendredi_1_5 = $use_planning->findByHoraireSalle(12, 5, $semaine);
+    $vendredi_2_1 = $use_planning->findByHoraireSalle(13, 1, $semaine);
+    $vendredi_2_2 = $use_planning->findByHoraireSalle(13, 2, $semaine);
+    $vendredi_2_3 = $use_planning->findByHoraireSalle(13, 3, $semaine);
+    $vendredi_2_4 = $use_planning->findByHoraireSalle(13, 4, $semaine);
+    $vendredi_2_5 = $use_planning->findByHoraireSalle(13, 5, $semaine);
 ?>
 
 <?php ob_start(); ?>
@@ -104,30 +104,46 @@
                 <thead>
                     <tr style="font-size:0.8em">
                     <th scope="col" style="width:100px"></th>
-                    <th scope="col">Lundi 17h55 - 18h55</th>
-                    <th scope="col">Lundi 19h05 - 20h05</th>
-                    <th scope="col">Mardi 17h55 - 18h55</th>
-                    <th scope="col">Mardi 19h05 - 20h05</th>
-                    <th scope="col">Mercredi 14h00 - 15h00</th>
-                    <th scope="col">Mercredi 15h10 - 16h10</th>
-                    <th scope="col">Mercredi 16h20 - 17h20</th>
-                    <th scope="col">Mercredi 17h30 - 18h30</th>
-                    <th scope="col">Mercredi 18h40 - 19h40</th>
-                    <th scope="col">Jeudi 17h55 - 18h55</th>
-                    <th scope="col">Jeudi 19h05 - 20h05</th>
-                    <th scope="col">Vendredi 17h55 - 18h55</th>
-                    <th scope="col">Vendredi 19h05 - 20h05</th>
+                    <th scope="col">Lundi<br> 17h55-18h55</th>
+                    <th scope="col">Lundi<br> 19h05-20h05</th>
+                    <th scope="col">Mardi<br> 17h55-18h55</th>
+                    <th scope="col">Mardi<br> 19h05-20h05</th>
+                    <th scope="col">Mercredi<br> 14h00-15h00</th>
+                    <th scope="col">Mercredi<br> 15h10-16h10</th>
+                    <th scope="col">Mercredi<br> 16h20-17h20</th>
+                    <th scope="col">Mercredi<br> 17h30-18h30</th>
+                    <th scope="col">Mercredi<br> 18h40-19h40</th>
+                    <th scope="col">Jeudi<br> 17h55-18h55</th>
+                    <th scope="col">Jeudi<br> 19h05-20h05</th>
+                    <th scope="col">Vendredi<br> 17h55-18h55</th>
+                    <th scope="col">Vendredi<br> 19h05-20h05</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr style="background-color:#CBFFAF">
+                        <td>Pédagogue</td>
+                        <td>Eddy Scylla</td>
+                        <td>Henri Stourne</td>
+                        <td>Mélanie Dansmonverre</td>
+                        <td>Ella Danloss</td>
+                        <td>Garcin Lazare</td>
+                        <td>Henri Stourne</td>
+                        <td>Eddy Scylla</td>
+                        <td>Garcin Lazare</td>
+                        <td>Mélanie Dansmonverre</td>
+                        <td>Ella Danloss</td>
+                        <td>Ella Danloss</td>
+                        <td>Mélanie Dansmonverre</td>
+                        <td>Eddy Scylla</td>
+                    </tr>
+                    <tr style="background-color:#E9F9FE">
                         <td>Bora Bora</td>
                         <!-- Lundi -->
                         <td>
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($lundi_1_1 != null){ ?>
-                                    <span class="text-primary"><?= $lundi_1_1[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $lundi_1_1[0]->get_matiere() ?>, première</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($lundi_1_1 as $creneau){ ?>
@@ -164,7 +180,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mardi_1_1 != null){ ?>
-                                    <span class="text-primary"><?= $mardi_1_1[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mardi_1_1[0]->get_matiere() ?>, 6ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mardi_1_1 as $creneau){ ?>
@@ -182,7 +198,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mardi_2_1 != null){ ?>
-                                    <span class="text-primary"><?= $mardi_2_1[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mardi_2_1[0]->get_matiere() ?>, 3ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mardi_2_1 as $creneau){ ?>
@@ -201,7 +217,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_1_1 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_1_1[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_1_1[0]->get_matiere() ?>, 4ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_1_1 as $creneau){ ?>
@@ -219,7 +235,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_2_1 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_2_1[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_2_1[0]->get_matiere() ?>, 6ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_2_1 as $creneau){ ?>
@@ -237,7 +253,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_3_1 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_3_1[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_3_1[0]->get_matiere() ?>, seconde</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_3_1 as $creneau){ ?>
@@ -255,7 +271,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_4_1 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_4_1[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_4_1[0]->get_matiere() ?>, 3ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_4_1 as $creneau){ ?>
@@ -273,7 +289,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_5_1 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_5_1[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_5_1[0]->get_matiere() ?>, 5ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_5_1 as $creneau){ ?>
@@ -292,7 +308,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($jeudi_1_1 != null){ ?>
-                                    <span class="text-primary"><?= $jeudi_1_1[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $jeudi_1_1[0]->get_matiere() ?>, 4ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($jeudi_1_1 as $creneau){ ?>
@@ -329,7 +345,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($vendredi_1_1 != null){ ?>
-                                    <span class="text-primary"><?= $vendredi_1_1[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $vendredi_1_1[0]->get_matiere() ?>, première</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($vendredi_1_1 as $creneau){ ?>
@@ -347,7 +363,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($vendredi_2_1 != null){ ?>
-                                    <span class="text-primary"><?= $vendredi_2_1[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $vendredi_2_1[0]->get_matiere() ?>, seconde</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($vendredi_2_1 as $creneau){ ?>
@@ -362,14 +378,14 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr style="background-color:#FFFAE7">
                         <td>Tahiti</td>
                         <!-- Lundi -->
                         <td>
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($lundi_1_2 != null){ ?>
-                                    <span class="text-primary"><?= $lundi_1_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $lundi_1_2[0]->get_matiere() ?>, première</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($lundi_1_2 as $creneau){ ?>
@@ -387,7 +403,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($lundi_2_2 != null){ ?>
-                                    <span class="text-primary"><?= $lundi_2_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $lundi_2_2[0]->get_matiere() ?>, 5ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($lundi_2_2 as $creneau){ ?>
@@ -406,7 +422,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mardi_1_2 != null){ ?>
-                                    <span class="text-primary"><?= $mardi_1_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mardi_1_2[0]->get_matiere() ?>, 6ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mardi_1_2 as $creneau){ ?>
@@ -424,7 +440,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mardi_2_2 != null){ ?>
-                                    <span class="text-primary"><?= $mardi_2_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mardi_2_2[0]->get_matiere() ?>, 3ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mardi_2_2 as $creneau){ ?>
@@ -443,7 +459,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_1_2 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_1_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_1_2[0]->get_matiere() ?>, 4ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_1_2 as $creneau){ ?>
@@ -479,7 +495,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_3_2 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_3_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_3_2[0]->get_matiere() ?>, première</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_3_2 as $creneau){ ?>
@@ -497,7 +513,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_4_2 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_4_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_4_2[0]->get_matiere() ?>, seconde</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_4_2 as $creneau){ ?>
@@ -515,7 +531,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_5_2 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_5_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_5_2[0]->get_matiere() ?>, 6ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_5_2 as $creneau){ ?>
@@ -534,7 +550,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($jeudi_1_2 != null){ ?>
-                                    <span class="text-primary"><?= $jeudi_1_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $jeudi_1_2[0]->get_matiere() ?>, 5ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($jeudi_1_2 as $creneau){ ?>
@@ -552,7 +568,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($jeudi_2_2 != null){ ?>
-                                    <span class="text-primary"><?= $jeudi_2_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $jeudi_2_2[0]->get_matiere() ?>, 4ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($jeudi_2_2 as $creneau){ ?>
@@ -571,7 +587,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($vendredi_1_2 != null){ ?>
-                                    <span class="text-primary"><?= $vendredi_1_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $vendredi_1_2[0]->get_matiere() ?>, 3ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($vendredi_1_2 as $creneau){ ?>
@@ -589,7 +605,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($vendredi_2_2 != null){ ?>
-                                    <span class="text-primary"><?= $vendredi_2_2[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $vendredi_2_2[0]->get_matiere() ?>, seconde</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($vendredi_2_2 as $creneau){ ?>
@@ -604,14 +620,14 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr style="background-color:#E9F9FE">
                         <td>Tokyo</td>
                         <!-- Lundi -->
                         <td>
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($lundi_1_3 != null){ ?>
-                                    <span class="text-primary"><?= $lundi_1_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $lundi_1_3[0]->get_matiere() ?>, première</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($lundi_1_3 as $creneau){ ?>
@@ -648,7 +664,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mardi_1_3 != null){ ?>
-                                    <span class="text-primary"><?= $mardi_1_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mardi_1_3[0]->get_matiere() ?>, première</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mardi_1_3 as $creneau){ ?>
@@ -666,7 +682,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mardi_2_3 != null){ ?>
-                                    <span class="text-primary"><?= $mardi_2_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mardi_2_3[0]->get_matiere() ?>, seconde</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mardi_2_3 as $creneau){ ?>
@@ -685,7 +701,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_1_3 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_1_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_1_3[0]->get_matiere() ?>, 6ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_1_3 as $creneau){ ?>
@@ -703,7 +719,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_2_3 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_2_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_2_3[0]->get_matiere() ?>, 5ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_2_3 as $creneau){ ?>
@@ -721,7 +737,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_3_3 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_3_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_3_3[0]->get_matiere() ?>, 4ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_3_3 as $creneau){ ?>
@@ -739,7 +755,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_4_3 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_4_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_4_3[0]->get_matiere() ?>, 3ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_4_3 as $creneau){ ?>
@@ -757,7 +773,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_5_3 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_5_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_5_3[0]->get_matiere() ?>, 5ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_5_3 as $creneau){ ?>
@@ -776,7 +792,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($jeudi_1_3 != null){ ?>
-                                    <span class="text-primary"><?= $jeudi_1_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $jeudi_1_3[0]->get_matiere() ?>, 6ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($jeudi_1_3 as $creneau){ ?>
@@ -794,7 +810,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($jeudi_2_3 != null){ ?>
-                                    <span class="text-primary"><?= $jeudi_2_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $jeudi_2_3[0]->get_matiere() ?>, 5ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($jeudi_2_3 as $creneau){ ?>
@@ -813,7 +829,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($vendredi_1_3 != null){ ?>
-                                    <span class="text-primary"><?= $vendredi_1_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $vendredi_1_3[0]->get_matiere() ?>, 3ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($vendredi_1_3 as $creneau){ ?>
@@ -831,7 +847,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($vendredi_2_3 != null){ ?>
-                                    <span class="text-primary"><?= $vendredi_2_3[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $vendredi_2_3[0]->get_matiere() ?>, 4ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($vendredi_2_3 as $creneau){ ?>
@@ -846,14 +862,14 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr style="background-color:#FFFAE7">
                         <td>Moscou</td>
                         <!-- Lundi -->
                         <td>
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($lundi_1_4 != null){ ?>
-                                    <span class="text-primary"><?= $lundi_1_4[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $lundi_1_4[0]->get_matiere() ?>, seconde</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($lundi_1_4 as $creneau){ ?>
@@ -871,7 +887,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($lundi_2_4 != null){ ?>
-                                    <span class="text-primary"><?= $lundi_2_4[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $lundi_2_4[0]->get_matiere() ?>, première</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($lundi_2_4 as $creneau){ ?>
@@ -908,7 +924,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mardi_2_4 != null){ ?>
-                                    <span class="text-primary"><?= $mardi_2_4[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mardi_2_4[0]->get_matiere() ?>, seconde</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mardi_2_4 as $creneau){ ?>
@@ -927,7 +943,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_1_4 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_1_4[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_1_4[0]->get_matiere() ?>, première</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_1_4 as $creneau){ ?>
@@ -963,7 +979,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_3_4 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_3_4[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_3_4[0]->get_matiere() ?>, 5ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_3_4 as $creneau){ ?>
@@ -981,7 +997,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_4_4 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_4_4[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_4_4[0]->get_matiere() ?>, 3ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_4_4 as $creneau){ ?>
@@ -999,7 +1015,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_5_4 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_5_4[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_5_4[0]->get_matiere() ?>, 6ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_5_4 as $creneau){ ?>
@@ -1018,7 +1034,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($jeudi_1_4 != null){ ?>
-                                    <span class="text-primary"><?= $jeudi_1_4[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $jeudi_1_4[0]->get_matiere() ?>, 5ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($jeudi_1_4 as $creneau){ ?>
@@ -1036,7 +1052,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($jeudi_2_4 != null){ ?>
-                                    <span class="text-primary"><?= $jeudi_2_4[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $jeudi_2_4[0]->get_matiere() ?>, 3ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($jeudi_2_4 as $creneau){ ?>
@@ -1055,7 +1071,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($vendredi_1_4 != null){ ?>
-                                    <span class="text-primary"><?= $vendredi_1_4[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $vendredi_1_4[0]->get_matiere() ?>, 6ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($vendredi_1_4 as $creneau){ ?>
@@ -1088,14 +1104,14 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr style="background-color:#E9F9FE">
                         <td>Paris</td>
                         <!-- Lundi -->
                         <td>
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($lundi_1_5 != null){ ?>
-                                    <span class="text-primary"><?= $lundi_1_5[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $lundi_1_5[0]->get_matiere() ?>, seconde</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($lundi_1_5 as $creneau){ ?>
@@ -1113,7 +1129,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($lundi_2_5 != null){ ?>
-                                    <span class="text-primary"><?= $lundi_2_5[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $lundi_2_5[0]->get_matiere() ?>, première</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($lundi_2_5 as $creneau){ ?>
@@ -1132,7 +1148,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mardi_1_5 != null){ ?>
-                                    <span class="text-primary"><?= $mardi_1_5[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mardi_1_5[0]->get_matiere() ?>, seconde</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mardi_1_5 as $creneau){ ?>
@@ -1169,7 +1185,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_1_5 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_1_5[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_1_5[0]->get_matiere() ?>, 6ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_1_5 as $creneau){ ?>
@@ -1187,7 +1203,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_2_5 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_2_5[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_2_5[0]->get_matiere() ?>, 5ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_2_5 as $creneau){ ?>
@@ -1205,7 +1221,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_3_5 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_3_5[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_3_5[0]->get_matiere() ?>, 4ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_3_5 as $creneau){ ?>
@@ -1223,7 +1239,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($mercredi_4_5 != null){ ?>
-                                    <span class="text-primary"><?= $mercredi_4_5[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $mercredi_4_5[0]->get_matiere() ?>, première</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($mercredi_4_5 as $creneau){ ?>
@@ -1260,7 +1276,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($jeudi_1_5 != null){ ?>
-                                    <span class="text-primary"><?= $jeudi_1_5[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $jeudi_1_5[0]->get_matiere() ?>, 6ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($jeudi_1_5 as $creneau){ ?>
@@ -1278,7 +1294,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($jeudi_2_5 != null){ ?>
-                                    <span class="text-primary"><?= $jeudi_2_5[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $jeudi_2_5[0]->get_matiere() ?>, 5ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($jeudi_2_5 as $creneau){ ?>
@@ -1297,7 +1313,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($vendredi_1_5 != null){ ?>
-                                    <span class="text-primary"><?= $vendredi_1_5[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $vendredi_1_5[0]->get_matiere() ?>, 4ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($vendredi_1_5 as $creneau){ ?>
@@ -1315,7 +1331,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <?php if($vendredi_2_5 != null){ ?>
-                                    <span class="text-primary"><?= $vendredi_2_5[0]->get_matiere() ?>, terminale</span>
+                                    <span class="text-primary"><?= $vendredi_2_5[0]->get_matiere() ?>, 3ème</span>
                                     <hr class="w-25">
                                     Elèves :<br>
                                             <?php foreach($vendredi_2_5 as $creneau){ ?>
