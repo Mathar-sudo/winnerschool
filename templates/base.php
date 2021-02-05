@@ -50,7 +50,7 @@
                         </li>
                         <span class="mx-1"></span>
                         <li class="nav-item">
-                            <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?plannings">Planning</a>
+                            <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?calendrier">Planning</a>
                         </li>
                     <?php } else if(isset($_SESSION['intervenant'])) { ?>
                         <li class="nav-item">
@@ -62,7 +62,7 @@
                         </li>
                         <span class="mx-1"></span>
                         <li class="nav-item">
-                            <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?plannings">Planning</a>
+                            <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?calendrier">Planning</a>
                         </li>
                     <?php } else if(isset($_SESSION['responsable'])) { ?>
                         <li class="nav-item">
@@ -70,7 +70,7 @@
                         </li>
                         <span class="mx-1"></span>
                         <li class="nav-item">
-                            <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?plannings">Planning</a>
+                            <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?calendrier">Planning</a>
                         </li>
                     <?php } else if(isset($_SESSION['eleve'])) { ?>
                         <li class="nav-item">
@@ -78,7 +78,7 @@
                         </li>
                         <span class="mx-1"></span>
                         <li class="nav-item">
-                            <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?plannings">Planning</a>
+                            <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?calendrier">Planning</a>
                         </li>
                     <?php } else if(isset($_SESSION['admin'])) { ?>
                         <li class="nav-item">
