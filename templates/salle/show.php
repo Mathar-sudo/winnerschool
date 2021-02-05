@@ -13,8 +13,14 @@
             </ol>
         </nav>
         <hr class="w-25">
-        <p>Id de la salle : <?= $salle->get_id_salle() ?></p>
-        <p>Nom de la salle : <?= $salle->get_nom_salle() ?></p>
+        <div class="row ">
+         <div class="col-5">
+            <div class="card">
+                <div class="card-body text-center">
+                  <p>Nom de la salle : <?= $salle->get_nom_salle() ?></p>
+                  </div>
+                </div>
+            </div>
     </div>
 <?php } ?>
 

@@ -27,6 +27,11 @@
         require_once($chemin . 'intervenant/modifier.php');
     } else if(isset($_GET['modifier_intervenant'])) {
         $use_intervenant->modifier($_GET['modifier_intervenant']);
+    } else if(isset($_GET['page_intervenant'])){
+        $intervenant = $use_intervenant->findById($_GET['page_intervenant']);
+        require_once($chemin . 'intervenant/perso_intervenant.php');
+    } else if(isset($_GET['modifier_intervenant_perso'])) {
+        $use_intervenant->modifier_perso($_GET['modifier_intervenant_perso']);
     }
 
 ?>

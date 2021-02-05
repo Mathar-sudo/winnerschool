@@ -119,6 +119,38 @@
             
         }
 
+        function modifier_perso($id_eleve){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+            
+            $nom_eleve = trim($_POST['nom_eleve']);
+            $prenom_eleve = trim($_POST['prenom_eleve']);
+            $age_eleve = trim($_POST['age_eleve']);
+            $mobile_eleve = trim($_POST['mobile_eleve']);
+            $mail_eleve = trim($_POST['mail_eleve']);
+            $etablissement_eleve = trim($_POST['etablissement_eleve']);
+            $particularite_eleve = trim($_POST['particularite_eleve']);
+            $mdp_eleve = password_hash(trim($_POST['mdp_eleve']), PASSWORD_DEFAULT);
+            $responsable_eleve = $_POST['responsable_eleve'];
+            $classe_eleve = $_POST['classe_eleve'];
+            
+            // Requête SQL
+            $requete = 'UPDATE eleve SET prenom_eleve = ?,nom_eleve = ?,age_eleve = ?,mobile_eleve = ?,mail_eleve = ?,etablissement_eleve = ?,particularite_eleve = ?,mdp_eleve = ?,fk_id_responsable = ?,fk_id_classe = ? WHERE id_eleve = ?';
+                    
+            if($bdd->doQuery($requete, [$prenom_eleve,$nom_eleve,$age_eleve,$mobile_eleve,$mail_eleve,$etablissement_eleve,$particularite_eleve,$mdp_eleve,$responsable_eleve,$classe_eleve, $id_eleve])){
+                $_SESSION['eleve'] = $prenom_eleve . ' ' . $nom_eleve;
+                echo '<script>
+                    window.setTimeout(function() {
+                        window.location = "?page_eleve=' . $id_eleve . '";
+                    }, 1000);
+                    </script>';
+                echo '<script>alert("Mise à jour effectuée. Cliquez sur OK pour continuer.")</script>';
+            } else {
+                return false;
+            }
+            
+        }
+
         /**
          * Inscription responsable + élève en même temps
          */

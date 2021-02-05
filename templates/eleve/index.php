@@ -7,7 +7,9 @@
 <?php if(isset($tableau_eleves)){ ?>
 
     <div class="container">
+    <?php if(isset($_SESSION['admin'])){ ?>
     <a href="?formulaire_ajout_eleve"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter un élève</button></a>
+    <?php } ?>
         <table class="table">
             <thead>
                 <tr>
@@ -22,12 +24,15 @@
                 <th scope="col">Classe</th>
                 <th scope="col">Responsable</th>
                 <th scope="col">Aperçu</th>
+                <?php if(isset($_SESSION['admin'])){ ?>
                 <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
+                <?php } ?>
                 </tr>
             </thead>
             <tbody>
                 <?php 
+                if($tableau_eleves != null){
                     foreach($tableau_eleves as $eleve){
                 ?>
                 <tr id="ligne<?= $eleve->get_id_eleve() ?>">
@@ -38,16 +43,21 @@
                     <td><?= $eleve->get_mobile_eleve() ?></td>
                     <td><?= $eleve->get_mail_eleve() ?></td>
                     <td><?= $eleve->get_etablissement_eleve() ?></td>
-                    <td><?= $eleve->get_particularite_eleve() ?></td>
+                    <td><?= $eleve->get_particularite_eleve() ? $eleve->get_particularite_eleve() : '/' ?></td>
                     <td><?= $eleve->get_classe() ?></td>
                     <td><?= $eleve->get_responsable() ?></td>
                     <td><a href="?eleve=<?= $eleve->get_id_eleve() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <?php if(isset($_SESSION['admin'])){ ?>
                     <td><a href="?formulaire_modifier_eleve=<?= $eleve->get_id_eleve() ?>"><button class="btn btn-info btn-sm"><i class="far fa-edit"></i></button></a></td>
                     <td><button class="supprimer_eleve btn btn-danger btn-sm" value="<?= $eleve->get_id_eleve() ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $eleve->get_id_eleve() ?>" style="display:none;">Confirmer</button></td>
+                    <?php } ?>
                 </tr>
                 <?php 
                     }
+                } else {
+                    echo '<tr><td colspan="100%">Aucun enregistrement</td></tr>';
+                }
                 ?>
             </tbody>
         </table>

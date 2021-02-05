@@ -20,6 +20,7 @@
             </thead>
             <tbody>
                 <?php 
+                if($tableau_classes != null){
                     foreach($tableau_classes as $classe){
                 ?>
                 <tr id="ligne<?= $classe->get_id_classe() ?>">
@@ -32,6 +33,9 @@
                 </tr>
                 <?php 
                     }
+                } else {
+                    echo '<tr><td colspan="100%">Aucun enregistrement</td></tr>';
+                }
                 ?>
             </tbody>
         </table>

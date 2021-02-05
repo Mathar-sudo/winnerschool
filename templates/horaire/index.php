@@ -20,6 +20,7 @@
             </thead>
             <tbody>
                 <?php 
+                if($tableau_horaires != null){
                     foreach($tableau_horaires as $horaire){
                 ?>
                 <tr id="ligne<?= $horaire->get_id_horaire() ?>">
@@ -32,6 +33,9 @@
                 </tr>
                 <?php 
                     }
+                } else {
+                    echo '<tr><td colspan="100%">Aucun enregistrement</td></tr>';
+                }
                 ?>
             </tbody>
         </table>

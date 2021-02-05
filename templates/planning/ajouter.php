@@ -15,14 +15,14 @@
                     <select name="intervenant_planning" class="form-select" id="input_intervenant" required>
                         <option value selected disabled>Choisissez un intervenant</option>
                         <?php foreach($intervenants as $intervenant) { ?>  
-                            <option value="<?= $intervenant->get_id_intervenant() ?>"><?= $intervenant->get_nom_intervenant() . ' ' . $intervenant->get_prenom_intervenant() ?></option>
+                            <option value="<?= $intervenant->get_id_intervenant() ?>"><?= $intervenant->get_nom_intervenant() . ' ' . $intervenant->get_prenom_intervenant() . ' (' . $intervenant->get_specialite_intervenant() . ')' ?></option>
                         <?php } ?>
                     </select>
                     <label for="input_eleve" class="form-label">Élève</label>
                     <select name="eleve_planning" class="form-select" id="input_eleve" required>
                         <option value selected disabled>Choisissez un élève</option>
                         <?php foreach($eleves as $eleve) { ?>  
-                            <option value="<?= $eleve->get_id_eleve() ?>"><?= $eleve->get_nom_eleve() . ' ' . $eleve->get_prenom_eleve() ?></option>
+                            <option value="<?= $eleve->get_id_eleve() ?>"><?= $eleve->get_nom_eleve() . ' ' . $eleve->get_prenom_eleve() . ' (Responsable : ' . $eleve->get_responsable() . ')' ?></option>
                         <?php } ?>
                     </select>
                     <label for="input_pedagogue" class="form-label">Pédagogue</label>

@@ -27,6 +27,11 @@
         require_once($chemin . 'pedagogue/modifier.php');
     } else if(isset($_GET['modifier_pedagogue'])) {
         $use_pedagogue->modifier($_GET['modifier_pedagogue']);
+    } else if(isset($_GET['page_pedagogue'])){
+        $pedagogue = $use_pedagogue->findById($_GET['page_pedagogue']);
+        require_once($chemin . 'pedagogue/perso_pedagogue.php');
+    } else if(isset($_GET['modifier_pedagogue_perso'])){
+        $use_pedagogue->modifier_perso($_GET['modifier_pedagogue_perso']);
     }
 
 ?>

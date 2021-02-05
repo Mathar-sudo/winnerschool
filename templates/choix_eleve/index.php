@@ -21,6 +21,7 @@
             <tbody>
                 <?php 
                     $i = 0;
+                    if($tableau_choix_eleves != null) {
                     foreach($tableau_choix_eleves as $choix_eleve){
                         $i++;
                 ?>
@@ -37,6 +38,9 @@
                 </tr>
                 <?php 
                     }
+                } else {
+                    echo '<tr><td colspan="100%">Aucun enregistrement</td></tr>';
+                }
                 ?>
             </tbody>
         </table>

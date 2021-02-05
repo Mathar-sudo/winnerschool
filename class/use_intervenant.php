@@ -143,18 +143,52 @@
             $profession_intervenant = trim($_POST['profession_intervenant']);
             $experience_intervenant = trim($_POST['experience_intervenant']);
             $connaissance_intervenant = trim($_POST['connaissance_intervenant']);
-            $mdp_intervenant = password_hash(trim($_POST['mdp_intervenant']), PASSWORD_DEFAULT);
-
-        
+            $mdp_intervenant = password_hash(trim($_POST['mdp_intervenant']), PASSWORD_DEFAULT);        
 
             //Requête       
             $requete = 'UPDATE intervenant SET nom_intervenant = ?, prenom_intervenant = ?, adresse_intervenant = ?, cdp_intervenant = ?, ville_intervenant = ?, fixe_intervenant = ?, mobile_intervenant = ?, mail_intervenant = ?,  niveau_intervenant = ?, specialite_intervenant = ?, profession_intervenant = ?, experience_intervenant = ?, connaissance_intervenant = ?, mdp_intervenant = ? WHERE id_intervenant = ?';
                  
             if($bdd->doQuery($requete, [$nom_intervenant, $prenom_intervenant, $adresse_intervenant, $cdp_intervenant, $ville_intervenant, $fixe_intervenant, $mobile_intervenant, $mail_intervenant, $niveau_intervenant, $specialite_intervenant, $profession_intervenant, $experience_intervenant, $connaissance_intervenant, $mdp_intervenant, $id_intervenant])){
-            header('Location: ?intervenants');
+                header('Location: ?intervenants');
             } else {
                 return false;
-                }
+            }
+                
+        }
+
+        function modifier_perso($id_intervenant){
+            // Connexion à la base de données
+            $bdd = new Connexion_bdd();
+            // Récupération des valeurs du formulaire
+            $nom_intervenant = trim($_POST['nom_intervenant']);
+            $prenom_intervenant = trim($_POST['prenom_intervenant']);
+            $adresse_intervenant = trim($_POST['adresse_intervenant']);
+            $cdp_intervenant = $_POST['code_postale_intervenant'];
+            $ville_intervenant = trim($_POST['ville_intervenant']);
+            $fixe_intervenant = trim($_POST['fixe_intervenant']);
+            $mail_intervenant = trim($_POST['mail_intervenant']);
+            $mobile_intervenant = trim($_POST['mobile_intervenant']);
+            $niveau_intervenant = trim($_POST['niveau_intervenant']);
+            $specialite_intervenant = trim($_POST['specialite_intervenant']);
+            $profession_intervenant = trim($_POST['profession_intervenant']);
+            $experience_intervenant = trim($_POST['experience_intervenant']);
+            $connaissance_intervenant = trim($_POST['connaissance_intervenant']);
+            $mdp_intervenant = password_hash(trim($_POST['mdp_intervenant']), PASSWORD_DEFAULT);        
+
+            //Requête       
+            $requete = 'UPDATE intervenant SET nom_intervenant = ?, prenom_intervenant = ?, adresse_intervenant = ?, cdp_intervenant = ?, ville_intervenant = ?, fixe_intervenant = ?, mobile_intervenant = ?, mail_intervenant = ?,  niveau_intervenant = ?, specialite_intervenant = ?, profession_intervenant = ?, experience_intervenant = ?, connaissance_intervenant = ?, mdp_intervenant = ? WHERE id_intervenant = ?';
+                 
+            if($bdd->doQuery($requete, [$nom_intervenant, $prenom_intervenant, $adresse_intervenant, $cdp_intervenant, $ville_intervenant, $fixe_intervenant, $mobile_intervenant, $mail_intervenant, $niveau_intervenant, $specialite_intervenant, $profession_intervenant, $experience_intervenant, $connaissance_intervenant, $mdp_intervenant, $id_intervenant])){
+                $_SESSION['intervenant'] = $prenom_intervenant . ' ' . $nom_intervenant;
+                echo '<script>
+                    window.setTimeout(function() {
+                        window.location = "?page_intervenant=' . $id_intervenant . '";
+                    }, 1000);
+                    </script>';
+                echo '<script>alert("Mise à jour effectuée. Cliquez sur OK pour continuer.")</script>';
+            } else {
+                return false;
+            }
                 
         }
         
@@ -232,13 +266,8 @@
 
             // Requête SQL
             $requete = 'DELETE FROM intervenant WHERE id_intervenant = ?';
-
             // Exécution de la requête
-            if(!$bdd->doQuery($requete, [$id])){
-                return false;
-            } else {
-               header("Location: ?intervenants") ;
-            }
+            $bdd->doQuery($requete, [$id]);
         }
 
     }

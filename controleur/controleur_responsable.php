@@ -26,6 +26,11 @@
         require_once($chemin . 'responsable/modifier.php');
     } else if(isset($_GET['modifier_responsable'])) {
         $use_responsable->modifier($_GET['modifier_responsable']);
+    } else if(isset($_GET['page_responsable'])){
+        $responsable = $use_responsable->findById($_GET['page_responsable']);
+        require_once($chemin . 'responsable/perso_responsable.php');
+    } else if(isset($_GET['modifier_responsable_perso'])){
+        $use_responsable->modifier_perso($_GET['modifier_responsable_perso']);
     }
 
 
