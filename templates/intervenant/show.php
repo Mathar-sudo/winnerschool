@@ -13,9 +13,8 @@
             </ol>
         </nav>
         <hr class="w-25">
-        <p>Id de la intervenant : <?= $intervenant->get_id_intervenant() ?></p>
-        <p>Nom de la intervenant : <?= $intervenant->get_nom_intervenant() ?></p>
-        <p>Prénom de la intervenant : <?= $intervenant->get_prenom_intervenant() ?></p>
+        <p>Nom : <?= $intervenant->get_nom_intervenant() ?></p>
+        <p>Prénom : <?= $intervenant->get_prenom_intervenant() ?></p>
     </div>
 
 
