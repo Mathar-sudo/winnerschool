@@ -14,8 +14,8 @@
             <thead>
                 <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Nom</th>
                 <th scope="col">Prénom</th>
+                <th scope="col">Nom</th>
                 <th scope="col">Adresse</th>
                 <th scope="col">Code postal</th>
                 <th scope="col">Ville</th>
@@ -36,8 +36,8 @@
                 ?>
                 <tr id="ligne<?= $responsable->get_id_responsable() ?>">
                     <td><?= $responsable->get_id_responsable() ?></td>
-                    <td><?= $responsable->get_nom_responsable() ?></td>
                     <td><?= $responsable->get_prenom_responsable() ?></td>
+                    <td><?= $responsable->get_nom_responsable() ?></td>
                     <td><?= $responsable->get_adresse_responsable() ?></td>
                     <td><?= $responsable->get_cdp_responsable() ?></td>
                     <td><?= $responsable->get_ville_responsable() ?></td>
