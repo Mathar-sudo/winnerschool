@@ -97,8 +97,14 @@
                             <a class="nav-link <?php if(isset($active_eleves)){ echo 'active'; } ?>" href="?eleves">Élèves</a>
                         </li>
                         <span class="mx-1"></span>
-                        <li class="nav-item">
-                            <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?plannings">Planning</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Planning
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="?calendrier">Calendrier</a></li>
+                                <li><a class="dropdown-item" href="?plannings">Planning complet</a></li>
+                            </ul>
                         </li>
                         <span class="mx-1"></span>
                         <li class="nav-item">
