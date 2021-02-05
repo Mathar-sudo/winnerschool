@@ -25,8 +25,8 @@
                 <div class="col-6">
                     <label for="input_etablissement" class="form-label">Etablissement de l'élève</label>
                     <input type="text" name="etablissement_eleve" class="form-control" id="input_etablissement" required>
-                    <label for="input_particularite" class="form-label">Eléments spécifiques à prendre en compte de l'élève (discipline, handicap, etc.)</label>
-                    <input type="text" name="particularite_eleve" class="form-control" id="input_particularite" required>
+                    <label for="input_particularite" class="form-label">Eléments spécifiques à prendre en compte de l'élève (discipline, handicap, etc.) *optionnel</label>
+                    <input type="text" name="particularite_eleve" class="form-control" id="input_particularite">
                     <label for="input_mdp" class="form-label">Mot de passe de l'élève</label>
                     <input type="password" value="winnerschool" name="mdp_eleve" class="form-control" id="input_mdp" readonly>
                     <label for="input_responsable" class="form-label">Responsable de l'élève</label>

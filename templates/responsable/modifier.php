@@ -12,7 +12,7 @@
             <div class="row">
             <div class="col-6">
                 <label for="input_nom" class="form-label">Nom du responsable</label>
-                <input type="text" name="nom_responsable" class="form-control" value="<?= $responsable->get_nom_responsable(); ?> " id="input_nom" required>
+                <input type="text" name="nom_responsable" class="form-control" value="<?= $responsable->get_nom_responsable(); ?>" id="input_nom" required>
                 <label for="input_prenom" class="form-label">Prénom du responsable</label>
                 <input type="text" name="prenom_responsable" class="form-control" value="<?= $responsable->get_prenom_responsable(); ?>" id="input_prenom" required>
                 <label for="input_adresse" class="form-label">Adresse du responsable</label>
@@ -35,9 +35,9 @@
             </div>
             </div>
             </div>
-            <div class="col-12 text-center">
+            <div class="col-12 mt-3 text-center">
                 <button type="submit" class="btn btn-primary">Modifier</button>
-                <a href="?intervenants" class="btn btn-success">Retour</a>
+                <a href="?responsables" class="btn btn-success">Retour</a>
             </div>
         </form>
     </div>

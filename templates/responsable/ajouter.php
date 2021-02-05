@@ -34,7 +34,7 @@
             </div>
             </div>
             </div>
-            <div class="col-12 text-center">
+            <div class="col-12 mt-3 text-center">
                 <button type="submit" class="btn btn-primary">Ajouter</button>
             </div>
         </form>

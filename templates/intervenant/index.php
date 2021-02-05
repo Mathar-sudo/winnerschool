@@ -1,4 +1,4 @@
-<?php $titre_page = 'Toutes les matières' ?>
+<?php $titre_page = 'Tous les intervenants' ?>
 
 <?php $active_intervenants = true ?>
 
@@ -7,14 +7,16 @@
 <?php if(isset($tableau_intervenants)){ ?>
 
     <div class="container">
+    <?php if(isset($_SESSION['admin'])){ ?>
     <a href="?formulaire_ajout_intervenant"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter un intervenant</button></a>
+    <?php } ?>
         <div class="table-responsive">
-        <table class="table">
+        <table class="table table-hover table-striped" style="font-size:0.9em">
             <thead>
                 <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Nom</th>
                 <th scope="col">Prénom</th>
+                <th scope="col">Nom</th>
                 <th scope="col">Adresse</th>
                 <th scope="col">CP</th>
                 <th scope="col">Ville</th>
@@ -27,8 +29,10 @@
                 <th scope="col">Expérience</th>
                 <th scope="col">Connaissance</th>
                 <th scope="col">Aperçu</th>
+                <?php if(isset($_SESSION['admin'])){ ?>
                 <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
+                <?php } ?>
                 </tr>
             </thead>
             <tbody>
@@ -38,8 +42,8 @@
                 ?>
                 <tr id="ligne<?= $intervenant->get_id_intervenant() ?>">
                     <td><?= $intervenant->get_id_intervenant() ?></td>
-                    <td><?= $intervenant->get_nom_intervenant() ?></td>
                     <td><?= $intervenant->get_prenom_intervenant() ?></td>
+                    <td><?= $intervenant->get_nom_intervenant() ?></td>
                     <td><?= $intervenant->get_adresse_intervenant() ?></td>
                     <td><?= $intervenant->get_cdp_intervenant() ?></td>
                     <td><?= $intervenant->get_ville_intervenant() ?></td>
@@ -52,9 +56,11 @@
                     <td><?= $intervenant->get_experience_intervenant() ?></td>
                     <td><?= $intervenant->get_connaissance_intervenant() ?></td>
                     <td><a href="?intervenant=<?= $intervenant->get_id_intervenant() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <?php if(isset($_SESSION['admin'])){ ?>
                     <td><a href="?formulaire_modifier_intervenant=<?= $intervenant->get_id_intervenant() ?>"><button class="btn btn-info btn-sm"><i class="far fa-edit"></i></button></a></td>
                     <td><button class="supprimer_intervenant btn btn-danger btn-sm" value="<?= $intervenant->get_id_intervenant() ?>"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $intervenant->get_id_intervenant() ?>" style="display:none;">Confirmer</button></td>
+                    <?php } ?>
                 </tr>
                 <?php 
                         } 

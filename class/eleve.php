@@ -35,7 +35,6 @@
         function get_age_eleve():int{
             return $this->age_eleve;
         }
-
         function get_mobile_eleve():String{
             return $this->mobile_eleve;
         }
@@ -45,7 +44,7 @@
         function get_etablissement_eleve():String{
             return $this->etablissement_eleve;
         }
-        function get_particularite_eleve():String{
+        function get_particularite_eleve(){
             return $this->particularite_eleve;
         }
         function get_mdp_eleve():String{

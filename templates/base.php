@@ -54,6 +54,10 @@
                         </li>
                     <?php } else if(isset($_SESSION['intervenant'])) { ?>
                         <li class="nav-item">
+                            <a class="nav-link <?php if(isset($active_intervenants)){ echo 'active'; } ?>" href="?intervenants">Intervenants</a>
+                        </li>
+                        <span class="mx-1"></span>
+                        <li class="nav-item">
                             <a class="nav-link <?php if(isset($active_pedagogues)){ echo 'active'; } ?>" href="?pedagogues">Pédagogues</a>
                         </li>
                         <span class="mx-1"></span>
@@ -69,6 +73,10 @@
                             <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?plannings">Planning</a>
                         </li>
                     <?php } else if(isset($_SESSION['eleve'])) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link <?php if(isset($active_eleves)){ echo 'active'; } ?>" href="?eleves">Élèves</a>
+                        </li>
+                        <span class="mx-1"></span>
                         <li class="nav-item">
                             <a class="nav-link <?php if(isset($active_plannings)){ echo 'active'; } ?>" href="?plannings">Planning</a>
                         </li>

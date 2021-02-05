@@ -12,14 +12,6 @@
             <div class="col-12">
                 <label for="input_nom" class="form-label">Nom de la salle</label>
                 <input type="text" name="nom_salle" value="<?= $salle->get_nom_salle() ?>" class="form-control" id="input_nom" required>
-        <h1 class="text-primary">Modifier la salle <?= $salle->get_nom_salle()?></h1>
-        <hr style="width:15%">
-        <?php if(isset($erreur)){ echo $erreur; } ?>
-        <form class="row g-3 w-25" method="POST" action="?modifier_salle=<?= $salle->get_id_salle()?>">
-            <div class="col-12">
-                <label for="input_nom" class="form-label">Nom de la salle</label>
-                <input type="text" name="nom_salle" value="<?= $salle->get_nom_salle()?>" class="form-control" id="input_nom" required>
-                <input type="text" name="nom_salle" class="form-control" id="input_nom" required>
             </div>
             <div class="col-12 text-center">
                 <button type="submit" class="btn btn-primary">Modifier</button>

@@ -7,7 +7,9 @@
 <?php if(isset($tableau_plannings)){ ?>
 
     <div class="container">
+    <?php if(isset($_SESSION['admin']) || isset($_SESSION['secretaire'])){ ?>
     <a href="?formulaire_ajout_planning"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter un élément au planning</button></a>
+    <?php } ?>
         <table class="table">
             <thead>
                 <tr>
