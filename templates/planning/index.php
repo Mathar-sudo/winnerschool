@@ -21,7 +21,9 @@
                 <th scope="col">Horaire</th>
                 <th scope="col">Numéro semaine</th>
                 <th scope="col">Année</th>
+                <?php if(isset($_SESSION['admin'])){ ?>
                 <th scope="col">Supprimer</th>
+                <?php } ?>
                 </tr>
             </thead>
             <tbody>
@@ -46,7 +48,9 @@
                     <td><?= $planning->get_horaire() ?></td>
                     <td><?= $planning->get_numero_semaine() ?></td>
                     <td><?= $planning->get_annee() ?></td>
+                    <?php if(isset($_SESSION['admin'])){ ?>
                     <td><button class="supprimer_planning btn btn-danger btn-sm" value="<?= $i ?>"><i class="fas fa-trash-alt"></i></button>
+                    <?php } ?>
                     <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $i ?>" style="display:none;">Confirmer</button></td>
                 </tr>
                 <?php 
