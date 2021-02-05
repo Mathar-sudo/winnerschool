@@ -44,9 +44,11 @@
                     </div>
                 </div>
             </div>
+            <?php if(isset($_SESSION['admin'])){ ?>
             <div class="text-center mt-3">
                 <a href="?formulaire_modifier_eleve=<?= $eleve->get_id_eleve();?> "class="btn btn-primary w-25" >Modifier</a>
             </div>
+            <?php } ?>
     </div>
 <?php } ?>
 

@@ -29,6 +29,12 @@
         require_once($chemin . 'planning/ajouter.php');
     } else if(isset($_GET['ajouter_planning'])){
         $use_planning->ajouter();
+    } else if(isset($_GET['calendrier'])){
+        $semaine = 6;
+        require_once($chemin . 'planning/calendrier.php');
+    } else if(isset($_GET['calendrier_semaine'])){
+        $semaine = $_POST['semaine'];
+        require_once($chemin . 'planning/calendrier.php');
     }
 
 ?>

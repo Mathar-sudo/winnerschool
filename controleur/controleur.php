@@ -48,7 +48,7 @@
         require_once('controleur_choix_eleve.php');
 
     // Gestion des plannings
-    } else if(isset($_GET['plannings']) || isset($_GET['supprimer_planning']) || isset($_GET['formulaire_ajout_planning']) || isset($_GET['ajouter_planning'])){
+    } else if(isset($_GET['plannings']) || isset($_GET['supprimer_planning']) || isset($_GET['formulaire_ajout_planning']) || isset($_GET['ajouter_planning']) || isset($_GET['calendrier']) || isset($_GET['calendrier_semaine'])){
         require_once('controleur_planning.php');
 
     // Gestion des admins

@@ -10,7 +10,7 @@
     <?php if(isset($_SESSION['admin'])){ ?>
     <a href="?formulaire_ajout_eleve"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Ajouter un élève</button></a>
     <?php } ?>
-        <table class="table">
+        <table class="table table-striped table-hover">
             <thead>
                 <tr>
                 <th scope="col">Id</th>
