@@ -13,7 +13,7 @@
             </ol>
         </nav>
         <hr class="w-35">
-        <div class="row ">
+        <div class="row justify-content-center">
          <div class="col-5">
             <div class="card">
                 <div class="card-body text-center">

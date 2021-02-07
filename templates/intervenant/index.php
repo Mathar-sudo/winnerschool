@@ -55,11 +55,23 @@
                     <td><?= $intervenant->get_profession_intervenant() ?></td>
                     <td><?= $intervenant->get_experience_intervenant() ?></td>
                     <td><?= $intervenant->get_connaissance_intervenant() ?></td>
-                    <td><a href="?intervenant=<?= $intervenant->get_id_intervenant() ?>"><button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button></a></td>
+                    <td>
+                        <a href="?intervenant=<?= $intervenant->get_id_intervenant() ?>">
+                            <button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button>
+                        </a>
+                    </td>
                     <?php if(isset($_SESSION['admin'])){ ?>
-                    <td><a href="?formulaire_modifier_intervenant=<?= $intervenant->get_id_intervenant() ?>"><button class="btn btn-info btn-sm"><i class="far fa-edit"></i></button></a></td>
-                    <td><button class="supprimer_intervenant btn btn-danger btn-sm" value="<?= $intervenant->get_id_intervenant() ?>"><i class="fas fa-trash-alt"></i></button>
-                    <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $intervenant->get_id_intervenant() ?>" style="display:none;">Confirmer</button></td>
+                    <td><a href="?formulaire_modifier_intervenant=<?= $intervenant->get_id_intervenant() ?>">
+                        <button class="btn btn-info btn-sm"><i class="far fa-edit"></i></button>
+                    </a></td>
+                    <td>
+                        <button class="supprimer_intervenant btn btn-danger btn-sm" value="<?= $intervenant->get_id_intervenant() ?>">
+                        <i class="fas fa-trash-alt"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="confirm_suppression<?= $intervenant->get_id_intervenant() ?>" style="display:none;">
+                        Confirmer
+                        </button>
+                    </td>
                     <?php } ?>
                 </tr>
                 <?php 

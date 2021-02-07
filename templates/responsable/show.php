@@ -14,13 +14,13 @@
             </ol>
         </nav>
         <hr class="w-55">
-        <div class="row ">
+        <div class="row justify-content-center">
          <div class="col-5">
             <div class="card">
                 <div class="card-body text-center">
-                <img src="images/avatar.jpg" alt="..." class="img-thumbnail" width='100' height='100'>
-                <p class="mt-3">Nom : <?= $responsable->get_nom_responsable() ?></p>
-                <p>Prénom : <?= $responsable->get_prenom_responsable() ?></p>
+                    <img src="images/avatar.jpg" alt="..." class="img-thumbnail" width='100' height='100'>
+                    <p class="mt-3">Nom : <?= $responsable->get_nom_responsable() ?></p>
+                    <p>Prénom : <?= $responsable->get_prenom_responsable() ?></p>
                 </div>
         
             </div>
